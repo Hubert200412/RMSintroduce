@@ -134,7 +134,7 @@ body {
 .fixed-buttons {
   position: fixed !important;
   right: 20px;
-  top: 50vh;
+  top: 70vh;
   transform: translateY(-50%);
   z-index: 1000;
   display: flex;
@@ -570,6 +570,3 @@ section {
 .glow:hover {
   box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
 }
-/ *   C S S   U p d a t e d   0 7 / 1 7 / 2 0 2 5   2 3 : 4 1 : 2 1   * / 
- 
- 

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMS系统 - 登录注册</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-icons@1.13.12/iconfont/material-icons.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-utensils"></i>
+                RMS餐厅管理系统
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="inquiry.html">预约体验</a></li>
+                <li><a href="#" class="active">登录</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="inquiry.html" class="btn-consult">免费咨询</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+            <div class="row full-screen align-items-center">
+                <div class="left">
+                    <span class="line"></span>
+                    <h2>欢迎使用 <br> <span>RMS餐厅管理系统</span></h2>
+                    <p>智能化餐厅管理，提升您的运营效率</p>
+                    <a href="register.html" class="btn">立即注册，加入我们！</a>
+
+                    <div class="social-media">
+                        <a href="#"><i class="fa-brands fa-weixin"></i></a>
+                        <a href="#"><i class="fa-brands fa-weibo"></i></a>
+                        <a href="#"><i class="fa-brands fa-qq"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+
+                    <div class="features-preview">
+                        <div class="feature-item">
+                            <i class="material-icons">restaurant_menu</i>
+                            <span>智能点餐</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="material-icons">inventory</i>
+                            <span>库存管理</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="material-icons">analytics</i>
+                            <span>数据分析</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="form">
+                        <div class="text-center">
+                            <h6><span>手机登录</span> <span>扫码登录</span></h6>
+                            <input type="checkbox" class="checkbox" id="reg-log">
+                            <label for="reg-log"></label>
+                            <div class="card-3d-wrap">
+                                <div class="card-3d-wrapper">
+                                    <div class="card-front">
+                                        <div class="center-wrap">
+                                            <h4 class="heading">手机登录</h4>
+                                            <form id="phoneLoginForm">
+                                                <div class="form-group phone-input-group">
+                                                    <div class="country-code">
+                                                        <select class="country-select">
+                                                            <option value="+86">+86</option>
+                                                            <option value="+1">+1</option>
+                                                            <option value="+44">+44</option>
+                                                            <option value="+81">+81</option>
+                                                            <option value="+82">+82</option>
+                                                        </select>
+                                                    </div>
+                                                    <input type="tel" class="form-style phone-input" placeholder="请输入11位手机号码" autocomplete="off" required maxlength="11">
+                                                </div>
+
+                                                <div class="form-group verification-group">
+                                                    <input type="text" class="form-style verification-input" placeholder="验证码" autocomplete="off" required maxlength="6">
+                                                    <button type="button" class="get-code-btn" id="getCodeBtn">获取验证码</button>
+                                                </div>
+
+                                                <button type="submit" class="btn login-btn">立即登录</button>
+                                                
+                                                <div class="agreement">
+                                                    <p>登录即表示同意<a href="#" class="link">用户协议</a>和<a href="#" class="link">隐私政策</a></p>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-back">
+                                        <div class="center-wrap">
+                                            <h4 class="heading">扫码登录</h4>
+                                            <div class="qr-code-section">
+                                                <div class="qr-code-container">
+                                                    <div class="qr-code-placeholder">
+                                                        <i class="material-icons qr-icon">qr_code</i>
+                                                        <p>请使用手机扫描二维码</p>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="qr-instructions">
+                                                    <p>1. 打开手机微信扫一扫</p>
+                                                    <p>2. 扫描上方二维码</p>
+                                                    <p>3. 确认登录即可</p>
+                                                </div>
+                                                
+                                                <button type="button" class="btn refresh-qr-btn" id="refreshQrBtn">
+                                                    <i class="material-icons">refresh</i>
+                                                    刷新二维码
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>产品服务</h3>
+                    <ul>
+                        <li><a href="#">收银系统</a></li>
+                        <li><a href="#">供应链管理</a></li>
+                        <li><a href="#">外卖管理</a></li>
+                        <li><a href="#">数据分析</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>解决方案</h3>
+                    <ul>
+                        <li><a href="#">连锁餐饮</a></li>
+                        <li><a href="#">单体餐厅</a></li>
+                        <li><a href="#">快餐店</a></li>
+                        <li><a href="#">咖啡厅</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>服务支持</h3>
+                    <ul>
+                        <li><a href="#">技术支持</a></li>
+                        <li><a href="#">培训服务</a></li>
+                        <li><a href="#">API文档</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <ul>
+                        <li><a href="#">公司介绍</a></li>
+                        <li><a href="#">新闻动态</a></li>
+                        <li><a href="#">合作伙伴</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RMS餐饮系统. 保留所有权利.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-weixin"></i></a>
+                    <a href="#"><i class="fab fa-weibo"></i></a>
+                    <a href="#"><i class="fab fa-qq"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="background-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
