@@ -29,7 +29,7 @@ class ContentManager {
           id: 1,
           title: "RMS餐饮管理系统",
           subtitle: "专业的餐厅数字化管理解决方案，助力餐饮企业实现智能化运营",
-          image: "img/banner1.jpg",
+          image: "img/banner-placeholder.svg",
           link: "#products",
           active: true
         }
@@ -49,7 +49,7 @@ class ContentManager {
           id: 1,
           title: "RMS系统助力餐厅数字化升级",
           summary: "新功能上线，帮助餐厅提升效率",
-          image: "img/news1.jpg",
+          image: "img/news-placeholder.svg",
           date: "2024-01-15",
           link: "#"
         }

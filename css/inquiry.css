@@ -2,12 +2,10 @@
 
 /* 主横幅区域 */
 .inquiry-hero {
-  height: 115vh;
-  min-height: 500px;
+  height: 1100px;
   background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
   position: relative;
   overflow: visible;
-  display: flex;
   align-items: flex-start;
 }
 
@@ -37,7 +35,7 @@
 }
 
 .hero-content {
-  max-width: 1200px;
+  width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   display: grid;
@@ -45,6 +43,7 @@
   gap: 60px;
   align-items: center;
   min-height: 40vh;
+  min-width: 1200px;
 }
 
 .hero-text h1 {
@@ -329,7 +328,7 @@
 
 .intro-content {
   text-align: center;
-  max-width: 800px;
+  width: 800px;
   margin: 0 auto;
   background: white;
   border-radius: 20px;
@@ -340,6 +339,7 @@
   margin-top: -250px;
   position: relative;
   z-index: 10;
+  min-width: 800px;
 }
 
 .intro-content h2 {
@@ -410,7 +410,7 @@
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
@@ -458,12 +458,13 @@
 }
 
 .form-wrapper {
-  max-width: 800px;
+  width: 800px;
   margin: 0 auto;
   background: #f8f9fa;
   border-radius: 20px;
   padding: 50px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  min-width: 800px;
 }
 
 .form-header {
@@ -628,7 +629,7 @@
 
 .advantages-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-top: 50px;
 }
@@ -671,22 +672,6 @@
   line-height: 1.6;
 }
 
-/* 活跃状态导航 */
-.nav-menu a.active {
-  color: #ff6b35;
-  position: relative;
-}
-
-.nav-menu a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: #ff6b35;
-}
-
 /* 动画效果 */
 @keyframes float {
   0%, 100% {
@@ -697,18 +682,8 @@
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 响应式设计 */
+/* 响应式设计 - 已禁用以防止内容缩放变形 */
+/*
 @media (max-width: 768px) {
   .inquiry-hero {
     height: 70vh;
@@ -789,3 +764,4 @@
     font-size: 1.8rem;
   }
 }
+*/

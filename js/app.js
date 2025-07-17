@@ -216,7 +216,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // 延迟显示页面内容
   setTimeout(() => {
     document.body.style.opacity = '1';
-    document.body.style.transform = 'translateY(0)';
+    // 移除transform避免影响fixed定位
+    // document.body.style.transform = 'translateY(0)';
   }, 100);
 });
 
