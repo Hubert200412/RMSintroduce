@@ -17,6 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const phone = this.querySelector('.phone-input').value;
             const code = this.querySelector('.verification-input').value;
+            const termsCheckbox = document.getElementById('termsCheckbox');
+            
+            // 检查协议条款勾选状态
+            if (!termsCheckbox.checked) {
+                showMessage('请先同意用户协议和隐私政策', 'error');
+                termsCheckbox.focus();
+                return;
+            }
             
             // 基本验证
             if (!phone || !code) {

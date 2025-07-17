@@ -39,7 +39,7 @@ body {
 
 
 .nav-container {
-  width: 1200px;
+  width: 1400px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -114,6 +114,20 @@ body {
 .btn-consult:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+}
+
+.btn-login {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 8px 20px;
+  border-radius: 25px;
+  color: #fff !important;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
 
 .nav-toggle {
@@ -498,6 +512,11 @@ section {
 
   .nav-menu li {
     margin: 10px 0;
+  }
+
+  .btn-login {
+    margin-left: 0;
+    margin-top: 10px;
   }
 
   .nav-toggle {

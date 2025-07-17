@@ -656,6 +656,23 @@ input[type="checkbox"] { display: none; }
     font-weight: bold;
 }
 
+/* 表单外部的协议条款 */
+.terms-agreement {
+    margin-top: 20px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.terms-agreement .checkbox-label {
+    justify-content: center;
+    font-size: 14px;
+    color: var(--whiteSmoke);
+}
+
+.terms-agreement .checkmark {
+    margin-right: 8px;
+}
+
 /* 动画效果 */
 @keyframes float {
     0%, 100% {
