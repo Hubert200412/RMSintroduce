@@ -27,18 +27,10 @@ class ContentManager {
       banners: [
         {
           id: 1,
-          title: "智能收银新体验",
-          subtitle: "RMS餐饮系统，让经营更简单",
+          title: "RMS餐饮管理系统",
+          subtitle: "专业的餐厅数字化管理解决方案，助力餐饮企业实现智能化运营",
           image: "img/banner1.jpg",
           link: "#products",
-          active: true
-        },
-        {
-          id: 2,
-          title: "数字化转型专家",
-          subtitle: "全链路数字化解决方案",
-          image: "img/banner2.jpg", 
-          link: "#solutions",
           active: true
         }
       ],
@@ -91,64 +83,6 @@ class ContentManager {
     
     if (titleElement) titleElement.textContent = activeBanner.title;
     if (subtitleElement) subtitleElement.textContent = activeBanner.subtitle;
-
-    // 如果有多个banner，创建轮播
-    if (this.contentConfig.banners.length > 1) {
-      this.createBannerCarousel();
-    }
-  }
-
-  createBannerCarousel() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    // 创建轮播指示器
-    const indicators = document.createElement('div');
-    indicators.className = 'banner-indicators';
-    
-    this.contentConfig.banners.forEach((banner, index) => {
-      const indicator = document.createElement('button');
-      indicator.className = `indicator ${index === 0 ? 'active' : ''}`;
-      indicator.addEventListener('click', () => this.showBanner(index));
-      indicators.appendChild(indicator);
-    });
-
-    hero.appendChild(indicators);
-
-    // 自动轮播
-    setInterval(() => {
-      const activeIndex = this.getCurrentBannerIndex();
-      const nextIndex = (activeIndex + 1) % this.contentConfig.banners.length;
-      this.showBanner(nextIndex);
-    }, 5000);
-  }
-
-  showBanner(index) {
-    const banner = this.contentConfig.banners[index];
-    if (!banner) return;
-
-    const heroContent = document.querySelector('.hero-content');
-    const titleElement = heroContent.querySelector('h1');
-    const subtitleElement = heroContent.querySelector('.hero-subtitle');
-    
-    // 添加淡出效果
-    heroContent.style.opacity = '0.5';
-    
-    setTimeout(() => {
-      titleElement.textContent = banner.title;
-      subtitleElement.textContent = banner.subtitle;
-      heroContent.style.opacity = '1';
-    }, 300);
-
-    // 更新指示器
-    document.querySelectorAll('.indicator').forEach((indicator, i) => {
-      indicator.classList.toggle('active', i === index);
-    });
-  }
-
-  getCurrentBannerIndex() {
-    const activeIndicator = document.querySelector('.indicator.active');
-    return activeIndicator ? Array.from(activeIndicator.parentNode.children).indexOf(activeIndicator) : 0;
   }
 
   renderNews() {

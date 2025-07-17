@@ -2,13 +2,32 @@
 
 /* 主横幅区域 */
 .inquiry-hero {
-  min-height: 100vh;
+  height: 115vh;
+  min-height: 500px;
   background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
-  align-items: center;
-  padding-top: 70px;
+  align-items: flex-start;
+}
+
+.inquiry-hero::after {
+  content: '';
+  position: absolute;
+  top: 65%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 15%, 
+    rgba(255, 255, 255, 0.3) 30%, 
+    rgba(255, 255, 255, 0.5) 45%, 
+    rgba(255, 255, 255, 0.7) 60%, 
+    rgba(255, 255, 255, 0.85) 80%, 
+    rgba(255, 255, 255, 1) 100%);
+  pointer-events: none;
+  z-index: 5;
 }
 
 .hero-background {
@@ -25,7 +44,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
-  min-height: 80vh;
+  min-height: 40vh;
 }
 
 .hero-text h1 {
@@ -46,7 +65,7 @@
 /* 设备展示区域 */
 .device-showcase {
   position: relative;
-  height: 500px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -303,12 +322,24 @@
 .system-intro {
   padding: 80px 0;
   background: #f8f9fa;
+  margin-top: -150px;
+  position: relative;
+  z-index: 10;
 }
 
 .intro-content {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  padding: 60px 40px 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 11;
+  margin-top: -250px;
+  position: relative;
+  z-index: 10;
 }
 
 .intro-content h2 {
@@ -679,10 +710,17 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+  .inquiry-hero {
+    height: 70vh;
+    min-height: 450px;
+    padding-top: 100px;
+  }
+  
   .hero-content {
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
+    min-height: 50vh;
   }
   
   .hero-text h1 {
@@ -718,9 +756,23 @@
   .tab-buttons {
     flex-direction: column;
   }
+  
+  .inquiry-hero::after {
+    height: 80px;
+  }
 }
 
 @media (max-width: 480px) {
+  .inquiry-hero {
+    height: 75vh;
+    min-height: 400px;
+    padding-top: 80px;
+  }
+  
+  .hero-content {
+    min-height: 40vh;
+  }
+  
   .hero-text h1 {
     font-size: 2rem;
   }
