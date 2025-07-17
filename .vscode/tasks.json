@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start RMS Website Server",
+			"type": "shell",
+			"command": "python -m http.server 8080",
+			"group": "serve",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

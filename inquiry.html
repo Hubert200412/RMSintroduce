@@ -1,0 +1,404 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>预约体验 - RMS餐饮管理系统</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/inquiry.css">
+  <meta name="description" content="预约体验RMS餐饮管理系统，智能化移动化收银系统解决方案，提供流量对接、多场景点餐、收银功能等服务。">
+  <meta name="keywords" content="餐饮管理系统,收银系统,预约体验,智能点餐,移动收银">
+
+  <meta property="og:title" content="预约体验 - RMS餐饮管理系统">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="预约体验智能化移动化的餐饮管理解决方案">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#ffa500">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <i class="fas fa-utensils"></i>
+        <span>RMS·餐饮系统</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="inquiry.html" class="active">预约体验</a></li>
+        <li><a href="index.html#products">产品中心</a></li>
+        <li><a href="index.html#cases">客户案例</a></li>
+        <li><a href="index.html#support">服务支持</a></li>
+        <li><a href="index.html#about">技术合作中心</a></li>
+        <li><a href="index.html#partner">渠道合作</a></li>
+        <li><a href="index.html#contact">加入我们</a></li>
+        <li><a href="index.html#more">了解更多</a></li>
+        <li><a href="#consult" class="btn-consult">咨询顾问</a></li>
+      </ul>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主横幅区域 -->
+  <section class="inquiry-hero">
+    <div class="hero-background">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>RMS餐饮系统</h1>
+          <p class="hero-subtitle">智能化、移动化收银系统解决方案</p>
+        </div>
+        <div class="hero-device">
+          <div class="device-showcase">
+            <!-- 主收银设备 -->
+            <div class="main-device">
+              <div class="device-screen">
+                <div class="screen-content">
+                  <div class="screen-header">
+                    <div class="status-bar">
+                      <span class="time">14:30</span>
+                      <div class="status-icons">
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-battery-three-quarters"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="screen-body">
+                    <div class="app-grid">
+                      <div class="app-icon blue"><i class="fas fa-cash-register"></i></div>
+                      <div class="app-icon green"><i class="fas fa-chart-bar"></i></div>
+                      <div class="app-icon orange"><i class="fas fa-shopping-cart"></i></div>
+                      <div class="app-icon purple"><i class="fas fa-users"></i></div>
+                      <div class="app-icon yellow"><i class="fas fa-utensils"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 辅助设备 -->
+            <div class="auxiliary-devices">
+              <div class="printer-device">
+                <div class="printer-body"></div>
+                <div class="printer-tray"></div>
+              </div>
+              <div class="scanner-device">
+                <div class="scanner-body"></div>
+                <div class="scanner-glass"></div>
+              </div>
+              <div class="tablet-device">
+                <div class="tablet-screen">
+                  <div class="tablet-content">
+                    <div class="order-item">订单 #001</div>
+                    <div class="order-item">订单 #002</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 装饰性元素 -->
+      <div class="hero-decorations">
+        <div class="decoration-circle circle-1"></div>
+        <div class="decoration-circle circle-2"></div>
+        <div class="decoration-circle circle-3"></div>
+        <div class="decoration-line line-1"></div>
+        <div class="decoration-line line-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 系统介绍 -->
+  <section class="system-intro">
+    <div class="container">
+      <div class="intro-content">
+        <h2>RMS餐饮系统</h2>
+        <p class="intro-subtitle">智能化、移动化收银系统解决方案</p>
+        
+        <div class="feature-tabs">
+          <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="hot-features">热门功能</button>
+            <button class="tab-btn" data-tab="special-features">特色能力</button>
+          </div>
+          
+          <div class="tab-content">
+            <div id="hot-features" class="tab-pane active">
+              <div class="features-grid">
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-wifi"></i>
+                  </div>
+                  <h3>流量对接</h3>
+                  <p>外来、团购、堂食、买单</p>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-tablet-alt"></i>
+                  </div>
+                  <h3>多场景点餐</h3>
+                  <p>手机点餐、Pad点餐、自助扫工作台</p>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-cash-register"></i>
+                  </div>
+                  <h3>收银功能</h3>
+                  <p>支付对账、扫码收款、POS收款</p>
+                </div>
+              </div>
+            </div>
+            
+            <div id="special-features" class="tab-pane">
+              <div class="features-grid">
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                  </div>
+                  <h3>智能分析</h3>
+                  <p>销售数据分析、客户行为洞察</p>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-cloud"></i>
+                  </div>
+                  <h3>云端管理</h3>
+                  <p>多店铺统一管理、实时数据同步</p>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                  </div>
+                  <h3>移动办公</h3>
+                  <p>随时随地查看经营状况</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 预约体验表单 -->
+  <section class="inquiry-form-section">
+    <div class="container">
+      <div class="form-wrapper">
+        <div class="form-header">
+          <h2>预约系统体验</h2>
+          <p>填写您的信息，我们的专业顾问将为您提供一对一的产品演示</p>
+        </div>
+        
+        <form class="inquiry-form" id="inquiryForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName">联系人姓名 *</label>
+              <input type="text" id="contactName" name="contactName" required placeholder="请输入您的姓名">
+            </div>
+            <div class="form-group">
+              <label for="contactPhone">联系电话 *</label>
+              <input type="tel" id="contactPhone" name="contactPhone" required placeholder="请输入手机号码">
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="companyName">公司/餐厅名称</label>
+              <input type="text" id="companyName" name="companyName" placeholder="请输入公司或餐厅名称">
+            </div>
+            <div class="form-group">
+              <label for="storeCount">门店规模 *</label>
+              <select id="storeCount" name="storeCount" required>
+                <option value="">请选择门店规模</option>
+                <option value="single">单店</option>
+                <option value="small">2-5家门店</option>
+                <option value="medium">6-20家门店</option>
+                <option value="large">21-50家门店</option>
+                <option value="enterprise">50家以上</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="businessType">业务类型</label>
+              <select id="businessType" name="businessType">
+                <option value="">请选择业务类型</option>
+                <option value="fastfood">快餐</option>
+                <option value="casual">休闲餐饮</option>
+                <option value="finedining">精品餐饮</option>
+                <option value="cafe">咖啡茶饮</option>
+                <option value="hotpot">火锅烧烤</option>
+                <option value="other">其他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="preferredTime">期望体验时间</label>
+              <select id="preferredTime" name="preferredTime">
+                <option value="">请选择时间</option>
+                <option value="morning">上午 9:00-12:00</option>
+                <option value="afternoon">下午 14:00-17:00</option>
+                <option value="evening">晚上 19:00-21:00</option>
+                <option value="anytime">随时</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group full-width">
+            <label for="requirements">具体需求描述</label>
+            <textarea id="requirements" name="requirements" rows="4" placeholder="请描述您的具体需求，比如关注的功能模块、遇到的问题等"></textarea>
+          </div>
+          
+          <div class="form-group full-width">
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                <span class="checkmark"></span>
+                我已阅读并同意 <a href="#" class="link">《隐私政策》</a> 和 <a href="#" class="link">《服务条款》</a>
+              </label>
+            </div>
+          </div>
+          
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-calendar-check"></i>
+            立即预约体验
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 为什么选择我们 -->
+  <section class="why-choose-us">
+    <div class="container">
+      <div class="section-header">
+        <h2>为什么选择RMS餐饮系统</h2>
+        <p>专业的技术实力和丰富的行业经验，为您的餐饮事业保驾护航</p>
+      </div>
+      
+      <div class="advantages-grid">
+        <div class="advantage-item">
+          <div class="advantage-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>快速部署</h3>
+          <p>标准化部署流程，最快1天内完成系统上线</p>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>稳定可靠</h3>
+          <p>99.9%的系统稳定性，24小时不间断服务</p>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-icon">
+            <i class="fas fa-users-cog"></i>
+          </div>
+          <h3>专业服务</h3>
+          <p>专业技术团队提供全方位的技术支持和培训</p>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>数据驱动</h3>
+          <p>深度数据分析，帮助您做出更明智的经营决策</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>产品服务</h3>
+          <ul>
+            <li><a href="#">收银系统</a></li>
+            <li><a href="#">供应链管理</a></li>
+            <li><a href="#">外卖管理</a></li>
+            <li><a href="#">数据分析</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>解决方案</h3>
+          <ul>
+            <li><a href="#">连锁餐饮</a></li>
+            <li><a href="#">单体餐厅</a></li>
+            <li><a href="#">快餐店</a></li>
+            <li><a href="#">咖啡厅</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>服务支持</h3>
+          <ul>
+            <li><a href="#">技术支持</a></li>
+            <li><a href="#">培训服务</a></li>
+            <li><a href="#">API文档</a></li>
+            <li><a href="#">常见问题</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>关于我们</h3>
+          <ul>
+            <li><a href="#">公司介绍</a></li>
+            <li><a href="#">新闻动态</a></li>
+            <li><a href="#">合作伙伴</a></li>
+            <li><a href="#">加入我们</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 RMS餐饮系统. 保留所有权利.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-weixin"></i></a>
+          <a href="#"><i class="fab fa-weibo"></i></a>
+          <a href="#"><i class="fab fa-qq"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 返回顶部按钮 -->
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- 固定咨询按钮 -->
+  <div class="fixed-consult">
+    <div class="consult-item">
+      <i class="fas fa-comments"></i>
+      <span>合作咨询</span>
+    </div>
+    <div class="consult-item">
+      <i class="fas fa-qrcode"></i>
+      <span>关注我们</span>
+    </div>
+  </div>
+
+  <!-- 加载脚本 -->
+  <script src="js/monitoring.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/inquiry.js"></script>
+</body>
+
+</html>
