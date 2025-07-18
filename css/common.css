@@ -352,19 +352,10 @@ section {
   color: #333;
   position: relative;
   display: inline-block;
+  padding: 0 100px;
 }
 
-.section-header h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(135deg, #ffa500, #ff8c00);
-  border-radius: 2px;
-}
+
 
 .section-header p {
   font-size: 1.1rem;
@@ -686,4 +677,93 @@ section {
 
 .nav-menu .dropdown:hover > a::before {
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    padding: 20px 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu li {
+    margin: 10px 0;
+  }
+
+  .btn-login {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .fixed-buttons {
+    position: fixed !important;
+    right: 15px;
+    top: 50vh;
+    transform: translateY(-50%);
+    z-index: 1000;
+  }
+
+  .consult-item {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+  }
+
+  .back-to-top {
+    width: 45px;
+    height: 45px;
+  }
+
+  .error-notification {
+    right: 10px;
+    left: 10px;
+    transform: translateY(-100%);
+  }
+  
+  .error-notification.show {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+    padding: 0 60px;
+  }
+  
+  .section-header h2::before,
+  .section-header h2::after {
+    width: 30px;
+  }
+  
+  .section-header::before {
+    left: calc(50% - 80px);
+  }
+  
+  .section-header::after {
+    right: calc(50% - 80px);
+  }
 }

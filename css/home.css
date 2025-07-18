@@ -25,6 +25,57 @@
   overflow: hidden;
 }
 
+/* 标题装饰样式 */
+.section-header .header-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.section-header .header-decoration h2 {
+  margin: 0;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 2;
+  background: var(--bg-color);
+}
+
+.decoration-line {
+  height: 2px;
+  background: linear-gradient(135deg, #ffa500, #ff8c00);
+  flex: 1;
+  opacity: 0.8;
+}
+
+.decoration-line.left {
+  margin-right: 0.5rem;
+  background: linear-gradient(to right, transparent, #ffa500);
+}
+
+.decoration-line.right {
+  margin-left: 0.5rem;
+  background: linear-gradient(to left, transparent, #ffa500);
+}
+
+.decoration-icon {
+  color: #ffa500;
+  font-size: 1rem;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+}
+
+.decoration-icon.left {
+  margin-right: 0.5rem;
+}
+
+.decoration-icon.right {
+  margin-left: 0.5rem;
+}
+
 .hero::after {
   content: '';
   position: absolute;
