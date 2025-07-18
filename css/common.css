@@ -221,11 +221,103 @@ body {
   font-size: 0.9rem;
   font-weight: 500;
   white-space: nowrap;
+  position: relative;
 }
 
 .consult-item:hover {
   transform: translateX(-5px);
   box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+}
+
+/* 弹出框样式 */
+.consult-popup {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 15px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  width: 320px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1001;
+  border: 1px solid #e0e0e0;
+}
+
+.consult-popup::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+  border-left-color: #fff;
+}
+
+.consult-item:hover .consult-popup {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(-10px);
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.popup-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.popup-item:hover {
+  background-color: #f8f9fa;
+}
+
+.popup-item i {
+  color: #ffa500;
+  font-size: 1.2rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.popup-text {
+  flex: 1;
+  color: #333;
+}
+
+.popup-text h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.popup-text p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #666;
+  margin: 0;
+}
+
+.popup-link {
+  color: #ffa500;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.popup-link:hover {
+  text-decoration: underline;
 }
 
 /* 页脚样式 */

@@ -1,0 +1,414 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>商家注册 - RMS餐饮管理系统</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/register.css">
+  <meta name="description" content="注册RMS餐饮管理系统，开启您的数字化餐厅管理之旅">
+  
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <i class="fas fa-utensils"></i>
+        RMS餐饮管理系统
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="inquiry.html">预约体验</a></li>
+        <li><a href="products.html">产品中心</a></li>
+        <li><a href="index.html#partner">客户案例</a></li>
+        <li><a href="about.html">了解我们</a></li>
+        <li class="dropdown">
+          <a style="cursor: pointer;">更多信息</a>
+          <ul class="dropdown-menu">
+            <li><a href="#news">新闻资讯</a></li>
+            <li><a href="#manual">使用手册</a></li>
+            <li><a href="#shop">在线商城</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <a href="inquiry.html#system-experience" class="btn-consult">免费咨询</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="register-section">
+    <div class="register-container">
+      <!-- 进度条 -->
+      <div class="progress-bar">
+        <div class="progress-step active" data-step="1">
+          <div class="step-number">1</div>
+          <div class="step-text">选择行业</div>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="2">
+          <div class="step-number">2</div>
+          <div class="step-text">商户信息</div>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="3">
+          <div class="step-number">3</div>
+          <div class="step-text">经营需求</div>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="4">
+          <div class="step-number">4</div>
+          <div class="step-text">账户设置</div>
+        </div>
+      </div>
+
+      <!-- 步骤1: 选择行业 -->
+      <div class="step-content active" id="step1">
+        <div class="step-header">
+          <h2>您的主营行业是？</h2>
+          <p>请选择您的餐厅类型，我们将为您推荐最适合的解决方案</p>
+        </div>
+        <div class="industry-grid">
+          <div class="industry-item" data-industry="chinese">
+            <div class="industry-icon">
+              <i class="fas fa-drumstick-bite"></i>
+            </div>
+            <span>中式餐厅</span>
+          </div>
+          <div class="industry-item" data-industry="western">
+            <div class="industry-icon">
+              <i class="fas fa-wine-glass-alt"></i>
+            </div>
+            <span>西式餐厅</span>
+          </div>
+          <div class="industry-item" data-industry="coffee">
+            <div class="industry-icon">
+              <i class="fas fa-coffee"></i>
+            </div>
+            <span>咖啡茶饮</span>
+          </div>
+          <div class="industry-item" data-industry="hotpot">
+            <div class="industry-icon">
+              <i class="fas fa-fire"></i>
+            </div>
+            <span>火锅烧烤</span>
+          </div>
+          <div class="industry-item" data-industry="dessert">
+            <div class="industry-icon">
+              <i class="fas fa-ice-cream"></i>
+            </div>
+            <span>甜品烘焙</span>
+          </div>
+          <div class="industry-item" data-industry="fastfood">
+            <div class="industry-icon">
+              <i class="fas fa-pizza-slice"></i>
+            </div>
+            <span>快餐便当</span>
+          </div>
+          <div class="industry-item" data-industry="seafood">
+            <div class="industry-icon">
+              <i class="fas fa-fish"></i>
+            </div>
+            <span>海鲜水产</span>
+          </div>
+          <div class="industry-item" data-industry="other">
+            <div class="industry-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <span>其他餐饮</span>
+          </div>
+        </div>
+        <div class="step-actions">
+          <button class="btn-next" disabled>下一步</button>
+        </div>
+      </div>
+
+      <!-- 步骤2: 商户信息 -->
+      <div class="step-content" id="step2">
+        <div class="step-header">
+          <h2>您目前的生意主要在？</h2>
+          <p>告诉我们您的经营模式和规模</p>
+        </div>
+        <div class="business-options">
+          <div class="option-group">
+            <label>经营模式</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="business-type" value="offline">
+                <span class="radio-custom"></span>
+                线下门店
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="business-type" value="online">
+                <span class="radio-custom"></span>
+                线上外卖
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="business-type" value="both">
+                <span class="radio-custom"></span>
+                线上线下结合
+              </label>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <label>您当前的门店规模是？</label>
+            <div class="scale-options">
+              <div class="scale-item" data-scale="single">
+                <span class="scale-number">1</span>
+                <span class="scale-text">单门店</span>
+              </div>
+              <div class="scale-item" data-scale="small">
+                <span class="scale-number">2-4</span>
+                <span class="scale-text">小型连锁</span>
+              </div>
+              <div class="scale-item" data-scale="medium">
+                <span class="scale-number">5-9</span>
+                <span class="scale-text">中型连锁</span>
+              </div>
+              <div class="scale-item" data-scale="large">
+                <span class="scale-number">10-29</span>
+                <span class="scale-text">大型连锁</span>
+              </div>
+              <div class="scale-item" data-scale="enterprise">
+                <span class="scale-number">30+</span>
+                <span class="scale-text">企业级</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <label>您在什么阶段有数字化需求？</label>
+            <div class="stage-options">
+              <div class="stage-item">
+                <i class="fas fa-seedling"></i>
+                <span>准备开店</span>
+              </div>
+              <div class="stage-item">
+                <i class="fas fa-chart-line"></i>
+                <span>业务发展中</span>
+              </div>
+              <div class="stage-item">
+                <i class="fas fa-rocket"></i>
+                <span>准备扩张</span>
+              </div>
+              <div class="stage-item">
+                <i class="fas fa-sync-alt"></i>
+                <span>系统升级</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="step-actions">
+          <button class="btn-prev">回到上一步</button>
+          <button class="btn-next" disabled>下一步</button>
+        </div>
+      </div>
+
+      <!-- 步骤3: 经营需求 -->
+      <div class="step-content" id="step3">
+        <div class="step-header">
+          <h2>您的经营需求是？</h2>
+          <p>请选择您最关心的功能模块（可多选）</p>
+        </div>
+        <div class="needs-grid">
+          <div class="need-item" data-need="pos">
+            <div class="need-checkbox">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="need-content">
+              <h4>收银【经营管理】</h4>
+              <p>POS收银、会储管理</p>
+            </div>
+          </div>
+          <div class="need-item" data-need="traffic">
+            <div class="need-checkbox">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="need-content">
+              <h4>把线下门店流量引流到线上商城</h4>
+              <p>扫码点餐、小程序商城、会员营销</p>
+            </div>
+          </div>
+          <div class="need-item" data-need="chain">
+            <div class="need-checkbox">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="need-content">
+              <h4>管理品牌下的多个门店</h4>
+              <p>进行门店分账等</p>
+            </div>
+          </div>
+          <div class="need-item" data-need="reservation">
+            <div class="need-checkbox">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="need-content">
+              <h4>实现客户线上预约到店服务</h4>
+              <p>门店人员排班</p>
+            </div>
+          </div>
+          <div class="need-item" data-need="delivery">
+            <div class="need-checkbox">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="need-content">
+              <h4>实现门店点餐、外卖配送</h4>
+              <p>配送管理、订单跟踪</p>
+            </div>
+          </div>
+          <div class="need-item" data-need="inventory">
+            <div class="need-checkbox">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="need-content">
+              <h4>库存管理、供应链管理</h4>
+              <p>食材采购、库存预警</p>
+            </div>
+          </div>
+        </div>
+        <div class="step-actions">
+          <button class="btn-prev">回到上一步</button>
+          <button class="btn-next" disabled>下一步</button>
+        </div>
+      </div>
+
+      <!-- 步骤4: 账户设置 -->
+      <div class="step-content" id="step4">
+        <div class="step-header">
+          <h2>设置您的账户</h2>
+          <p>最后一步，设置您的登录账户信息</p>
+        </div>
+        <div class="account-form">
+          <div class="form-group">
+            <label>手机号码</label>
+            <div class="phone-input-group">
+              <div class="country-code">
+                <span class="country-prefix">+86</span>
+              </div>
+              <input type="tel" class="form-input phone-input" placeholder="请输入11位手机号码" maxlength="11" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>验证码</label>
+            <div class="verification-group">
+              <input type="text" class="form-input verification-input" placeholder="请填写短信验证码" maxlength="6" required>
+              <button type="button" class="get-code-btn" id="getCodeBtn">获取验证码</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>设置密码</label>
+            <div class="password-input-group">
+              <input type="password" class="form-input password-input" placeholder="8~16位必须数字和字母" maxlength="16" required>
+              <button type="button" class="password-toggle">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <div class="password-strength">
+              <div class="strength-bar"></div>
+              <span class="strength-text">密码强度：弱</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>商户名称</label>
+            <input type="text" class="form-input" placeholder="请输入您的餐厅名称" required>
+          </div>
+
+          <div class="form-group">
+            <label>联系人姓名</label>
+            <input type="text" class="form-input" placeholder="请输入联系人姓名" required>
+          </div>
+
+          <div class="terms-agreement">
+            <label class="checkbox-label">
+              <input type="checkbox" id="termsCheckbox" required>
+              <span class="checkmark"></span>
+              我已阅读并同意<a href="#" class="link">用户协议</a>和<a href="#" class="link">隐私政策</a>
+            </label>
+          </div>
+        </div>
+        <div class="step-actions">
+          <button class="btn-prev">回到上一步</button>
+          <button class="btn-submit" disabled>完成注册</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>产品服务</h3>
+          <ul>
+            <li><a href="#">收银系统</a></li>
+            <li><a href="#">供应链管理</a></li>
+            <li><a href="#">外卖管理</a></li>
+            <li><a href="#">数据分析</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>解决方案</h3>
+          <ul>
+            <li><a href="#">连锁餐饮</a></li>
+            <li><a href="#">单体餐厅</a></li>
+            <li><a href="#">快餐店</a></li>
+            <li><a href="#">咖啡厅</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>服务支持</h3>
+          <ul>
+            <li><a href="#">技术支持</a></li>
+            <li><a href="#">培训服务</a></li>
+            <li><a href="#">API文档</a></li>
+            <li><a href="#">常见问题</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>关于我们</h3>
+          <ul>
+            <li><a href="about.html#company">公司介绍</a></li>
+            <li><a href="about.html#news">新闻动态</a></li>
+            <li><a href="about.html#partners">合作伙伴</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 RMS餐饮系统. 保留所有权利.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-weixin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="background-animation">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+  </div>
+
+  <script src="js/register.js"></script>
+</body>
+
+</html>

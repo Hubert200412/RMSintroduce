@@ -219,6 +219,84 @@ document.addEventListener('DOMContentLoaded', function() {
     // 移除transform避免影响fixed定位
     // document.body.style.transform = 'translateY(0)';
   }, 100);
+
+  // 咨询弹出框交互
+  const consultBtn = document.querySelector('#consultBtn');
+  const consultPopup = document.querySelector('#consultPopup');
+  
+  if (consultBtn && consultPopup) {
+    // 点击"预约演示"项跳转到指定页面
+    const scheduleItem = consultPopup.querySelector('.popup-item:first-child');
+    if (scheduleItem) {
+      scheduleItem.addEventListener('click', function(e) {
+        e.stopPropagation();
+        window.location.href = 'inquiry.html#system-experience';
+        
+        // 追踪点击事件
+        if (window.RMSAnalytics) {
+          RMSAnalytics.trackCustomEvent('consult_popup_click', {
+            action: 'schedule_demo',
+            timestamp: Date.now()
+          });
+        }
+      });
+    }
+
+    // 点击电话咨询项
+    const phoneItem = consultPopup.querySelector('.popup-item:nth-child(2)');
+    if (phoneItem) {
+      phoneItem.addEventListener('click', function(e) {
+        e.stopPropagation();
+        
+        // 追踪点击事件
+        if (window.RMSAnalytics) {
+          RMSAnalytics.trackCustomEvent('consult_popup_click', {
+            action: 'phone_consult',
+            timestamp: Date.now()
+          });
+        }
+      });
+    }
+
+    // 点击帮助中心项
+    const helpItem = consultPopup.querySelector('.popup-item:nth-child(3)');
+    if (helpItem) {
+      helpItem.addEventListener('click', function(e) {
+        e.stopPropagation();
+        
+        // 追踪点击事件
+        if (window.RMSAnalytics) {
+          RMSAnalytics.trackCustomEvent('consult_popup_click', {
+            action: 'help_center',
+            timestamp: Date.now()
+          });
+        }
+      });
+    }
+
+    // 阻止弹出框内的点击事件冒泡
+    consultPopup.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+
+    // 点击按钮外的区域隐藏弹出框 - 优化版本
+    document.addEventListener('click', function(e) {
+      if (!consultBtn.contains(e.target) && !consultPopup.contains(e.target)) {
+        consultPopup.style.opacity = '0';
+        consultPopup.style.visibility = 'hidden';
+        consultPopup.style.transform = 'translateY(-50%) translateX(0)';
+      }
+    });
+
+    // ESC键隐藏弹出框
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        consultPopup.style.opacity = '0';
+        consultPopup.style.visibility = 'hidden';
+        consultPopup.style.transform = 'translateY(-50%) translateX(0)';
+      }
+    });
+  }
 });
 
 // 通知系统

@@ -34,9 +34,36 @@
   <!-- 右侧滚动按钮组 -->
   <div class="fixed-buttons">
     <div class="consult-buttons">
-      <div class="consult-item">
+      <div class="consult-item" id="consultBtn">
         <i class="fas fa-comments"></i>
         <span>合作咨询</span>
+        <!-- 弹出框 -->
+        <div class="consult-popup" id="consultPopup">
+          <div class="popup-content">
+            <div class="popup-item">
+              <i class="fas fa-calendar-alt"></i>
+              <div class="popup-text">
+                <h4>预约演示</h4>
+                <p>填写您的基本信息，</p>
+                <p>专属餐饮顾问会一对一帮您安装使用。</p>
+              </div>
+            </div>
+            <div class="popup-item">
+              <i class="fas fa-phone"></i>
+              <div class="popup-text">
+                <h4>电话咨询</h4>
+                <p>售后客服热线：400-6260-106<br>快速响应，全程跟踪</p>
+              </div>
+            </div>
+            <div class="popup-item">
+              <i class="fas fa-headset"></i>
+              <div class="popup-text">
+                <h4>帮助中心</h4>
+                <p>智能版帮助中心：<a href="#" class="popup-link">点击查看</a><br>青春版帮助中心：<a href="#" class="popup-link">点击查看</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="consult-item">
         <i class="fas fa-qrcode"></i>
@@ -53,7 +80,7 @@
     <div class="nav-container">
       <div class="nav-logo">
         <i class="fas fa-utensils"></i>
-        <span>RMS·餐饮系统</span>
+        <span>RMS餐饮管理系统</span>
       </div>
       <ul class="nav-menu">
         <li><a href="#home">首页</a></li>
