@@ -405,8 +405,29 @@
 
 /* 联系我们样式 */
 .contact {
-  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  position: relative;
+  background: url('../img/index联系我们背景.jpeg') center/cover no-repeat;
   color: #fff;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.85), rgba(45, 45, 45, 0.85));
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.contact .container {
+  position: relative;
+  z-index: 2;
+  padding: 80px 20px;
 }
 
 .contact-content {
@@ -424,12 +445,14 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .contact-info p {
   font-size: 1.1rem;
-  color: #ccc;
+  color: #fff;
   margin-bottom: 30px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .contact-methods {
@@ -440,6 +463,11 @@
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+}
+
+.contact-method span {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .contact-method i {
@@ -706,3 +734,58 @@
   }
 }
 */
+
+/* 按钮效果样式 */
+.btn-effect-20 {
+  background-color: #f39c12;
+  color: white;
+  overflow: hidden;
+  position: relative;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-effect-20:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-effect-20::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #ff0 0%, #fff 70%);
+  opacity: 0;
+  transform: scale(1.2);
+}
+
+.btn-effect-20:hover::before {
+  animation: shineRotate 3s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes shineRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(660deg); }
+}
+
+/* 按钮组容器样式 */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 40px 20px;
+}

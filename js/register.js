@@ -35,6 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 验证码功能
     initVerificationCode();
+    
+    // 设置初始背景
+    updateBackground(1);
   }
 
   // 步骤1: 行业选择
@@ -301,12 +304,26 @@ document.addEventListener('DOMContentLoaded', function() {
     if (stepElement) {
       stepElement.classList.add('active');
     }
+    
+    // 更新背景图片
+    updateBackground(step);
   }
 
   function hideStep(step) {
     const stepElement = document.getElementById(`step${step}`);
     if (stepElement) {
       stepElement.classList.remove('active');
+    }
+  }
+
+  // 更新背景图片
+  function updateBackground(step) {
+    const registerSection = document.querySelector('.register-section');
+    if (registerSection) {
+      // 移除所有步骤类
+      registerSection.classList.remove('step-1', 'step-2', 'step-3', 'step-4');
+      // 添加当前步骤类
+      registerSection.classList.add(`step-${step}`);
     }
   }
 
