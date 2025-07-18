@@ -1,0 +1,732 @@
+/* 产品中心页面专用样式 */
+
+/* 椭圆轮播容器样式 - 仿照elliptical-rotation-chart */
+:root {
+  --carousel-spacing: 1.5vw;
+  --carousel-item-size: 22vw;
+  --carousel-mask-size: 95vw;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: calc(var(--carousel-item-size) / 0.75);
+  overflow: hidden;
+  margin: 4rem 0;
+  z-index: 10; /* 设置基础层级 */
+  
+  /* 椭圆形遮罩效果 */
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='450' viewBox='0 0 1440 450'%3E%3Cpath fill='rgb(200,200,200)' fill-rule='evenodd' d='M0 0s275.04 100 720 100S1440 0 1440 0v450s-275.04-100-720-100S0 450 0 450V0z'/%3E%3C/svg%3E");
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='450' viewBox='0 0 1440 450'%3E%3Cpath fill='rgb(200,200,200)' fill-rule='evenodd' d='M0 0s275.04 100 720 100S1440 0 1440 0v450s-275.04-100-720-100S0 450 0 450V0z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: var(--carousel-mask-size);
+  mask-size: var(--carousel-mask-size);
+  
+  background: linear-gradient(135deg, 
+    rgba(255, 165, 0, 0.15) 0%, 
+    rgba(255, 140, 0, 0.1) 50%, 
+    rgba(255, 165, 0, 0.08) 100%);
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(255, 165, 0, 0.2) 1px, transparent 1px);
+  background-size: 50px 50px, 80px 80px;
+  border-radius: 30px;
+}
+
+.carousel-wrapper {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  transform: translate(12vw, 0);
+  animation: carousel-entrance 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: visible; /* 确保tooltip可以显示在容器外 */
+  z-index: 20; /* 设置轮播内容层级 */
+}
+
+@keyframes carousel-entrance {
+  0% {
+    transform: translate(120vw, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(12vw, 0);
+    opacity: 1;
+  }
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.9));
+  border: 2px solid #ffa500;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100; /* 确保按钮在轮播内容之上，但在tooltip之下 */
+  box-shadow: 0 6px 20px rgba(255, 165, 0, 0.3);
+  backdrop-filter: blur(15px);
+  opacity: 0;
+  animation: btn-appear 2s ease-out 1.5s forwards;
+}
+
+.carousel-btn.prev-btn {
+  left: 2%;
+}
+
+.carousel-btn.next-btn {
+  right: 2%;
+}
+
+@keyframes btn-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+.carousel-btn:hover {
+  background: linear-gradient(135deg, #ffa500, #ff8c00);
+  color: white;
+  transform: translateY(-50%) scale(1.2);
+  box-shadow: 0 12px 35px rgba(255, 165, 0, 0.5);
+  border-color: #ff8c00;
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn i {
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover i {
+  transform: scale(1.1);
+  color: white;
+}
+
+body {
+  padding-top: 70px;
+}
+
+/* 产品工具箱区域 */
+.products-hero {
+  position: relative;
+  padding: 80px 0;
+  background-image: url('https://cloud-static.com/gallery/781718052705_.pic.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.products-hero .container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 60px 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-top: -50px;
+}
+
+/* 下滑提示样式 */
+.scroll-hint {
+  position: absolute;
+  left: 200px;
+  top: 70%;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-hint span {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.scroll-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: bounceDown 2s infinite;
+}
+
+.scroll-arrow i {
+  font-size: 1.2rem;
+  color: #ffa500;
+  margin-bottom: 5px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* 下滑箭头动画 */
+@keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.section-header .subtitle {
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.highlight {
+  background: linear-gradient(135deg, #ffa500, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 0 10px;
+  border-left: 4px solid #ffa500;
+  border-right: 4px solid #ffa500;
+}
+
+/* 产品网格 */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-item {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 8px 30px rgba(255, 165, 0, 0.2);
+}
+
+.product-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ffa500, #ff8c00);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  color: white;
+  font-size: 24px;
+}
+
+.product-item h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* 优势区域 */
+.advantages-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.advantage-card {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.advantage-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.advantage-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 收银系统区域 */
+.pos-systems-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.pos-systems-grid,
+.accessories-grid {
+  display: flex;
+  gap: var(--carousel-spacing);
+  transition: left 0.5s ease; /* 使用left而不是transform */
+  will-change: left; /* 优化性能 */
+  height: 100%;
+  position: relative; /* 确保可以使用left属性 */
+  left: 0; /* 初始位置 */
+}
+
+.pos-systems-grid .tooltip-container,
+.accessories-grid .tooltip-container {
+  width: var(--carousel-item-size);
+  height: 100%;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 悬停提示框样式 - 确保不被遮挡 */
+.tooltip-container {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 17px;
+  z-index: 1; /* 基础层级 */
+}
+
+.tooltip-container:hover {
+  z-index: 3000; /* 悬停时提升到最高层级 */
+}
+
+.tooltip_wrap {
+  opacity: 0;
+  padding: 20px;
+  position: fixed; /* 改为fixed定位，相对于视口 */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3001; /* 确保在最顶层 */
+  pointer-events: none;
+  max-width: 90vw; /* 限制最大宽度 */
+  max-height: 90vh; /* 限制最大高度 */
+}
+
+.tooltip-container:hover .tooltip_wrap {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
+.tooltip {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 165, 0, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 3002; /* 确保tooltip内容在最顶层 */
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgba(255, 255, 255, 0.98);
+  z-index: 3003;
+}
+
+/* 关闭按钮样式已移除 */
+
+.profile {
+  background: #2a2b2f;
+  border-radius: 10px 15px;
+  padding: 10px 12px;
+  border: 1px solid #ffa500;
+}
+
+.product-details {
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #BE7EF1;
+  white-space: nowrap;
+}
+
+.product-specs {
+  color: #fff;
+}
+
+.product-specs .spec-item {
+  font-size: 0.85em;
+  color: #aaa;
+  margin-bottom: 2px;
+}
+
+.product-price {
+  margin-top: 5px;
+  white-space: nowrap;
+  background-color: #fe2c55;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  height: 26px;
+  overflow: hidden;
+  padding: 0 8px;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.tooltip-container:hover .tooltip_wrap {
+  transform: translateX(-50%) translateY(10px);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.tooltip-container:hover .pos-image-container,
+.tooltip-container:hover .accessory-image-container {
+  padding: 30px 90px; /* 增大 hover 范围，避免经过间隙时来回弹跳 */
+}
+
+/* 产品图片容器样式 - 椭圆轮播专用 */
+.pos-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffa500, #ff8c00);
+  box-shadow: 0 8px 25px rgba(255, 165, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pos-image-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 45px rgba(255, 165, 0, 0.3);
+  z-index: 10;
+}
+
+.pos-product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s ease;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.pos-image-container:hover .pos-product-image {
+  transform: scale(1.02);
+}
+
+.pos-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 165, 0, 0.9), rgba(255, 140, 0, 0.8));
+  color: white;
+  font-size: 48px;
+  backdrop-filter: blur(5px);
+}
+
+/* 配件区域样式统一 */
+.accessories-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+/* 轮播项目样式统一 */
+.pos-systems-grid .tooltip-container,
+.accessories-grid .tooltip-container {
+  width: var(--carousel-item-size);
+  height: 100%;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 椭圆轮播响应式设计 */
+@media (max-width: 1200px) {
+  :root {
+    --carousel-item-size: 28vw;
+    --carousel-spacing: 2vw;
+    --carousel-mask-size: 90vw;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --carousel-item-size: 35vw;
+    --carousel-spacing: 2.5vw;
+    --carousel-mask-size: 85vw;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .tooltip_wrap {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 85vw;
+    max-height: 80vh;
+  }
+
+  .tooltip-container:hover .tooltip_wrap {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .tooltip {
+    min-width: 280px;
+    max-width: 350px;
+    padding: 15px;
+  }
+  
+  .carousel-btn {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .carousel-btn i {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --carousel-item-size: 45vw;
+    --carousel-spacing: 3vw;
+    --carousel-mask-size: 80vw;
+  }
+  
+  .section-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .product-item {
+    padding: 20px 15px;
+  }
+  
+  .product-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .product-details {
+    min-width: 200px;
+  }
+
+  .tooltip {
+    padding: 15px;
+    min-width: 250px;
+    max-width: 300px;
+  }
+  
+  .tooltip_wrap {
+    max-width: 90vw;
+    max-height: 85vh;
+  }
+  
+  .carousel-container {
+    margin: 2rem 0;
+  }
+  
+  .carousel-btn {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .carousel-btn i {
+    font-size: 18px;
+  }
+  
+  .carousel-btn.prev-btn {
+    left: 1%;
+  }
+  
+  .carousel-btn.next-btn {
+    right: 1%;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --carousel-item-size: 70vw;
+    --carousel-spacing: 4vw;
+    --carousel-mask-size: 75vw;
+  }
+  
+  .section-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .advantage-card {
+    padding: 30px 20px;
+  }
+
+  .product-details {
+    min-width: 180px;
+  }
+
+  .product-name {
+    font-size: 1rem;
+  }
+
+  .product-specs .spec-item {
+    font-size: 0.8rem;
+  }
+
+  .product-price {
+    font-size: 1.1rem;
+  }
+  
+  .carousel-container {
+    margin: 1.5rem 0;
+  }
+  
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    opacity: 1; /* 移动端始终显示按钮 */
+  }
+  
+  .carousel-btn i {
+    font-size: 16px;
+  }
+  
+  .pos-placeholder {
+    font-size: 36px;
+  }
+}

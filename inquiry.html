@@ -38,16 +38,22 @@
       <ul class="nav-menu">
         <li><a href="index.html">首页</a></li>
         <li><a href="inquiry.html" class="active">预约体验</a></li>
-        <li><a href="index.html#products">产品中心</a></li>
-        <li><a href="index.html#cases">客户案例</a></li>
-        <li><a href="index.html#support">服务支持</a></li>
-        <li><a href="index.html#about">技术合作中心</a></li>
+        <li><a href="products.html">产品中心</a></li>
         <li><a href="index.html#partner">渠道合作</a></li>
-        <li><a href="index.html#contact">加入我们</a></li>
-        <li><a href="index.html#more">了解更多</a></li>
-        <li><a href="#consult" class="btn-consult">咨询顾问</a></li>
-        <li><a href="login.html" class="btn-login">登录/注册</a></li>
+        <li><a href="index.html#contact">了解我们</a></li>
+        <li class="dropdown">
+          <a href="index.html#more">更多信息</a>
+          <ul class="dropdown-menu">
+            <li><a href="#news">新闻资讯</a></li>
+            <li><a href="#manual">使用手册</a></li>
+            <li><a href="#shop">在线商城</a></li>
+          </ul>
+        </li>
       </ul>
+      <div class="nav-actions">
+        <a href="#consult" class="btn-consult">咨询顾问</a>
+        <a href="login.html" class="btn-login">登录/注册</a>
+      </div>
       <div class="nav-toggle">
         <span></span>
         <span></span>
@@ -93,14 +99,10 @@
             </div>
             
             <!-- 辅助设备 -->
-            <div class="auxiliary-devices">
+            <div class="auxiliary-devices" style="margin-left: 200px;">
               <div class="printer-device">
                 <div class="printer-body"></div>
                 <div class="printer-tray"></div>
-              </div>
-              <div class="scanner-device">
-                <div class="scanner-body"></div>
-                <div class="scanner-glass"></div>
               </div>
               <div class="tablet-device">
                 <div class="tablet-screen">
@@ -266,16 +268,14 @@
             <textarea id="requirements" name="requirements" rows="4" placeholder="请描述您的具体需求，比如关注的功能模块、遇到的问题等"></textarea>
           </div>
           
-          <div class="form-group full-width">
-            <div class="checkbox-group">
-              <label class="checkbox-label">
-                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+          <div class="terms-agreement">
+            <label class="checkbox-label">
+                <input type="checkbox" id="termsCheckbox" required>
                 <span class="checkmark"></span>
-                我已阅读并同意 <a href="#" class="link">《隐私政策》</a> 和 <a href="#" class="link">《服务条款》</a>
-              </label>
-            </div>
-          </div>
-          
+                我已阅读并同意<a href="#" class="link">用户协议</a>和<a href="#" class="link">隐私政策</a>
+            </label>
+        </div>
+
           <button type="submit" class="submit-btn">
             <i class="fas fa-calendar-check"></i>
             立即预约体验

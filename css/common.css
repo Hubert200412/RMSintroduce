@@ -81,6 +81,7 @@ body {
 
 .nav-menu li {
   margin: 0 25px;
+  position: relative;
 }
 
 .nav-menu a {
@@ -602,4 +603,87 @@ section {
 /* 悬停发光效果 */
 .glow:hover {
   box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+}
+
+/* 下拉菜单样式 */
+.nav-menu li {
+  margin: 0 25px;
+  position: relative;
+}
+
+.nav-menu .dropdown {
+  position: relative;
+}
+
+.nav-menu .dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: rgba(37, 37, 37, 0.845);
+  backdrop-filter: blur(15px);
+  border-radius: 8px;
+  padding: 8px 0;
+  min-width: 140px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1001;
+  list-style: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 165, 0, 0.2);
+}
+
+.nav-menu .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-menu .dropdown-menu li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu .dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+.nav-menu .dropdown-menu a:hover {
+  background: rgba(255, 165, 0, 0.15);
+  color: #ffa500;
+  padding-left: 25px;
+}
+
+.nav-menu .dropdown-menu a::after {
+  display: none;
+}
+
+/* 为下拉菜单添加小箭头 */
+.nav-menu .dropdown > a::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.95);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-menu .dropdown:hover > a::before {
+  opacity: 1;
 }
