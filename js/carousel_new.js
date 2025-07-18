@@ -70,25 +70,29 @@ class EllipticalCarousel {
     this.index--;
     console.log('Next index:', this.index);
     
-    // 先移动整个容器
+    // 先移动数组元素
+    this.items.push(this.items.shift());
+    
+    // 处理移动后的最后一个元素位置（原来的第一个元素）
+    this.handleNextLastItemPosition();
+    
+    // 移动整个容器
     this.itemsContainer.style.left = `${this.itemBoxLength * this.index}vw`;
     
-    setTimeout(() => {
-      this.itemsContainer.style.transition = 'none';
-      
-      // 检查是否需要重置
-      if (Math.abs(this.index) >= this.itemCount) {
+    const lastItem = this.getLastItem();
+    if (lastItem) {
+      lastItem.style.transition = 'none';
+    }
+    
+    // 检查是否需要重置
+    if (Math.abs(this.index) >= this.itemCount) {
+      setTimeout(() => {
+        this.itemsContainer.style.transition = 'none';
         this.resetToStart();
-      } else {
-        this.handleNextItemPosition();
-      }
-      
-      // 移动数组元素
-      this.items.push(this.items.shift());
-      
-      // 恢复过渡效果
-      this.itemsContainer.style.transition = `${this.animationTime}s ease`;
-    }, this.animationTime * 1000);
+        // 恢复过渡效果
+        this.itemsContainer.style.transition = `${this.animationTime}s ease`;
+      }, this.animationTime * 1000);
+    }
   }
   
   moveToPrev() {
@@ -114,11 +118,31 @@ class EllipticalCarousel {
     // 检查是否需要重置
     if (Math.abs(this.index) >= this.itemCount) {
       setTimeout(() => {
+        this.itemsContainer.style.transition = 'none';
         this.resetToStart();
+        // 恢复过渡效果
+        this.itemsContainer.style.transition = `${this.animationTime}s ease`;
       }, this.animationTime * 1000);
     }
   }
   
+  handleNextLastItemPosition() {
+    const lastItem = this.getLastItem();
+    const movedToLastItem = this.items[this.items.length - 1]; // 新的最后一个元素（原来的第一个）
+    
+    if (movedToLastItem === lastItem) {
+      lastItem.style.transition = 'none';
+      lastItem.style.transform = 'translateX(0px)';
+    } else if (this.index >= 0) {
+      // 回退情况处理
+      movedToLastItem.style.transform = 'none';
+    } else {
+      // 正常情况下，将移动到最后的元素设置正确位置
+      const moveDistance = this.itemBoxLength * this.itemCount;
+      movedToLastItem.style.transform = `translateX(${moveDistance}vw)`;
+    }
+  }
+
   handleNextItemPosition() {
     const lastItem = this.getLastItem();
     const firstItem = this.items[0];
