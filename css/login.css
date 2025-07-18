@@ -22,7 +22,7 @@ body {
     font-size: 16px;
     letter-spacing: 0.5px;
     font-weight: normal;
-    background: var(--black);
+    background: var(--cardBg);
     overflow-x: hidden;
     min-height: 100vh;
     display: flex;
@@ -246,6 +246,27 @@ ul { list-style: none; }
     position: relative;
 }
 
+/* 登录标签页样式 */
+.login-tab {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    padding: 8px 20px !important;
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.login-tab:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--mainColor);
+}
+
+.login-tab.active {
+    background: var(--gradient);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
 input[type="checkbox"] { display: none; }
 
 .checkbox:checked + label, 
@@ -290,7 +311,6 @@ input[type="checkbox"] { display: none; }
 
 .link { 
     color: var(--whiteSmoke); 
-    margin-top: 15px; 
     display: inline-block;
     transition: all 0.3s ease;
 }
@@ -553,7 +573,6 @@ input[type="checkbox"] { display: none; }
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 0;
 }
 
 .qr-code-container {
@@ -648,7 +667,7 @@ input[type="checkbox"] { display: none; }
 .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
     content: '✓';
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;

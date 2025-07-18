@@ -6,9 +6,54 @@ document.addEventListener('DOMContentLoaded', function() {
     const phoneLoginForm = document.getElementById('phoneLoginForm');
     const getCodeBtn = document.getElementById('getCodeBtn');
     const refreshQrBtn = document.getElementById('refreshQrBtn');
+    const loginTabs = document.querySelectorAll('.login-tab');
 
     let countdown = 0;
     let countdownTimer = null;
+
+    // 初始化标签页状态
+    updateTabStates();
+
+    // 登录标签页点击事件
+    loginTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const tabType = this.getAttribute('data-tab');
+            
+            if (tabType === 'phone') {
+                // 切换到手机登录
+                if (regLogCheckbox.checked) {
+                    regLogCheckbox.checked = false;
+                }
+            } else if (tabType === 'qr') {
+                // 切换到扫码登录
+                if (!regLogCheckbox.checked) {
+                    regLogCheckbox.checked = true;
+                }
+            }
+            
+            updateTabStates();
+        });
+    });
+
+    // 监听checkbox变化
+    if (regLogCheckbox) {
+        regLogCheckbox.addEventListener('change', updateTabStates);
+    }
+
+    // 更新标签页状态
+    function updateTabStates() {
+        const isQrMode = regLogCheckbox ? regLogCheckbox.checked : false;
+        
+        loginTabs.forEach(tab => {
+            const tabType = tab.getAttribute('data-tab');
+            
+            if ((tabType === 'phone' && !isQrMode) || (tabType === 'qr' && isQrMode)) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+    }
 
     // 处理手机登录表单提交
     if (phoneLoginForm) {

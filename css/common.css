@@ -47,6 +47,7 @@ body {
   padding: 0 20px;
   height: 70px;
   min-width: 1200px;
+  position: relative;
 }
 
 .nav-logo {
@@ -67,10 +68,19 @@ body {
   display: flex;
   list-style: none;
   align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 分离主导航菜单和按钮 */
+.nav-actions {
+  display: flex;
+  align-items: center;
 }
 
 .nav-menu li {
-  margin: 0 15px;
+  margin: 0 25px;
 }
 
 .nav-menu a {
@@ -79,7 +89,7 @@ body {
   font-weight: 400;
   transition: color 0.3s ease;
   position: relative;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 .nav-menu a:hover,
@@ -109,11 +119,14 @@ body {
   border-radius: 25px;
   color: #fff !important;
   font-weight: 500;
+  text-decoration: none;
+  margin-right: 10px;
 }
 
 .btn-consult:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+  color: #fff !important;
 }
 
 .btn-login {
@@ -122,12 +135,13 @@ body {
   border-radius: 25px;
   color: #fff !important;
   font-weight: 500;
-  margin-left: 10px;
+  text-decoration: none;
 }
 
 .btn-login:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  color: #fff !important;
 }
 
 .nav-toggle {
