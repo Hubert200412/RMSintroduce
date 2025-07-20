@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
   initTabSwitching();
   initFormHandling();
   initScrollAnimations();
+  initParticles();
+  initCarousel();
   
   // 追踪页面访问
   if (window.RMSAnalytics) {
@@ -13,6 +15,106 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// 粒子效果
+function initParticles() {
+  const canvas = document.getElementById('particlesCanvas');
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  const particles = [];
+  
+  // 设置画布大小
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+  
+  // 粒子类
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 3 + 1;
+      this.speedX = Math.random() * 2 - 1;
+      this.speedY = Math.random() * 2 - 1;
+      this.opacity = Math.random() * 0.5 + 0.2;
+    }
+    
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      
+      if (this.x > canvas.width) this.x = 0;
+      if (this.x < 0) this.x = canvas.width;
+      if (this.y > canvas.height) this.y = 0;
+      if (this.y < 0) this.y = canvas.height;
+    }
+    
+    draw() {
+      ctx.globalAlpha = this.opacity;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = '#ffffff';
+      ctx.fill();
+    }
+  }
+  
+  // 创建粒子
+  for (let i = 0; i < 50; i++) {
+    particles.push(new Particle());
+  }
+  
+  // 动画循环
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    particles.forEach(particle => {
+      particle.update();
+      particle.draw();
+    });
+    
+    requestAnimationFrame(animate);
+  }
+  
+  animate();
+}
+
+// 轮播功能
+function initCarousel() {
+  const slides = document.getElementById('carouselSlides');
+  const indicators = document.querySelectorAll('.indicator');
+  let currentSlide = 0;
+  
+  if (!slides || !indicators.length) return;
+  
+  // 切换到指定幻灯片
+  function goToSlide(slideIndex) {
+    currentSlide = slideIndex;
+    slides.style.transform = `translateX(-${currentSlide * 25}%)`;
+    
+    // 更新指示器
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle('active', index === currentSlide);
+    });
+  }
+  
+  // 指示器点击事件
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      goToSlide(index);
+    });
+  });
+  
+  // 自动轮播
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % 4;
+    goToSlide(currentSlide);
+  }, 4000);
+}
 
 // 标签页切换功能
 function initTabSwitching() {

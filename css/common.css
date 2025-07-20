@@ -1,5 +1,23 @@
 /* 通用页面样式 - 所有页面共用 */
 
+/* 新配色方案 */
+:root {
+  --primary: #FF6B00; /* 主色调（原橙色优化） */
+  --secondary: #6E44FF; /* 副色调（原紫色优化） */
+  --dark-bg: #1A1A24; /* 深空黑背景 */
+  --text-light: #F5F7FA; /* 浅色文字 */
+  --text-primary: #333333; /* 主要文字颜色 */
+  --text-secondary: #666666; /* 次要文字颜色 */
+  --bg-light: #FFFFFF; /* 浅色背景 */
+  --bg-section: #F8F9FA; /* 区块背景 */
+  --border-light: #E5E7EB; /* 浅色边框 */
+  --shadow-light: rgba(0, 0, 0, 0.1); /* 浅色阴影 */
+  --shadow-medium: rgba(0, 0, 0, 0.15); /* 中等阴影 */
+  --shadow-dark: rgba(0, 0, 0, 0.25); /* 深色阴影 */
+  --gradient-primary: linear-gradient(135deg, var(--primary), #FF8A33); /* 主色渐变 */
+  --gradient-secondary: linear-gradient(135deg, var(--secondary), #8B5FFF); /* 副色渐变 */
+}
+
 /* CSS重置和基础样式 */
 * {
   margin: 0;
@@ -12,11 +30,19 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Roboto', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: var(--text-primary);
+  background-color: var(--bg-light);
   overflow-x: auto;
   min-width: 1240px;
+}
+
+/* 标题字体系统 */
+h1, h2, h3, h4, h5, h6, .heading {
+  font-family: 'Inter', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
 .container {
@@ -31,12 +57,12 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(26, 26, 36, 0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 107, 0, 0.2);
   z-index: 1000;
   transition: all 0.3s ease;
 }
-
 
 .nav-container {
   width: 1400px;
@@ -53,14 +79,15 @@ body {
 .nav-logo {
   display: flex;
   align-items: center;
-  color: #fff;
+  color: var(--text-light);
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: 'Inter', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .nav-logo i {
   margin-right: 8px;
-  color: #ffa500;
+  color: var(--primary);
   font-size: 1.5rem;
 }
 
@@ -85,17 +112,17 @@ body {
 }
 
 .nav-menu a {
-  color: #fff;
+  color: var(--text-light);
   text-decoration: none;
-  font-weight: 400;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  transition: all 0.3s ease;
   position: relative;
   font-size: 1.1rem;
 }
 
 .nav-menu a:hover,
 .nav-menu a.active {
-  color: #ffa500;
+  color: var(--primary);
 }
 
 .nav-menu a::after {
@@ -105,7 +132,7 @@ body {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #ffa500;
+  background-color: var(--primary);
   transition: width 0.3s ease;
 }
 
@@ -115,34 +142,40 @@ body {
 }
 
 .btn-consult {
-  background: linear-gradient(135deg, #ffa500, #ff8c00);
+  background: var(--gradient-primary);
   padding: 8px 20px;
   border-radius: 25px;
-  color: #fff !important;
-  font-weight: 500;
+  color: var(--text-light) !important;
+  font-weight: 600;
   text-decoration: none;
   margin-right: 10px;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 2px 8px var(--shadow-light);
 }
 
 .btn-consult:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
-  color: #fff !important;
+  box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+  color: var(--text-light) !important;
 }
 
 .btn-login {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: var(--gradient-secondary);
   padding: 8px 20px;
   border-radius: 25px;
-  color: #fff !important;
-  font-weight: 500;
+  color: var(--text-light) !important;
+  font-weight: 600;
   text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 2px 8px var(--shadow-light);
 }
 
 .btn-login:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
-  color: #fff !important;
+  box-shadow: 0 8px 25px rgba(110, 68, 255, 0.4);
+  color: var(--text-light) !important;
 }
 
 .nav-toggle {
@@ -154,7 +187,7 @@ body {
 .nav-toggle span {
   width: 25px;
   height: 3px;
-  background: #fff;
+  background: var(--text-light);
   margin: 3px 0;
   transition: 0.3s;
 }
@@ -177,16 +210,18 @@ body {
 .back-to-top {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #ffa500, #ff8c00);
+  background: var(--gradient-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--text-light);
   cursor: pointer;
   transition: all 0.3s ease;
   opacity: 0;
   visibility: hidden;
+  box-shadow: 0 4px 12px var(--shadow-medium);
+  border: 2px solid white;
 }
 
 .back-to-top.show {
@@ -196,7 +231,7 @@ body {
 
 .back-to-top:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
 }
 
 /* 咨询按钮组 */
@@ -209,8 +244,8 @@ body {
 }
 
 .consult-item {
-  background: linear-gradient(135deg, #ffa500, #ff8c00);
-  color: #fff;
+  background: var(--gradient-primary);
+  color: var(--text-light);
   padding: 12px 20px;
   border-radius: 25px;
   cursor: pointer;
@@ -219,14 +254,16 @@ body {
   align-items: center;
   gap: 8px;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
   position: relative;
+  box-shadow: 0 4px 12px var(--shadow-medium);
+  border: 2px solid white;
 }
 
 .consult-item:hover {
   transform: translateX(-5px);
-  box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
 }
 
 /* 弹出框样式 */
@@ -236,16 +273,16 @@ body {
   top: 50%;
   transform: translateY(-50%);
   margin-right: 15px;
-  background: #fff;
+  background: var(--bg-light);
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 40px var(--shadow-dark);
   padding: 20px;
   width: 320px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
   z-index: 1001;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-light);
 }
 
 .consult-popup::after {
@@ -255,7 +292,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   border: 8px solid transparent;
-  border-left-color: #fff;
+  border-left-color: var(--bg-light);
 }
 
 .consult-item:hover .consult-popup {
@@ -281,11 +318,11 @@ body {
 }
 
 .popup-item:hover {
-  background-color: #f8f9fa;
+  background-color: var(--bg-section);
 }
 
 .popup-item i {
-  color: #ffa500;
+  color: var(--primary);
   font-size: 1.2rem;
   margin-top: 2px;
   flex-shrink: 0;
@@ -293,27 +330,28 @@ body {
 
 .popup-text {
   flex: 1;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .popup-text h4 {
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: 'Inter', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   margin-bottom: 4px;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .popup-text p {
   font-size: 0.85rem;
   line-height: 1.4;
-  color: #666;
+  color: var(--text-secondary);
   margin: 0;
 }
 
 .popup-link {
-  color: #ffa500;
+  color: var(--primary);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .popup-link:hover {
@@ -322,8 +360,8 @@ body {
 
 /* 页脚样式 */
 .footer {
-  background: #1a1a1a;
-  color: #fff;
+  background: var(--dark-bg);
+  color: var(--text-light);
   padding: 50px 0 20px;
 }
 
@@ -336,9 +374,10 @@ body {
 
 .footer-section h3 {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: 'Inter', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   margin-bottom: 20px;
-  color: #ffa500;
+  color: var(--primary);
 }
 
 .footer-section ul {
@@ -356,7 +395,7 @@ body {
 }
 
 .footer-section a:hover {
-  color: #ffa500;
+  color: var(--primary);
 }
 
 .footer-bottom {

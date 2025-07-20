@@ -64,6 +64,9 @@
 
   <!-- 主横幅区域 -->
   <section class="inquiry-hero">
+    <!-- 动态粒子效果 -->
+    <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+    
     <div class="hero-background">
       <div class="hero-content">
         <div class="hero-text">
@@ -75,24 +78,136 @@
             <!-- 主收银设备 -->
             <div class="main-device">
               <div class="device-screen">
-                <div class="screen-content">
-                  <div class="screen-header">
-                    <div class="status-bar">
-                      <span class="time">14:30</span>
-                      <div class="status-icons">
-                        <i class="fas fa-wifi"></i>
-                        <i class="fas fa-battery-three-quarters"></i>
+                <!-- 手机屏幕轮播 -->
+                <div class="screen-carousel">
+                  <div class="carousel-slides" id="carouselSlides">
+                    <!-- 第一屏：应用图标 -->
+                    <div class="carousel-slide">
+                      <div class="screen-content">
+                        <div class="screen-header">
+                          <div class="status-bar">
+                            <span class="time">14:30</span>
+                            <div class="status-icons">
+                              <i class="fas fa-wifi"></i>
+                              <i class="fas fa-battery-three-quarters"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="screen-body">
+                          <div class="app-grid">
+                            <div class="app-icon blue">
+                              <i class="fas fa-cash-register"></i>
+                              <span class="feature-tag">HOT</span>
+                            </div>
+                            <div class="app-icon green">
+                              <i class="fas fa-mobile-alt"></i>
+                              <span class="feature-tag">NEW</span>
+                            </div>
+                            <div class="app-icon orange">
+                              <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div class="app-icon purple">
+                              <i class="fas fa-users"></i>
+                            </div>
+                            <div class="app-icon yellow">
+                              <i class="fas fa-utensils"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- 第二屏：收银app界面 -->
+                    <div class="carousel-slide">
+                      <div class="screen-content" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="screen-header">
+                          <div class="status-bar">
+                            <span class="time">14:30</span>
+                            <div class="status-icons">
+                              <i class="fas fa-wifi"></i>
+                              <i class="fas fa-battery-three-quarters"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="screen-body" style="padding: 20px; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                          <div style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 25px; width: 90%;">
+                            <i class="fas fa-cash-register" style="font-size: 2.5rem; margin-bottom: 15px; color: #FFD700;"></i>
+                            <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;">收银App界面</div>
+                            <div style="font-size: 0.8rem; opacity: 0.9; line-height: 1.4;">
+                              智能收银系统
+                            </div>
+                            <div style="margin-top: 15px; font-size: 0.7rem; opacity: 0.7;">
+                              <i class="fas fa-image" style="margin-right: 5px;"></i>
+                              后续放入收银台App的截图
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- 第三屏：点餐小程序 -->
+                    <div class="carousel-slide">
+                      <div class="screen-content" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);">
+                        <div class="screen-header">
+                          <div class="status-bar">
+                            <span class="time">14:30</span>
+                            <div class="status-icons">
+                              <i class="fas fa-wifi"></i>
+                              <i class="fas fa-battery-three-quarters"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="screen-body" style="padding: 20px; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                          <div style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 25px; width: 90%; border: 1px solid rgba(255,255,255,0.2);">
+                            <i class="fas fa-mobile-alt" style="font-size: 2.5rem; margin-bottom: 15px; color: #3498db;"></i>
+                            <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;">点餐小程序界面</div>
+                            <div style="font-size: 0.8rem; opacity: 0.9; line-height: 1.4;">
+                              扫码点餐系统
+                            </div>
+                            <div style="margin-top: 15px; font-size: 0.7rem; opacity: 0.7;">
+                              <i class="fas fa-image" style="margin-right: 5px;"></i>
+                              后续放入点餐小程序的截图
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- 第四屏：商家管理app界面 -->
+                    <div class="carousel-slide">
+                      <div class="screen-content" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d3436 100%);">
+                        <div class="screen-header">
+                          <div class="status-bar">
+                            <span class="time">14:30</span>
+                            <div class="status-icons">
+                              <i class="fas fa-wifi"></i>
+                              <i class="fas fa-battery-three-quarters"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="screen-body" style="padding: 20px; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                          <div style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 25px; width: 90%; border: 1px solid rgba(255,255,255,0.2);">
+                            <i class="fas fa-chart-pie" style="font-size: 2.5rem; margin-bottom: 15px; color: #e74c3c;"></i>
+                            <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;">商家管理App界面</div>
+                            <div style="font-size: 0.8rem; opacity: 0.9; line-height: 1.4;">
+                              经营状况监控
+                            </div>
+                            <div style="margin-top: 15px; font-size: 0.7rem; opacity: 0.7;">
+                              <i class="fas fa-image" style="margin-right: 5px;"></i>
+                              后续放入商家管理App的截图
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="screen-body">
-                    <div class="app-grid">
-                      <div class="app-icon blue"><i class="fas fa-cash-register"></i></div>
-                      <div class="app-icon green"><i class="fas fa-chart-bar"></i></div>
-                      <div class="app-icon orange"><i class="fas fa-shopping-cart"></i></div>
-                      <div class="app-icon purple"><i class="fas fa-users"></i></div>
-                      <div class="app-icon yellow"><i class="fas fa-utensils"></i></div>
-                    </div>
+                  
+                  <!-- 轮播指示器 -->
+                  <div class="carousel-indicators">
+                    <div class="indicator active" data-slide="0"></div>
+                    <div class="indicator" data-slide="1"></div>
+                    <div class="indicator" data-slide="2"></div>
+                    <div class="indicator" data-slide="3"></div>
                   </div>
                 </div>
               </div>

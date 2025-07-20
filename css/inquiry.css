@@ -3,10 +3,21 @@
 /* 主横幅区域 */
 .inquiry-hero {
   height: 1100px;
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+  background: radial-gradient(circle, #FF9E6D 0%, #FF6B00 100%);
   position: relative;
   overflow: visible;
   align-items: flex-start;
+}
+
+/* 动态粒子效果画布 */
+.particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .inquiry-hero::after {
@@ -82,6 +93,23 @@
     -20px -20px 40px rgba(255, 255, 255, 0.9);
   z-index: 3;
   transform: perspective(1000px) rotateY(-15deg);
+  animation: deviceGlow 4s ease-in-out infinite;
+}
+
+/* 设备发光效果 */
+@keyframes deviceGlow {
+  0%, 100% {
+    box-shadow: 
+      20px 20px 40px rgba(0, 0, 0, 0.1),
+      -20px -20px 40px rgba(255, 255, 255, 0.9),
+      0 0 0 rgba(255, 107, 0, 0);
+  }
+  50% {
+    box-shadow: 
+      20px 20px 40px rgba(0, 0, 0, 0.1),
+      -20px -20px 40px rgba(255, 255, 255, 0.9),
+      0 0 20px rgba(255, 107, 0, 0.3);
+  }
 }
 
 .device-screen {
@@ -93,6 +121,53 @@
   background: #000;
   border-radius: 15px;
   overflow: hidden;
+}
+
+/* 手机屏幕轮播容器 */
+.screen-carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  width: 400%; /* 4个slide */
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-slide {
+  width: 25%; /* 100% / 4 = 25% */
+  height: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+/* 轮播指示器 */
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.indicator.active {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .screen-content {
@@ -144,7 +219,54 @@
   color: white;
   font-size: 1.5rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  animation: float 3s ease-in-out infinite;
+  animation: bounce 2s ease-in-out infinite;
+  position: relative;
+}
+
+/* 弹跳入场动画 */
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+/* 功能标签 */
+.feature-tag {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(238, 90, 36, 0.4);
+  animation: bounceIn 0.8s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .app-icon.blue { background: linear-gradient(135deg, #667eea, #764ba2); }
@@ -158,6 +280,16 @@
 .app-icon:nth-child(3) { animation-delay: 1s; }
 .app-icon:nth-child(4) { animation-delay: 1.5s; }
 .app-icon:nth-child(5) { animation-delay: 2s; }
+
+/* 浮动动画（保留原有的用于装饰元素） */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
 /* 辅助设备 */
 .auxiliary-devices {
@@ -501,8 +633,9 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #ff6b35;
-  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+  border-color: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+  transform: scale(1.02);
 }
 
 .form-group textarea {
@@ -576,7 +709,7 @@
 .submit-btn {
   width: 100%;
   padding: 18px;
-  background: linear-gradient(135deg, #ff6b35, #f9ca24);
+  background: var(--gradient-primary);
   color: white;
   border: none;
   border-radius: 12px;
@@ -589,11 +722,26 @@
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
+  animation: pulse 2s infinite;
+}
+
+/* 脉冲动画 */
+@keyframes pulse {
+  0% { 
+    box-shadow: 0 0 0 0 rgba(255,107,0,0.7); 
+  }
+  70% { 
+    box-shadow: 0 0 0 12px rgba(255,107,0,0); 
+  }
+  100% { 
+    box-shadow: 0 0 0 0 rgba(255,107,0,0); 
+  }
 }
 
 .submit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+  animation: none; /* 悬停时停止脉冲 */
 }
 
 .submit-btn:active {
