@@ -1,0 +1,674 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>使用手册 - RMS餐饮管理系统</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/manual.css">
+  <meta name="description" content="RMS餐饮管理系统使用手册，详细介绍各功能模块的使用方法和操作指南">
+  <meta name="keywords" content="使用手册,操作指南,餐饮管理系统,收银系统,供应链管理">
+
+  <meta property="og:title" content="使用手册 - RMS餐饮管理系统">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="详细的功能模块使用指南和操作手册">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#ffa500">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <i class="fas fa-utensils"></i>
+        <span>RMS餐饮管理系统</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="inquiry.html">预约体验</a></li>
+        <li><a href="products.html">产品中心</a></li>
+        <li><a href="about.html">了解我们</a></li>
+        <li class="dropdown">
+          <a style="cursor: pointer;">更多信息</a>
+          <ul class="dropdown-menu">
+            <li><a href="#news">新闻资讯</a></li>
+            <li><a href="manual.html" class="active">使用手册</a></li>
+            <li><a href="#shop">在线商城</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <a href="inquiry.html#system-experience" class="btn-consult">咨询顾问</a>
+        <a href="login.html" class="btn-login">登录/注册</a>
+      </div>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主横幅区域 -->
+  <section class="manual-hero">
+    <div class="hero-background">
+      <div class="container">
+        <div class="hero-content">
+          <h1>使用手册</h1>
+          <p class="hero-subtitle">详细的功能模块使用指南，帮助您快速上手RMS餐饮管理系统</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 侧边导航 -->
+  <div class="manual-layout">
+    <aside class="manual-sidebar">
+      <div class="sidebar-content">
+        <h3>功能模块</h3>
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="#cash-register" class="nav-item active" data-section="cash-register">
+                <i class="fas fa-cash-register"></i>
+                <span>智能收银系统</span>
+              </a>
+            </li>
+            <li>
+              <a href="#supply-chain" class="nav-item" data-section="supply-chain">
+                <i class="fas fa-truck"></i>
+                <span>供应链管理</span>
+              </a>
+            </li>
+            <li>
+              <a href="#production" class="nav-item" data-section="production">
+                <i class="fas fa-utensils"></i>
+                <span>生产管理</span>
+              </a>
+            </li>
+            <li>
+              <a href="#delivery" class="nav-item" data-section="delivery">
+                <i class="fas fa-motorcycle"></i>
+                <span>外卖管理</span>
+              </a>
+            </li>
+            <li>
+              <a href="#analytics" class="nav-item" data-section="analytics">
+                <i class="fas fa-chart-bar"></i>
+                <span>数据分析</span>
+              </a>
+            </li>
+            <li>
+              <a href="#smart-devices" class="nav-item" data-section="smart-devices">
+                <i class="fas fa-wifi"></i>
+                <span>智能设备</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- 主要内容区域 -->
+    <main class="manual-main">
+      <div class="content-container">
+        
+        <!-- 智能收银系统 -->
+        <section id="cash-register" class="manual-section">
+          <div class="section-header">
+            <h2><i class="fas fa-cash-register"></i>智能收银系统</h2>
+            <p>支持多种支付方式，快速结账，自动对账，提升前厅服务效率</p>
+          </div>
+          
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-credit-card"></i>
+              </div>
+              <h3>多支付方式集成</h3>
+              <p>支持微信支付、支付宝、银行卡、现金等多种支付方式，满足不同客户需求。</p>
+              <div class="feature-steps">
+                <h4>操作步骤：</h4>
+                <ol>
+                  <li>在收银界面选择商品</li>
+                  <li>点击结算按钮</li>
+                  <li>选择支付方式</li>
+                  <li>确认支付完成</li>
+                </ol>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>自动生成报表</h3>
+              <p>系统自动生成日报、周报、月报，实时掌握经营状况。</p>
+              <div class="feature-steps">
+                <h4>功能特点：</h4>
+                <ul>
+                  <li>销售额统计</li>
+                  <li>商品销量排行</li>
+                  <li>支付方式分析</li>
+                  <li>时段销售分析</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>会员管理系统</h3>
+              <p>完善的会员管理功能，支持积分、优惠券、等级管理。</p>
+              <div class="feature-steps">
+                <h4>管理功能：</h4>
+                <ul>
+                  <li>会员信息管理</li>
+                  <li>积分规则设置</li>
+                  <li>会员等级管理</li>
+                  <li>消费记录查询</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-tags"></i>
+              </div>
+              <h3>优惠券管理</h3>
+              <p>灵活的优惠券设置，支持满减、折扣、买赠等多种优惠方式。</p>
+              <div class="feature-steps">
+                <h4>优惠类型：</h4>
+                <ul>
+                  <li>满减优惠券</li>
+                  <li>折扣优惠券</li>
+                  <li>买赠优惠券</li>
+                  <li>新客优惠券</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 供应链管理 -->
+        <section id="supply-chain" class="manual-section">
+          <div class="section-header">
+            <h2><i class="fas fa-truck"></i>供应链管理</h2>
+            <p>从采购到库存的全流程管理，降低成本，提升食材管理效率</p>
+          </div>
+          
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <h3>智能采购建议</h3>
+              <p>基于销售数据和库存情况，智能推荐采购计划。</p>
+              <div class="feature-steps">
+                <h4>功能特点：</h4>
+                <ul>
+                  <li>销售趋势分析</li>
+                  <li>库存预测</li>
+                  <li>自动生成采购单</li>
+                  <li>供应商比价</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <h3>库存预警系统</h3>
+              <p>实时监控库存状态，及时提醒补货，避免缺货断货。</p>
+              <div class="feature-steps">
+                <h4>预警类型：</h4>
+                <ul>
+                  <li>低库存预警</li>
+                  <li>过期提醒</li>
+                  <li>滞销商品提醒</li>
+                  <li>异常消耗预警</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h3>供应商管理</h3>
+              <p>统一管理供应商信息，建立供应商评价体系。</p>
+              <div class="feature-steps">
+                <h4>管理内容：</h4>
+                <ul>
+                  <li>供应商档案</li>
+                  <li>合作协议管理</li>
+                  <li>供应商评价</li>
+                  <li>采购记录追踪</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-calculator"></i>
+              </div>
+              <h3>成本分析报告</h3>
+              <p>详细的成本分析，帮助优化采购策略，降低经营成本。</p>
+              <div class="feature-steps">
+                <h4>分析维度：</h4>
+                <ul>
+                  <li>食材成本分析</li>
+                  <li>供应商成本对比</li>
+                  <li>季节性价格趋势</li>
+                  <li>成本控制建议</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 生产管理 -->
+        <section id="production" class="manual-section">
+          <div class="section-header">
+            <h2><i class="fas fa-utensils"></i>生产管理</h2>
+            <p>标准化作业流程，提升出餐效率，保证食品安全和品质</p>
+          </div>
+          
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-book"></i>
+              </div>
+              <h3>标准化菜谱管理</h3>
+              <p>建立标准化菜谱库，确保菜品质量稳定一致。</p>
+              <div class="feature-steps">
+                <h4>功能包括：</h4>
+                <ul>
+                  <li>菜谱标准化设置</li>
+                  <li>制作流程记录</li>
+                  <li>用料标准管理</li>
+                  <li>营养成分分析</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-eye"></i>
+              </div>
+              <h3>生产流程监控</h3>
+              <p>实时监控厨房生产状态，优化出餐流程。</p>
+              <div class="feature-steps">
+                <h4>监控内容：</h4>
+                <ul>
+                  <li>订单生产状态</li>
+                  <li>制作时间统计</li>
+                  <li>厨师工作量分析</li>
+                  <li>出餐效率监控</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3>品质管控系统</h3>
+              <p>建立完善的品质管控体系，确保食品安全。</p>
+              <div class="feature-steps">
+                <h4>管控环节：</h4>
+                <ul>
+                  <li>原料品质检查</li>
+                  <li>制作过程监控</li>
+                  <li>成品质量验收</li>
+                  <li>温度安全管控</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-tachometer-alt"></i>
+              </div>
+              <h3>效率分析优化</h3>
+              <p>通过数据分析优化生产流程，提升整体效率。</p>
+              <div class="feature-steps">
+                <h4>优化方向：</h4>
+                <ul>
+                  <li>制作时间优化</li>
+                  <li>人员配置优化</li>
+                  <li>设备使用优化</li>
+                  <li>流程改进建议</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 外卖管理 -->
+        <section id="delivery" class="manual-section">
+          <div class="section-header">
+            <h2><i class="fas fa-motorcycle"></i>外卖管理</h2>
+            <p>多平台订单统一管理，智能配送调度，提升外卖运营效率</p>
+          </div>
+          
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-layer-group"></i>
+              </div>
+              <h3>多平台订单聚合</h3>
+              <p>统一管理来自美团、饿了么等多个平台的订单。</p>
+              <div class="feature-steps">
+                <h4>支持平台：</h4>
+                <ul>
+                  <li>美团外卖</li>
+                  <li>饿了么</li>
+                  <li>百度外卖</li>
+                  <li>自营小程序</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-route"></i>
+              </div>
+              <h3>智能配送路径</h3>
+              <p>智能规划配送路线，提升配送效率，降低配送成本。</p>
+              <div class="feature-steps">
+                <h4>优化功能：</h4>
+                <ul>
+                  <li>路径智能规划</li>
+                  <li>配送员调度</li>
+                  <li>配送时间预估</li>
+                  <li>异常订单处理</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h3>实时订单跟踪</h3>
+              <p>实时跟踪订单状态，及时处理异常情况。</p>
+              <div class="feature-steps">
+                <h4>跟踪功能：</h4>
+                <ul>
+                  <li>订单实时状态</li>
+                  <li>配送员位置</li>
+                  <li>预计送达时间</li>
+                  <li>客户通知推送</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-chart-pie"></i>
+              </div>
+              <h3>配送数据分析</h3>
+              <p>详细的配送数据分析，优化配送策略。</p>
+              <div class="feature-steps">
+                <h4>分析内容：</h4>
+                <ul>
+                  <li>配送效率分析</li>
+                  <li>客户满意度</li>
+                  <li>配送成本分析</li>
+                  <li>热门配送区域</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 数据分析 -->
+        <section id="analytics" class="manual-section">
+          <div class="section-header">
+            <h2><i class="fas fa-chart-bar"></i>数据分析</h2>
+            <p>全方位经营数据分析，助力商家科学决策，提升盈利能力</p>
+          </div>
+          
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>销售数据分析</h3>
+              <p>全面的销售数据统计和分析，掌握经营趋势。</p>
+              <div class="feature-steps">
+                <h4>分析维度：</h4>
+                <ul>
+                  <li>销售额趋势</li>
+                  <li>商品销量排行</li>
+                  <li>时段销售分析</li>
+                  <li>渠道销售对比</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-user-friends"></i>
+              </div>
+              <h3>客户行为分析</h3>
+              <p>深入分析客户消费行为，优化营销策略。</p>
+              <div class="feature-steps">
+                <h4>分析内容：</h4>
+                <ul>
+                  <li>客户消费偏好</li>
+                  <li>复购率分析</li>
+                  <li>客户价值分析</li>
+                  <li>流失客户分析</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-file-invoice-dollar"></i>
+              </div>
+              <h3>财务报表生成</h3>
+              <p>自动生成各类财务报表，辅助财务管理。</p>
+              <div class="feature-steps">
+                <h4>报表类型：</h4>
+                <ul>
+                  <li>收入支出报表</li>
+                  <li>利润分析报表</li>
+                  <li>成本控制报表</li>
+                  <li>税务申报资料</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-crystal-ball"></i>
+              </div>
+              <h3>趋势预测分析</h3>
+              <p>基于历史数据预测未来趋势，辅助经营决策。</p>
+              <div class="feature-steps">
+                <h4>预测内容：</h4>
+                <ul>
+                  <li>销售趋势预测</li>
+                  <li>库存需求预测</li>
+                  <li>客流量预测</li>
+                  <li>季节性分析</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 智能设备 -->
+        <section id="smart-devices" class="manual-section">
+          <div class="section-header">
+            <h2><i class="fas fa-wifi"></i>智能设备</h2>
+            <p>IoT设备接入，设备状态监控，预防性维护，保障设备稳定运行</p>
+          </div>
+          
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-tv"></i>
+              </div>
+              <h3>设备状态监控</h3>
+              <p>实时监控各类设备运行状态，确保设备正常运行。</p>
+              <div class="feature-steps">
+                <h4>监控设备：</h4>
+                <ul>
+                  <li>收银设备</li>
+                  <li>厨房设备</li>
+                  <li>制冷设备</li>
+                  <li>网络设备</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-bell"></i>
+              </div>
+              <h3>故障预警系统</h3>
+              <p>智能检测设备异常，提前预警，减少停机时间。</p>
+              <div class="feature-steps">
+                <h4>预警类型：</h4>
+                <ul>
+                  <li>设备故障预警</li>
+                  <li>维护提醒</li>
+                  <li>性能下降提醒</li>
+                  <li>安全隐患提醒</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <h3>远程诊断维护</h3>
+              <p>支持远程诊断和维护，快速解决设备问题。</p>
+              <div class="feature-steps">
+                <h4>服务内容：</h4>
+                <ul>
+                  <li>远程故障诊断</li>
+                  <li>远程技术支持</li>
+                  <li>维护计划制定</li>
+                  <li>现场服务调度</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-chart-area"></i>
+              </div>
+              <h3>设备使用分析</h3>
+              <p>分析设备使用情况，优化设备配置和使用效率。</p>
+              <div class="feature-steps">
+                <h4>分析内容：</h4>
+                <ul>
+                  <li>设备利用率</li>
+                  <li>能耗分析</li>
+                  <li>设备寿命预测</li>
+                  <li>投资回报分析</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>产品服务</h3>
+          <ul>
+            <li><a href="#cash-register">收银系统</a></li>
+            <li><a href="#supply-chain">供应链管理</a></li>
+            <li><a href="#delivery">外卖管理</a></li>
+            <li><a href="#analytics">数据分析</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>解决方案</h3>
+          <ul>
+            <li><a href="#cash-register">收银</a></li>
+            <li><a href="#supply-chain">供应链</a></li>
+            <li><a href="#production">生产管理</a></li>
+            <li><a href="#delivery">外卖管理</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>服务支持</h3>
+          <ul>
+            <li><a href="#">技术支持</a></li>
+            <li><a href="#">培训服务</a></li>
+            <li><a href="#">API文档</a></li>
+            <li><a href="#">常见问题</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>关于我们</h3>
+          <ul>
+            <li><a href="about.html#company">公司介绍</a></li>
+            <li><a href="about.html#news">新闻动态</a></li>
+            <li><a href="about.html#partners">合作伙伴</a></li>
+            <li><a href="about.html#careers">加入我们</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 RMS餐饮系统. 保留所有权利.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-weixin"></i></a>
+          <a href="#"><i class="fab fa-weibo"></i></a>
+          <a href="#"><i class="fab fa-qq"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 右侧滚动按钮组 -->
+  <div class="fixed-buttons">
+    <div class="consult-buttons">
+      <div class="consult-item" id="consultBtn">
+        <i class="fas fa-comments"></i>
+        <span>合作咨询</span>
+      </div>
+      <div class="consult-item">
+        <i class="fas fa-qrcode"></i>
+        <span>关注我们</span>
+      </div>
+    </div>
+    <div class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <!-- 加载脚本 -->
+  <script src="js/app.js"></script>
+  <script src="js/manual.js"></script>
+</body>
+
+</html>

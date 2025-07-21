@@ -46,9 +46,9 @@
   .swiper-button {
     --position       : 17%;
     background-color : #F04E23;
-    height           : 3rem;
-    width            : 3rem;
-    border-radius    : 0.5rem;
+    height           : 1rem;
+    width            : 1rem;
+    border-radius    : 2.5rem;
     
     &.swiper-button-prev {
       left : var(--position);
@@ -59,7 +59,7 @@
     }
 
     &:hover {
-      background-color : #4A261F;
+      background-color : #464646;
     }
 
     &::after {

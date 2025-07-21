@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initScrollAnimations();
   initParticles();
   initCarousel();
+  initAnimatedText(); // 添加动态文字效果
   
   // 追踪页面访问
   if (window.RMSAnalytics) {
@@ -446,4 +447,21 @@ function scrollToForm() {
 // 如果URL包含特定参数，自动滚动到表单
 if (window.location.hash === '#form' || window.location.search.includes('scroll=form')) {
   setTimeout(scrollToForm, 1000);
+}
+
+// 动态文字效果
+function initAnimatedText() {
+  const textFragments = document.querySelectorAll('.text-fragment');
+  
+  // 为每个文字片段设置延迟
+  textFragments.forEach((fragment, index) => {
+    fragment.style.setProperty('--delay', index);
+  });
+  
+  // 初始动画完成后，开始循环动画
+  setTimeout(() => {
+    textFragments.forEach(fragment => {
+      fragment.classList.add('animate-cycle');
+    });
+  }, textFragments.length * 100 + 8000); // 等待初始动画完成
 }

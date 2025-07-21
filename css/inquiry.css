@@ -72,6 +72,56 @@
   line-height: 1.5;
 }
 
+/* 动态文字效果 */
+.animated-text {
+  position: relative;
+  display: inline-block;
+}
+
+.text-fragment {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(50px) rotate(15deg) scale(0.5);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: calc(var(--delay, 0) * 0.1s);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) rotate(15deg) scale(0.5);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(-10px) rotate(-5deg) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+/* 循环动画效果 */
+.text-fragment.animate-cycle {
+  animation: textCycle 4s ease-in-out infinite;
+  animation-delay: calc(var(--delay, 0) * 0.1s);
+}
+
+@keyframes textCycle {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(30px) rotate(10deg) scale(0.7);
+  }
+  15%, 85% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-5px) rotate(-2deg) scale(1.05);
+  }
+}
+
 /* 设备展示区域 */
 .device-showcase {
   position: relative;

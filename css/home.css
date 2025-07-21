@@ -283,12 +283,46 @@
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   border: 1px solid #eee;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .solution-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   border-color: #ffa500;
+}
+
+/* 悬停时的查看详情按钮 */
+.solution-card .detail-btn {
+  position: absolute;
+  bottom: -50px;
+  left: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #ffa500, #ff8c00);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.solution-card:hover .detail-btn {
+  bottom: 20px;
+  opacity: 1;
+}
+
+.solution-card .detail-btn:hover {
+  background: linear-gradient(135deg, #ff8c00, #e67e00);
+  transform: translateY(-2px);
 }
 
 .solution-icon {
