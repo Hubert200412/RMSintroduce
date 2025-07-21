@@ -260,9 +260,8 @@
 
         <!-- 最终标题 -->
         <div class="advantages-big-title">
-          <div class="advantage-title-line"><span>餐饮</span></div>
-          <div class="advantage-title-line"><span>管理</span></div>
-          <div class="advantage-title-line"><span>专家</span></div>
+          <div class="advantage-title-line"><span>智能餐饮</span></div>
+          <div class="advantage-title-line"><span>管理系统</span></div>
         </div>
 
         <!-- 重新开始按钮 -->
@@ -284,7 +283,10 @@
         <div class="swiper pos-swiper" style="height: 600px;">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="https://images.unsplash.com/photo-1566679056462-2075774c8c07?q=80&w=2675&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+              <div class="product-image-popup-wrapper pos-popup-wrapper">
+                <img class="popup-trigger pos-image" src="https://images.unsplash.com/photo-1566679056462-2075774c8c07?q=80&w=2675&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                <button class="view-detail-btn popup-trigger">查看详情</button>
+              </div>
             </div>
             <div class="swiper-slide">
               <img src="https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
@@ -326,7 +328,10 @@
       <div class="swiper accessories-swiper" style="height: 600px;">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="https://images.unsplash.com/photo-1566679056462-2075774c8c07?q=80&w=2675&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <div class="product-image-popup-wrapper acc-popup-wrapper">
+              <img class="popup-trigger acc-image" src="https://images.unsplash.com/photo-1566679056462-2075774c8c07?q=80&w=2675&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+              <button class="view-detail-btn popup-trigger">查看详情</button>
+            </div>
           </div>
           <div class="swiper-slide">
             <img src="https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
@@ -465,5 +470,144 @@
   <script src="js/advantages-animation.js"></script>
   <script src="js/app.js"></script>
 </body>
+<style>
+.product-image-popup-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.product-image-popup-wrapper img {
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+  cursor: pointer;
+}
+.product-image-popup-wrapper:hover img {
+  transform: scale(1.08);
+  z-index: 2;
+}
+.view-detail-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  opacity: 0;
+  background: linear-gradient(90deg, #ffb347, #ff6b00);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(255,107,0,0.15);
+  cursor: pointer;
+  transition: opacity 0.25s, transform 0.25s;
+  z-index: 3;
+  pointer-events: auto;
+}
+.product-image-popup-wrapper:hover .view-detail-btn {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.product-popup-overlay {
+  position: fixed;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-popup-content {
+  background: #fff;
+  border-radius: 18px;
+  padding: 40px 32px 32px 32px;
+  min-width: 320px;
+  max-width: 90vw;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  position: relative;
+  animation: popupIn 0.3s cubic-bezier(.4,2,.6,1);
+}
+.popup-close {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  font-size: 2rem;
+  color: #ff6b00;
+  cursor: pointer;
+  font-weight: bold;
+}
+.product-info-list {
+  margin: 24px 0 0 0;
+  padding: 0 0 0 12px;
+  font-size: 1.1rem;
+  color: #333;
+}
+.product-info-list li {
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+@keyframes popupIn {
+  0% { transform: scale(0.8) translateY(40px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+</style>
+<!-- 收银系统弹窗 -->
+<div class="product-popup-overlay" id="pos-popup" style="display:none;">
+  <div class="product-popup-content">
+    <span class="popup-close" id="pos-popup-close">&times;</span>
+    <h2>收银系统</h2>
+    <ul class="product-info-list">
+      <li><strong>处理器：</strong>高性能多核处理器</li>
+      <li><strong>显示器：</strong>15.6寸，分辨率1920×1080</li>
+      <li><strong>存储：</strong>2G内存、8G存储</li>
+      <li><strong>触摸屏：</strong>多点电容触摸屏</li>
+      <li><strong>WIFI：</strong>802.11a/b/g/n/ac，2.4G</li>
+      <li><strong>蓝牙：</strong>BLE4.0</li>
+      <li><strong>喇叭：</strong>2瓦高保真音腔</li>
+      <li><strong>外形尺寸：</strong>长372×宽237×高438mm</li>
+    </ul>
+  </div>
+</div>
+<!-- 收银配件弹窗 -->
+<div class="product-popup-overlay" id="acc-popup" style="display:none;">
+  <div class="product-popup-content">
+    <span class="popup-close" id="acc-popup-close">&times;</span>
+    <h2>收银配件</h2>
+    <ul class="product-info-list">
+      <li><strong>打印方式：</strong>直接行式热敏</li>
+      <li><strong>打印速度：</strong>70mm/s</li>
+      <li><strong>纸卷宽度：</strong>58mm</li>
+      <li><strong>自动切刀：</strong>不支持</li>
+      <li><strong>接口类型：</strong>USB</li>
+      <li><strong>外形尺寸：</strong>长120 × 宽105 × 高105mm</li>
+      <li><strong>裸机重量：</strong>约500g</li>
+    </ul>
+  </div>
+</div>
+<script>
+// 收银系统弹窗
+document.querySelectorAll('.pos-popup-wrapper .popup-trigger').forEach(function(el) {
+  el.addEventListener('click', function() {
+    document.getElementById('pos-popup').style.display = 'flex';
+  });
+});
+document.getElementById('pos-popup-close').onclick = function() {
+  document.getElementById('pos-popup').style.display = 'none';
+};
+document.getElementById('pos-popup').onclick = function(e) {
+  if(e.target === this) this.style.display = 'none';
+};
+// 收银配件弹窗
+document.querySelectorAll('.acc-popup-wrapper .popup-trigger').forEach(function(el) {
+  el.addEventListener('click', function() {
+    document.getElementById('acc-popup').style.display = 'flex';
+  });
+});
+document.getElementById('acc-popup-close').onclick = function() {
+  document.getElementById('acc-popup').style.display = 'none';
+};
+document.getElementById('acc-popup').onclick = function(e) {
+  if(e.target === this) this.style.display = 'none';
+};
+</script>
 
 </html>
