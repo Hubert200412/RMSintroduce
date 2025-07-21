@@ -898,3 +898,216 @@ section {
     right: calc(50% - 80px);
   }
 }
+
+/* 动态背景装饰系统 - 基于example\动态图标背景 */
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+  animation: FadeIn 3.1s ease-out;
+  user-select: none;
+}
+
+@keyframes FadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.floating-icon {
+  position: absolute;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  height: 70px;
+  animation-duration: 120s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-name: Float, FadeFloat;
+  z-index: 1;
+  color: rgba(255, 165, 0, 0.7);
+  font-size: 48px;
+  user-select: none;
+  pointer-events: none;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.floating-icon.Foreground {
+  height: 15%;
+  min-height: 60px;
+  z-index: 3;
+  color: rgba(255, 107, 0, 0.8);
+  font-size: 56px;
+}
+
+.floating-icon.Background {
+  height: calc(12% / 1.1);
+  min-height: 45px;
+  animation-duration: calc(120s * 1.75);
+  color: rgba(255, 165, 0, 0.6);
+  font-size: 40px;
+}
+
+@keyframes Float {
+  from { transform: translateX(100%) translateZ(0); }
+  to { transform: translateX(-15%) translateZ(0); }
+}
+
+@keyframes FadeFloat {
+  0%, 100% { opacity: 0; }
+  5%, 90% { opacity: 1; }
+}
+
+/* 生成循环动画延迟 */
+.floating-icon:nth-child(1) {
+  animation-delay: calc(-120s / 6.5 * 1);
+  top: 6%;
+}
+
+.floating-icon:nth-child(2) {
+  animation-delay: calc(-120s / 6.5 * 2);
+  top: 12%;
+}
+
+.floating-icon:nth-child(3) {
+  animation-delay: calc(-120s / 6.5 * 3);
+  top: 18%;
+}
+
+.floating-icon:nth-child(4) {
+  animation-delay: calc(-120s / 6.5 * 4);
+  top: 24%;
+}
+
+.floating-icon:nth-child(5) {
+  animation-delay: calc(-120s / 6.5 * 5);
+  top: 30%;
+}
+
+.floating-icon:nth-child(6) {
+  animation-delay: calc(-120s / 6.5 * 6);
+  top: 36%;
+}
+
+.floating-icon:nth-child(7) {
+  animation-delay: calc(-120s / 6.5 * 7);
+  top: 42%;
+}
+
+.floating-icon:nth-child(8) {
+  animation-delay: calc(-120s / 6.5 * 8);
+  top: 48%;
+}
+
+.floating-icon:nth-child(9) {
+  animation-delay: calc(-120s / 6.5 * 9);
+  top: 54%;
+}
+
+.floating-icon:nth-child(10) {
+  animation-delay: calc(-120s / 6.5 * 10);
+  top: 60%;
+}
+
+/* Foreground图标特殊设置 */
+.floating-icon.Foreground:nth-child(1) {
+  animation-duration: calc(120s - 1 * 4s);
+  height: calc(15% + 1 * 2.5%);
+  font-size: 60px;
+}
+
+.floating-icon.Foreground:nth-child(3) {
+  animation-duration: calc(120s - 3 * 4s);
+  height: calc(15% + 3 * 2.5%);
+  font-size: 64px;
+}
+
+.floating-icon.Foreground:nth-child(5) {
+  animation-duration: calc(120s - 5 * 4s);
+  height: calc(15% + 5 * 2.5%);
+  font-size: 68px;
+}
+
+.floating-icon.Foreground:nth-child(8) {
+  animation-duration: calc(120s - 8 * 4s);
+  height: calc(15% + 8 * 2.5%);
+  font-size: 72px;
+}
+
+/* Background图标特殊设置 */
+.floating-icon.Background:nth-child(2) {
+  animation-duration: calc(120s * 1.25 - 2 * 4s);
+  height: calc(10% / 1.1 - 2 * 1.25%);
+}
+
+.floating-icon.Background:nth-child(4) {
+  animation-duration: calc(120s * 1.25 - 4 * 4s);
+  height: calc(10% / 1.1 - 4 * 1.25%);
+}
+
+.floating-icon.Background:nth-child(6) {
+  animation-duration: calc(120s * 1.25 - 6 * 4s);
+  height: calc(10% / 1.1 - 6 * 1.25%);
+}
+
+.floating-icon.Background:nth-child(7) {
+  animation-duration: calc(120s * 1.25 - 7 * 4s);
+  height: calc(10% / 1.1 - 7 * 1.25%);
+}
+
+.floating-icon.Background:nth-child(9) {
+  animation-duration: calc(120s * 1.25 - 9 * 4s);
+  height: calc(10% / 1.1 - 9 * 1.25%);
+}
+
+.floating-icon.Background:nth-child(10) {
+  animation-duration: calc(120s * 1.25 - 10 * 4s);
+  height: calc(10% / 1.1 - 10 * 1.25%);
+}
+
+/* 页面背景装饰 */
+.page-background-decoration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: 
+    linear-gradient(135deg, rgba(255, 107, 0, 0.03) 0%, rgba(255, 165, 0, 0.02) 25%, rgba(255, 140, 0, 0.015) 50%, rgba(255, 165, 0, 0.01) 75%, rgba(255, 107, 0, 0.02) 100%),
+    radial-gradient(ellipse at 30% 20%, rgba(255, 140, 0, 0.025) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(255, 165, 0, 0.02) 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(255, 107, 0, 0.015) 0%, transparent 70%);
+  background-size: 100% 100%, 800px 600px, 600px 800px, 1200px 1200px;
+  background-position: 0% 0%, 0% 0%, 100% 100%, 50% 50%;
+  animation: backgroundMove 90s ease-in-out infinite;
+}
+
+@keyframes backgroundMove {
+  0%, 100% {
+    background-position: 0% 0%, 0% 0%, 100% 100%, 50% 50%;
+  }
+  25% {
+    background-position: 0% 0%, 100% 20%, 20% 80%, 30% 70%;
+  }
+  50% {
+    background-position: 0% 0%, 80% 100%, 0% 0%, 70% 30%;
+  }
+  75% {
+    background-position: 0% 0%, 20% 80%, 80% 20%, 40% 60%;
+  }
+}

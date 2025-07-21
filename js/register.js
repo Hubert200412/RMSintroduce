@@ -286,6 +286,8 @@ document.addEventListener('DOMContentLoaded', function() {
       showStep(currentStep);
       updateProgressBar();
       trackEvent('step_next', { step: currentStep });
+      // 滚动到表单顶部
+      scrollToTop();
     }
   }
 
@@ -296,6 +298,8 @@ document.addEventListener('DOMContentLoaded', function() {
       showStep(currentStep);
       updateProgressBar();
       trackEvent('step_prev', { step: currentStep });
+      // 滚动到表单顶部
+      scrollToTop();
     }
   }
 
@@ -520,6 +524,23 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => notification.remove(), 300);
       }
     }, 5000);
+  }
+
+  // 滚动到表单顶部
+  function scrollToTop() {
+    const registerContainer = document.querySelector('.register-container');
+    if (registerContainer) {
+      registerContainer.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    } else {
+      // 如果找不到容器，则滚动到页面顶部
+      window.scrollTo({ 
+        top: 0, 
+        behavior: 'smooth' 
+      });
+    }
   }
 
   // 事件追踪

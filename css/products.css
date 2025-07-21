@@ -129,12 +129,29 @@ body {
 .products-hero {
   position: relative;
   padding: 80px 0;
-  background-image: url('https://cloud-static.com/gallery/781718052705_.pic.jpg');
+  background-image: url('../img/products1.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
   overflow: hidden;
+}
+
+.products-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../img/products1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px);
+  opacity: 0.6;
+  z-index: 1;
 }
 
 .products-hero .container {
@@ -289,7 +306,6 @@ body {
 /* 优势区域 */
 .advantages-section {
   padding: 80px 0;
-  background: white;
 }
 
 .advantages-grid {
@@ -331,7 +347,6 @@ body {
 /* 收银系统区域 */
 .pos-systems-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
 }
 
 .pos-systems-grid,
@@ -536,7 +551,6 @@ body {
 /* 配件区域样式统一 */
 .accessories-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
 }
 
 /* 轮播项目样式统一 */
