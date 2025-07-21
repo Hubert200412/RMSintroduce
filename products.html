@@ -25,6 +25,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
 </head>
 
 <body>
@@ -39,7 +42,6 @@
         <li><a href="index.html">首页</a></li>
         <li><a href="inquiry.html">预约体验</a></li>
         <li><a href="products.html" class="active">产品中心</a></li>
-        <li><a href="index.html#partner">客户案例</a></li>
         <li><a href="about.html">了解我们</a></li>
         <li class="dropdown">
           <a style="cursor: pointer;">更多信息</a>
@@ -188,28 +190,83 @@
     </div>
   </section>
 
-  <!-- 我们的优势区域 -->
+  <!-- 我们的优势区域 - 动态展示 -->
   <section class="advantages-section">
     <div class="container">
       <div class="section-header">
         <h2><span class="highlight">我们的优势</span></h2>
       </div>
       
-      <div class="advantages-grid">
-        <div class="advantage-card">
-          <h3>完善的自媒体 全员运营体系</h3>
-          <p>通过3+3+3云餐厅解决方案，帮助餐厅获得新客源，增品牌影响。</p>
+      <div class="advantages-dynamic">
+        <!-- 动态图片加载区域 -->
+        <div class="advantages-preloader">
+          <div class="advantages-content">
+            <div class="advantages-image-container">
+              <div id="advantage-image-0" class="advantage-image-wrapper">
+                <img src="img/advantage1.jpg" alt="完善的自媒体运营体系" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="advantage-placeholder">
+                  <i class="fas fa-share-alt"></i>
+                  <p>完善的自媒体运营体系</p>
+                </div>
+              </div>
+              <div id="advantage-image-25" class="advantage-image-wrapper">
+                <img src="img/advantage2.jpg" alt="独到的成本管理系统" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="advantage-placeholder">
+                  <i class="fas fa-chart-line"></i>
+                  <p>独到的成本管理系统</p>
+                </div>
+              </div>
+              <div id="advantage-image-50" class="advantage-image-wrapper">
+                <img src="img/advantage3.jpg" alt="全新的H5技术" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="advantage-placeholder">
+                  <i class="fas fa-mobile-alt"></i>
+                  <p>全新的H5技术</p>
+                </div>
+              </div>
+              <div id="advantage-image-75" class="advantage-image-wrapper">
+                <img src="img/advantage4.jpg" alt="智能数据分析" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="advantage-placeholder">
+                  <i class="fas fa-brain"></i>
+                  <p>智能数据分析</p>
+                </div>
+              </div>
+              <div id="advantage-image-100" class="advantage-image-wrapper">
+                <img src="img/advantage5.jpg" alt="全方位技术支持" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="advantage-placeholder">
+                  <i class="fas fa-headset"></i>
+                  <p>全方位技术支持</p>
+                </div>
+              </div>
+            </div>
+            <div class="advantages-percentage">0</div>
+          </div>
         </div>
-        
-        <div class="advantage-card">
-          <h3>独到的成本管理系统</h3>
-          <p>帮助餐厅减省成本，提升3-5个百分点。</p>
+
+        <!-- 文字描述容器 (初始) -->
+        <div class="advantages-text-container">
+          <div class="advantage-text-line">通过3+3+3云餐厅解决方案</div>
+          <div class="advantage-text-line">帮助餐厅获得新客源</div>
+          <div class="advantage-text-line">增强品牌影响力</div>
+          <div class="advantage-text-line">减省成本，提升3-5个百分点</div>
+          <div class="advantage-text-line">支持各种设备</div>
+          <div class="advantage-text-line">链接线上线下支付方式</div>
+          <div class="advantage-text-line">智能化经营决策</div>
+          <div class="advantage-text-line">全天候技术保障</div>
         </div>
-        
-        <div class="advantage-card">
-          <h3>全新的H5技术</h3>
-          <p>支持各种设备，链接线上下各种支付方式。</p>
+
+        <!-- 最终标题 -->
+        <div class="advantages-big-title">
+          <div class="advantage-title-line"><span>餐饮</span></div>
+          <div class="advantage-title-line"><span>管理</span></div>
+          <div class="advantage-title-line"><span>专家</span></div>
         </div>
+
+        <!-- 重新开始按钮 -->
+        <button class="advantages-restart-btn">
+          <div class="advantage-restart-icon">
+            <i class="fas fa-redo-alt"></i>
+          </div>
+        </button>
       </div>
     </div>
   </section>
@@ -659,6 +716,7 @@
   <script src="js/animated-background.js"></script>
   <script src="js/carousel_new.js"></script>
   <script src="js/product-navigation.js"></script>
+  <script src="js/advantages-animation.js"></script>
   <script src="js/app.js"></script>
 </body>
 

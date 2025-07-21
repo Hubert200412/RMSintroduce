@@ -748,4 +748,217 @@ body {
   .pos-placeholder {
     font-size: 36px;
   }
+  
+  /* 优势动态展示适配 */
+  .advantages-dynamic {
+    margin: 2rem 0;
+  }
+  
+  .advantages-image-container {
+    width: 350px;
+    height: 450px;
+  }
+  
+  .advantages-percentage {
+    font-size: 2rem;
+  }
+  
+  .advantage-text-line {
+    font-size: 1.1rem;
+  }
+  
+  .advantages-big-title .advantage-title-line span {
+    font-size: 2rem;
+  }
+}
+
+/* 优势动态展示样式 */
+.advantages-dynamic {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 3rem 0;
+}
+
+.advantages-preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background-color: #1a1a1a;
+}
+
+.advantages-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.advantages-image-container {
+  position: relative;
+  width: 500px;
+  height: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.advantage-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  clip-path: inset(100% 0 0 0);
+}
+
+.advantage-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.advantage-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+  color: white;
+  text-align: center;
+}
+
+.advantage-placeholder i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.advantage-placeholder p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.advantages-percentage {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  z-index: 3;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: left 0.65s ease;
+  white-space: nowrap;
+  min-width: 150px;
+}
+
+.advantages-text-container {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  z-index: 3;
+}
+
+.advantage-text-line {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.6;
+  opacity: 0;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.3);
+}
+
+.advantages-big-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 4;
+  opacity: 0;
+}
+
+.advantage-title-line {
+  overflow: hidden;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.advantage-title-line span {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.advantages-restart-btn {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.advantages-restart-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.advantage-restart-icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.advantage-restart-icon i {
+  font-size: 24px;
+  color: white;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.advantages-restart-btn:hover .advantage-restart-icon i {
+  opacity: 1;
+  transform: rotate(180deg) scale(1.2);
+  color: #ffa500;
 }

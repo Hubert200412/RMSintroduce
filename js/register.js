@@ -479,9 +479,6 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="notification-content">
         <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
         <span>${message}</span>
-        <button class="notification-close">
-          <i class="fas fa-times"></i>
-        </button>
       </div>
     `;
     
@@ -504,13 +501,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 添加到页面
     document.body.appendChild(notification);
-    
-    // 关闭按钮事件
-    const closeBtn = notification.querySelector('.notification-close');
-    closeBtn.addEventListener('click', () => {
-      notification.style.transform = 'translateX(100%)';
-      setTimeout(() => notification.remove(), 300);
-    });
     
     // 显示动画
     setTimeout(() => {

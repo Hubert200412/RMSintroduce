@@ -560,7 +560,8 @@
 }
 
 .get-code-btn:disabled {
-  background: #ccc;
+  background: #e0e0e0;
+  color: #666;
   cursor: not-allowed;
 }
 
@@ -816,14 +817,7 @@
   }
 }
 
-/* Safari浏览器优化 */
-@supports (-webkit-backdrop-filter: blur(20px)) {
-  .register-container {
-    -webkit-backdrop-filter: blur(25px);
-  }
-}
-
-/* 动画优化 */
+/* 动画优化 */  
 .register-section {
   will-change: background-image;
 }

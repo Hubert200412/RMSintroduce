@@ -1,11 +1,11 @@
 class AnimatedBackground {
   constructor() {
     this.icons = [
-      'fa-shopping-cart', 'fa-cash-register', 'fa-chart-line', 'fa-users',
-      'fa-handshake', 'fa-trophy', 'fa-cogs', 'fa-lightbulb',
+      'fa-shopping-cart', 'fa-cash-register', 'fa-users',
+      'fa-handshake', 'fa-trophy', 'fa-cogs',
       'fa-shield-alt', 'fa-heart', 'fa-star', 'fa-comments',
-      'fa-envelope', 'fa-phone', 'fa-map-marker-alt', 'fa-clock',
-      'fa-dollar-sign', 'fa-percentage', 'fa-gift', 'fa-thumbs-up'
+      'fa-envelope', 'fa-phone',
+      'fa-dollar-sign','fa-thumbs-up'
     ];
   }
 
