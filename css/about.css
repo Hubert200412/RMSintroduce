@@ -3,11 +3,13 @@
 /* 主横幅区域 */
 .about-hero {
   position: relative;
-  min-height: 80vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
   overflow: hidden;
+  background-attachment: fixed;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .hero-background {
@@ -23,23 +25,29 @@
 }
 
 .hero-content h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 24px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 50px;
-  opacity: 0.9;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  margin-bottom: 60px;
+  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: 80px;
+  gap: clamp(40px, 5vw, 80px);
   margin-top: 60px;
+  flex-wrap: wrap;
 }
 
 .stat-item {
@@ -47,13 +55,18 @@
 }
 
 .stat-number {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 12px;
   background: linear-gradient(45deg, #fff, #f0f0f0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover .stat-number {
+  transform: scale(1.05);
 }
 
 .stat-label {
@@ -156,8 +169,8 @@
 /* 公司介绍 */
 .company-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(40px, 5vw, 80px);
   margin-bottom: 100px;
 }
 

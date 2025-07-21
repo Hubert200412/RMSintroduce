@@ -2,11 +2,13 @@
 
 /* 主横幅区域 */
 .inquiry-hero {
-  height: 1100px;
-  background: radial-gradient(circle, #FF9E6D 0%, #FF6B00 100%);
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #FF9E6D 0%, #FF6B00 100%);
   position: relative;
-  overflow: visible;
+  overflow: hidden;
+  display: flex;
   align-items: flex-start;
+  background-attachment: fixed;
 }
 
 /* 动态粒子效果画布 */
@@ -46,30 +48,31 @@
 }
 
 .hero-content {
-  width: 1200px;
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(40px, 5vw, 60px);
   align-items: center;
   min-height: 40vh;
-  min-width: 1200px;
 }
 
 .hero-text h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 20px;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 24px;
   line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
-  font-size: 1.3rem;
-  color: #666;
-  margin-bottom: 30px;
-  line-height: 1.5;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
 /* 动态文字效果 */
@@ -134,16 +137,21 @@
 
 .main-device {
   position: relative;
-  width: 280px;
-  height: 400px;
+  width: clamp(200px, 22vw, 280px);
+  height: clamp(286px, 31.43vw, 400px);
   background: linear-gradient(145deg, #f0f0f0, #d0d0d0);
-  border-radius: 20px;
+  border-radius: 24px;
   box-shadow: 
-    20px 20px 40px rgba(0, 0, 0, 0.1),
-    -20px -20px 40px rgba(255, 255, 255, 0.9);
+    24px 24px 48px rgba(0, 0, 0, 0.12),
+    -24px -24px 48px rgba(255, 255, 255, 0.9);
   z-index: 3;
-  transform: perspective(1000px) rotateY(-15deg);
+  transform: perspective(1200px) rotateY(-12deg);
   animation: deviceGlow 4s ease-in-out infinite;
+  transition: transform 0.5s ease;
+}
+
+.main-device:hover {
+  transform: perspective(1200px) rotateY(-12deg) scale(1.05);
 }
 
 /* 设备发光效果 */

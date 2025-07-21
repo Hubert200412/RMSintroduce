@@ -3,9 +3,11 @@
 /* 主横幅区域 */
 .manual-hero {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d3436 50%, #636e72 100%);
-  padding: 120px 0 80px;
+  padding: 140px 0 100px;
   position: relative;
   overflow: hidden;
+  background-attachment: fixed;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .manual-hero::before {
@@ -32,19 +34,21 @@
 }
 
 .manual-hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
   background: linear-gradient(45deg, #ffa500, #ff6b6b);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .manual-hero .hero-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* 手册布局 */
@@ -80,10 +84,11 @@
 .sidebar-content h3 {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  padding: 1.5rem;
+  padding: 1.8rem;
   margin: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 .sidebar-nav ul {
@@ -95,12 +100,20 @@
 .sidebar-nav .nav-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 1rem 1.5rem;
+  gap: 15px;
+  padding: 1.2rem 1.8rem;
   color: #666;
   text-decoration: none;
   transition: all 0.3s ease;
   border-bottom: 1px solid #f0f0f0;
+  border-left: 4px solid transparent;
+}
+
+.sidebar-nav .nav-item:hover {
+  background: #f8f9fa;
+  color: #ffa500;
+  transform: translateX(5px);
+  border-left: 4px solid #ffa500;
 }
 
 .sidebar-nav .nav-item:hover {
@@ -188,16 +201,23 @@
 /* 功能网格 */
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
 }
 
 /* 功能卡片 */
 .feature-card {
   background: #fff;
   border: 1px solid #e9ecef;
-  border-radius: 12px;
-  padding: 2rem;
+  border-radius: 16px;
+  padding: 2.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
