@@ -25,6 +25,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./css/picture-style.css">
   <!-- GSAP for animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
@@ -65,7 +68,7 @@
   </nav>
 
   <!-- 产品工具箱区域 -->
-  <section class="products-hero">
+  <section class="products-hero" style="width: 100%;">
     <div class="scroll-hint">
       <span>下滑查看更多</span>
       <div class="scroll-arrow">
@@ -271,353 +274,93 @@
     </div>
   </section>
 
-  <!-- 美团餐饮收银系统区域 -->
+  <!-- 餐饮收银系统区域 -->
   <section class="pos-systems-section">
     <div class="container">
       <div class="section-header">
         <h2><span class="highlight">餐饮收银系统</span></h2>
       </div>
-      
-      <div class="carousel-container">
-        <button class="carousel-btn prev-btn" onclick="moveCarousel('pos', -1)">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        
-        <div class="carousel-wrapper">
-          <div class="pos-systems-grid" id="pos-carousel">
-          <div class="tooltip-container">
-            <div class="tooltip_wrap">
-              <div class="tooltip">
-                <div class="profile">
-                  <div class="product-details">
-                    <div class="product-name">S4单屏系列收银机</div>
-                    <div class="product-specs">
-                      <div class="spec-item">屏幕尺寸: 15.6英寸</div>
-                      <div class="spec-item">处理器: Intel J4125</div>
-                      <div class="spec-item">内存: 8GB DDR4</div>
-                      <div class="spec-item">存储: 128GB SSD</div>
-                      <div class="spec-item">接口: USB、网口、现金盒</div>
-                    </div>
-                    <div class="product-price">￥2,999起</div>
-                    <a href="inquiry.html#system-experience" class="product-more-info" style="text-decoration: none;">咨询我们，了解详情</a>
-                  </div>
-                </div>
-              </div>
+        <div class="swiper pos-swiper" style="height: 600px;">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1566679056462-2075774c8c07?q=80&w=2675&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
             </div>
-            <div class="pos-image-container">
-              <img src="img/s4-single.jpg" alt="S4单屏系列收银机" class="pos-product-image" onerror="this.style.display='none'">
-              <div class="pos-placeholder">
-                <i class="fas fa-desktop"></i>
-              </div>
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1670414701148-16ac8873a150?q=80&w=2648&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=2856&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1443632864897-14973fa006cf?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1446488547543-78c11468449a?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1463693396721-8ca0cfa2b3b5?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
             </div>
           </div>
-          
-          <div class="tooltip-container">
-            <div class="tooltip_wrap">
-              <div class="tooltip">
-                <div class="profile">
-                  <div class="product-details">
-                    <div class="product-name">S4S双屏系列收银机</div>
-                    <div class="product-specs">
-                      <div class="spec-item">主屏: 15.6英寸触摸屏</div>
-                      <div class="spec-item">客显: 10.1英寸副屏</div>
-                      <div class="spec-item">处理器: Intel J4125</div>
-                      <div class="spec-item">内存: 8GB DDR4</div>
-                      <div class="spec-item">存储: 256GB SSD</div>
-                    </div>
-                    <div class="product-price">￥3,599起</div>
-                    <a href="inquiry.html#system-experience" class="product-more-info">咨询我们，了解详情</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pos-image-container">
-              <img src="img/s4s-dual.jpg" alt="S4S双屏系列收银机" class="pos-product-image" onerror="this.style.display='none'">
-              <div class="pos-placeholder">
-                <i class="fas fa-desktop"></i>
-              </div>
-            </div>
-          </div>
-          
-          <div class="tooltip-container">
-            <div class="tooltip_wrap">
-              <div class="tooltip">
-                <div class="profile">
-                  <div class="product-details">
-                    <div class="product-name">Windows收银系统</div>
-                    <div class="product-specs">
-                      <div class="spec-item">系统: Windows 10 Pro</div>
-                      <div class="spec-item">兼容性: 支持各类外设</div>
-                      <div class="spec-item">扩展性: 可定制功能模块</div>
-                      <div class="spec-item">稳定性: 24小时连续运行</div>
-                      <div class="spec-item">维护: 远程技术支持</div>
-                    </div>
-                    <div class="product-price">￥1,999起</div>
-                    <a href="inquiry.html#system-experience" class="product-more-info">咨询我们，了解详情</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pos-image-container">
-              <img src="img/windows-pos.jpg" alt="Windows收银" class="pos-product-image" onerror="this.style.display='none'">
-              <div class="pos-placeholder">
-                <i class="fas fa-desktop"></i>
-              </div>
-            </div>
-          </div>
-
-          <!-- 新增更多产品 -->
-          <div class="tooltip-container">
-            <div class="tooltip_wrap">
-              <div class="tooltip">
-                <div class="profile">
-                  <div class="product-details">
-                    <div class="product-name">智能收银终端</div>
-                    <div class="product-specs">
-                      <div class="spec-item">屏幕: 21.5英寸4K显示</div>
-                      <div class="spec-item">处理器: Intel i5-9400</div>
-                      <div class="spec-item">内存: 16GB DDR4</div>
-                      <div class="spec-item">存储: 512GB SSD</div>
-                      <div class="spec-item">特色: 人脸识别支付</div>
-                    </div>
-                    <div class="product-price">￥4,999起</div>
-                    <a href="inquiry.html#system-experience" class="product-more-info">咨询我们，了解详情</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pos-image-container">
-              <img src="img/smart-pos.jpg" alt="智能收银终端" class="pos-product-image" onerror="this.style.display='none'">
-              <div class="pos-placeholder">
-                <i class="fas fa-desktop"></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="tooltip-container last-item" id="last-pos-item">
-            <div class="tooltip_wrap">
-              <div class="tooltip">
-                <div class="profile">
-                  <div class="product-details">
-                    <div class="product-name">移动收银平板</div>
-                    <div class="product-specs">
-                      <div class="spec-item">屏幕: 10.1英寸触摸屏</div>
-                      <div class="spec-item">系统: Android 11</div>
-                      <div class="spec-item">电池: 8000mAh长续航</div>
-                      <div class="spec-item">网络: 4G/WiFi双模</div>
-                      <div class="spec-item">应用: 移动点餐收银</div>
-                    </div>
-                    <div class="product-price">￥1,299起</div>
-                    <a href="inquiry.html#system-experience" class="product-more-info">咨询我们，了解详情</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pos-image-container">
-              <img src="img/mobile-pos.jpg" alt="移动收银平板" class="pos-product-image" onerror="this.style.display='none'">
-              <div class="pos-placeholder">
-                <i class="fas fa-tablet-alt"></i>
-              </div>
-            </div>
-          </div>
+          <div class="swiper-button swiper-button-next"></div>
+          <div class="swiper-button swiper-button-prev"></div>
         </div>
-        </div>
-        
-        <button class="carousel-btn next-btn" onclick="moveCarousel('pos', +1)">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </div>
+        <!-- partial -->
     </div>
   </section>
-
   <!-- 收银配件区域 -->
   <section class="accessories-section">
     <div class="container">
       <div class="section-header">
         <h2><span class="highlight">收银配件</span></h2>
       </div>
-      
-      <div class="carousel-container">
-        <button class="carousel-btn prev-btn" onclick="moveCarousel('accessories', -1)">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        
-        <div class="carousel-wrapper">
-          <div class="accessories-grid" id="accessories-carousel">
-            <div class="tooltip-container">
-            <div class="tooltip_wrap">
-              <div class="tooltip">
-                <div class="profile">
-                  <div class="product-details">
-                    <div class="product-name">LP1标签打印机</div>
-                    <div class="product-specs">
-                      <div class="spec-item">打印方式: 热敏标签/票据</div>
-                      <div class="spec-item">打印宽度: 20-80mm</div>
-                      <div class="spec-item">打印速度: 152mm/s</div>
-                      <div class="spec-item">分辨率: 203dpi</div>
-                      <div class="spec-item">外形尺寸: 150×155×123mm</div>
-                    </div>
-                    <div class="product-price">￥399</div>
-                    <a href="inquiry.html#system-experience" class="product-more-info">咨询我们，了解详情</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pos-image-container">
-              <img src="img/lp1-printer.jpg" alt="LP1标签打印机" class="pos-product-image" onerror="this.style.display='none'">
-              <div class="pos-placeholder">
-                <i class="fas fa-print"></i>
-              </div>
-            </div>
+      <div class="swiper accessories-swiper" style="height: 600px;">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1566679056462-2075774c8c07?q=80&w=2675&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
           </div>
-          
-          <div class="tooltip-container">
-            <div class="tooltip_wrap">
-              <div class="tooltip">
-                <div class="profile">
-                  <div class="product-details">
-                    <div class="product-name">58A打印机</div>
-                    <div class="product-specs">
-                      <div class="spec-item">打印方式: 热敏打印</div>
-                      <div class="spec-item">纸卷宽度: 58mm</div>
-                      <div class="spec-item">打印速度: 101mm/s</div>
-                      <div class="spec-item">接口类型: USB/串口</div>
-                      <div class="spec-item">机器重量: 约700g</div>
-                    </div>
-                    <div class="product-price">￥299</div>
-                    <a href="inquiry.html#system-experience" class="product-more-info">咨询我们，了解详情</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pos-image-container">
-              <img src="img/58a-printer.jpg" alt="58A打印机" class="pos-product-image" onerror="this.style.display='none'">
-              <div class="pos-placeholder">
-                <i class="fas fa-print"></i>
-              </div>
-            </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
           </div>
-          
-          <div class="tooltip-container">
-            <div class="tooltip_wrap">
-              <div class="tooltip">
-                <div class="profile">
-                  <div class="product-details">
-                    <div class="product-name">80A打印机</div>
-                    <div class="product-specs">
-                      <div class="spec-item">打印方式: 热敏打印</div>
-                      <div class="spec-item">纸卷宽度: 25-80mm</div>
-                      <div class="spec-item">打印速度: 260mm/s</div>
-                      <div class="spec-item">接口类型: USB</div>
-                      <div class="spec-item">切刀寿命: 200万次</div>
-                    </div>
-                    <div class="product-price">￥459</div>
-                    <a href="inquiry.html#system-experience" class="product-more-info">咨询我们，了解详情</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pos-image-container">
-              <img src="img/80a-printer.jpg" alt="80A打印机" class="pos-product-image" onerror="this.style.display='none'">
-              <div class="pos-placeholder">
-                <i class="fas fa-print"></i>
-              </div>
-            </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1670414701148-16ac8873a150?q=80&w=2648&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
           </div>
-
-          <div class="tooltip-container">
-            <div class="tooltip_wrap">
-              <div class="tooltip">
-                <div class="profile">
-                  <div class="product-details">
-                    <div class="product-name">80C打印机</div>
-                    <div class="product-specs">
-                      <div class="spec-item">打印方式: 热敏打印</div>
-                      <div class="spec-item">纸卷宽度: 80mm</div>
-                      <div class="spec-item">打印速度: 300mm/s</div>
-                      <div class="spec-item">接口类型: USB/网口</div>
-                      <div class="spec-item">支持功能: 自动切纸</div>
-                    </div>
-                    <div class="product-price">￥559</div>
-                    <a href="inquiry.html#system-experience" class="product-more-info">咨询我们，了解详情</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pos-image-container">
-              <img src="img/80c-printer.jpg" alt="80C打印机" class="pos-product-image" onerror="this.style.display='none'">
-              <div class="pos-placeholder">
-                <i class="fas fa-print"></i>
-              </div>
-            </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=2856&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
           </div>
-
-          <!-- 新增配件 -->
-          <div class="tooltip-container">
-            <div class="tooltip_wrap">
-              <div class="tooltip">
-                <div class="profile">
-                  <div class="product-details">
-                    <div class="product-name">扫码枪</div>
-                    <div class="product-specs">
-                      <div class="spec-item">扫描类型: 1D/2D条码</div>
-                      <div class="spec-item">扫描距离: 5-30cm</div>
-                      <div class="spec-item">接口: USB即插即用</div>
-                      <div class="spec-item">防护等级: IP54</div>
-                      <div class="spec-item">电池: 2200mAh长续航</div>
-                    </div>
-                    <div class="product-price">￥199</div>
-                    <a href="inquiry.html#system-experience" class="product-more-info">咨询我们，了解详情</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pos-image-container">
-              <img src="img/barcode-scanner.jpg" alt="扫码枪" class="pos-product-image" onerror="this.style.display='none'">
-              <div class="pos-placeholder">
-                <i class="fas fa-barcode"></i>
-              </div>
-            </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
           </div>
-
-          <div class="tooltip-container last-item" id="last-accessory-item">
-            <div class="tooltip_wrap">
-              <div class="tooltip">
-                <div class="profile">
-                  <div class="product-details">
-                    <div class="product-name">钱箱</div>
-                    <div class="product-specs">
-                      <div class="spec-item">材质: 钢制防盗</div>
-                      <div class="spec-item">隔断: 5钞票4硬币</div>
-                      <div class="spec-item">驱动: 12V/24V兼容</div>
-                      <div class="spec-item">接口: RJ11标准接口</div>
-                      <div class="spec-item">尺寸: 405×375×95mm</div>
-                    </div>
-                    <div class="product-price">￥199</div>
-                    <a href="inquiry.html#system-experience" class="product-more-info">咨询我们，了解详情</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pos-image-container">
-              <img src="img/cash-drawer.jpg" alt="钱箱" class="pos-product-image" onerror="this.style.display='none'">
-              <div class="pos-placeholder">
-                <i class="fas fa-cash-register"></i>
-              </div>
-            </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1443632864897-14973fa006cf?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1446488547543-78c11468449a?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1463693396721-8ca0cfa2b3b5?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
           </div>
         </div>
-        </div>
-        
-        <button class="carousel-btn next-btn" onclick="moveCarousel('accessories', 1)">
-          <i class="fas fa-chevron-right"></i>
-        </button>
+        <div class="swiper-button swiper-button-next"></div>
+        <div class="swiper-button swiper-button-prev"></div>
       </div>
+      <!-- partial -->
     </div>
   </section>
 
   <!-- 页脚 -->
-  <footer class="footer">
+  <footer class="footer" style="width: 100%;">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
@@ -713,6 +456,8 @@
   </div>
 
   <!-- 加载脚本 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/picture-script.js"></script>
   <script src="js/animated-background.js"></script>
   <script src="js/carousel_new.js"></script>
   <script src="js/product-navigation.js"></script>

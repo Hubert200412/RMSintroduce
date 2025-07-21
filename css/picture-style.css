@@ -1,0 +1,85 @@
+@layer reset, base, swiper;
+
+@import url('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css') layer(base);
+
+@layer swiper {
+  .swiper {
+    width  : 100%;
+    height : 100%;
+  }
+
+  .swiper-wrapper {
+    display     : flex;
+    align-items : center;
+  }
+
+  .swiper-slide {
+    scale      : 1.25;
+    transition : scale 250ms ease-in-out;
+
+    &.swiper-slide-active {
+      scale   : 2;
+      z-index : 10;
+    }
+
+    &.swiper-slide-prev,
+    &.swiper-slide-next {
+      scale               : 1.7;
+      z-index             : 5;
+      transition-duration : 150ms;
+    }
+    
+    &.swiper-slide-next + & {
+      z-index : 2;
+    }
+  }
+
+  .swiper-slide img {
+    display        : block;
+    border-radius  : 0.5rem;
+    width          : 100%;
+    height         : 100%;
+    object-fit     : cover;
+    user-select    : none;
+  }
+
+  .swiper-button {
+    --position       : 17%;
+    background-color : #F04E23;
+    height           : 3rem;
+    width            : 3rem;
+    border-radius    : 0.5rem;
+    
+    &.swiper-button-prev {
+      left : var(--position);
+    }
+
+    &.swiper-button-next {
+      right : var(--position);
+    }
+
+    &:hover {
+      background-color : #4A261F;
+    }
+
+    &::after {
+      font-size : 1.5rem;
+      color     : white;
+    }
+  }
+}
+
+@layer reset {
+  * {
+    margin     : 0;
+    padding    : 0;
+    box-sizing : border-box;
+  }
+
+  body {
+    display     : grid;
+    place-items : center;
+    min-height  : 100svh;
+    background  : #eee;
+  }
+}
