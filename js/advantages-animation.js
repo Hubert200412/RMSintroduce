@@ -43,7 +43,7 @@ function initAdvantageAnimation() {
   // 重置包装器和容器尺寸
   gsap.set(wrappers, { visibility: "hidden", clipPath: "inset(100% 0 0 0)" });
   gsap.set(wrappers[0], { visibility: "visible" });
-  gsap.set(imageContainer, { width: "800px", height: "600px" });
+  gsap.set(imageContainer, { width: "1000px", height: "600px" });
   gsap.set(".advantage-image-wrapper img", {
     scale: 1.2,
     transformOrigin: "center center"
@@ -80,11 +80,11 @@ function initAdvantageAnimation() {
 
   // 图片和文字说明同步动画
   const advantageTexts = [
-    "自媒体运营",
-    "成本管理",
-    "智能化技术",
-    "数据分析", 
-    "技术支持"
+    "完善的自媒体运营体系",
+    "独到的成本管理系统",
+    "全新的智能化技术",
+    "多方位的数据分析能力", 
+    "适配的技术支持"
   ];
   
   percentages.forEach((percentage, index) => {

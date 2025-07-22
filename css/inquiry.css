@@ -3,13 +3,14 @@
 /* 主横幅区域 */
 .inquiry-hero {
   min-height: 100vh;
-  background: radial-gradient(circle at center, #FF9E6D 0%, #FF6B00 100%);
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: flex-start;
   background-attachment: fixed;
+  background: url('../img/inquiry1.jpg') no-repeat center;
 }
+
 
 /* 动态粒子效果画布 */
 .particles-canvas {
@@ -60,6 +61,8 @@
 }
 
 .hero-text h1 {
+  -webkit-text-stroke: 0.5px #000;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7), 0 0 2px #000;
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 800;
   color: #fff;
@@ -82,6 +85,8 @@
 }
 
 .text-fragment {
+  -webkit-text-stroke: 0.5px #000;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7), 0 0 2px #000;
   display: inline-block;
   opacity: 0;
   transform: translateY(50px) rotate(15deg) scale(0.5);
@@ -347,75 +352,6 @@
   50% {
     transform: translateY(-10px);
   }
-}
-
-/* 辅助设备 */
-.auxiliary-devices {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.printer-device {
-  position: absolute;
-  left: -80px;
-  top: 50px;
-  width: 60px;
-  height: 80px;
-  background: #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transform: perspective(1000px) rotateY(30deg);
-}
-
-.printer-body {
-  width: 100%;
-  height: 60px;
-  background: linear-gradient(145deg, #f0f0f0, #d0d0d0);
-  border-radius: 8px 8px 0 0;
-}
-
-.printer-tray {
-  width: 100%;
-  height: 20px;
-  background: #c0c0c0;
-  border-radius: 0 0 8px 8px;
-}
-
-.tablet-device {
-  position: absolute;
-  left: -40px;
-  bottom: 50px;
-  width: 100px;
-  height: 140px;
-  background: #2c3e50;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  transform: perspective(1000px) rotateY(45deg) rotateX(-10deg);
-}
-
-.tablet-screen {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  right: 8px;
-  bottom: 8px;
-  background: #34495e;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.tablet-content {
-  padding: 10px;
-  color: white;
-  font-size: 0.7rem;
-}
-
-.order-item {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 4px 8px;
-  margin-bottom: 5px;
-  border-radius: 4px;
 }
 
 /* 装饰性元素 */
