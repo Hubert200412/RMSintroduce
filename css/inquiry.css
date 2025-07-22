@@ -555,7 +555,19 @@
 .inquiry-form-section {
   padding: 80px 0;
   background: white;
+  position: relative;
 }
+
+.inquiry-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../img/inquiry2.jpg') no-repeat center center / cover;
+  z-index: 1;
+}
+
 
 .form-wrapper {
   width: 800px;

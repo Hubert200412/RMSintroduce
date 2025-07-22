@@ -80,7 +80,7 @@ function initAdvantageAnimation() {
 
   // 图片和文字说明同步动画
   const advantageTexts = [
-    "完善的自媒体运营体系",
+    "完善的多端运营体系",
     "独到的成本管理系统",
     "全新的智能化技术",
     "多方位的数据分析能力", 
