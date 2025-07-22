@@ -218,44 +218,6 @@
   gap: 30px;
 }
 
-.capability-item {
-  background: #fff;
-  padding: 40px 30px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.capability-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(135deg, #ffa500, #ff8c00);
-}
-
-.capability-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.capability-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #ffa500, #ff8c00);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  color: #fff;
-  font-size: 2rem;
-}
 
 .capability-item h3 {
   font-size: 1.3rem;
@@ -577,46 +539,82 @@
   box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
 }
 
-/* 新闻动态样式 */
-.news {
-  padding: 80px 0;
-  background: #f8f9fa;
+
+.capability-item {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 32px 24px 24px 24px;
+  text-align: center;
+  transition: box-shadow 0.35s cubic-bezier(.4,2,.6,1), transform 0.35s cubic-bezier(.4,2,.6,1), height 0.35s cubic-bezier(.4,2,.6,1);
+  position: relative;
+  cursor: pointer;
+  min-height: 220px;
+  overflow: visible;
 }
 
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 50px;
+.capability-item:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.16);
+  transform: scale(1.18) translateY(-12px);
+  z-index: 2;
+  min-height: 320px;
 }
 
-.news-card {
-  background: white;
-  border-radius: 12px;
+
+.capability-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #ffa500, #ff8c00);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: #fff;
+  transition: color 0.3s;
+  font-size: 2rem;
+}
+
+.capability-item:hover .capability-icon {
+  color: #000000;
+}
+
+.capability-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.capability-item p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* 详细信息默认隐藏，悬停时显示 */
+.capability-detail {
+  opacity: 0;
+  max-height: 0;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: opacity 1s, max-height 0.3s;
+  margin-top: 18px;
+  pointer-events: none;
 }
-
-.news-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+.capability-item:hover .capability-detail {
+  opacity: 1;
+  max-height: 200px;
+  pointer-events: auto;
 }
-
-.news-image {
-  height: 200px;
-  overflow: hidden;
+.capability-detail ul {
+  list-style: disc inside;
+  color: #444;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0 0 0 18px;
+  font-size: 0.98rem;
 }
-
-.news-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.news-card:hover .news-image img {
-  transform: scale(1.05);
+.capability-detail li {
+  margin-bottom: 6px;
 }
 
 .news-content {
