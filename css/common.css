@@ -224,8 +224,6 @@ h1, h2, h3, h4, h5, h6, .heading {
   color: var(--text-light);
   cursor: pointer;
   transition: all 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
   box-shadow: 0 4px 12px var(--shadow-medium);
   border: 2px solid white;
 }
@@ -302,6 +300,7 @@ h1, h2, h3, h4, h5, h6, .heading {
 }
 
 .consult-item:hover .consult-popup {
+  z-index: 1002;
   opacity: 1;
   visibility: visible;
   transform: translateY(-50%) translateX(-10px);
@@ -465,15 +464,17 @@ h1, h2, h3, h4, h5, h6, .heading {
   transform: translateX(-50%) scaleY(1) rotateY(0deg);
 }
 .qrcode-popup-inner {
-  background: #fff;
+  background: rgba(255, 145, 0, 0.845);
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
   padding: 22px 28px 18px 28px;
   display: flex;
+  flex-direction: row;
   gap: 32px;
   align-items: flex-end;
   max-width: 90vw;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
 .qrcode-item {
   display: flex;
@@ -487,7 +488,7 @@ h1, h2, h3, h4, h5, h6, .heading {
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-  background: #f8f8f8;
+  background: #fff;
   margin-bottom: 8px;
 }
 .qrcode-item .qrcode-label {

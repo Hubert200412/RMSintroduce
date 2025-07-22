@@ -1,13 +1,13 @@
 // 网站交互功能
 document.addEventListener('DOMContentLoaded', function() {
   // ====== 社交二维码弹窗功能 ======
-  // 1. 读取二维码配置
-  let qrcodeData = [
-    {icon: 'fab fa-weixin', label: '瑞德库普视频号', img: 'img/qrcode-weixin-video.jpg', social: 'weixin'},
-    {icon: 'fab fa-weibo', label: '瑞德库普公众号', img: 'img/qrcode-weixin-public.jpg', social: 'weibo'},
-    {icon: 'fab fa-qq', label: '鸿天集团视频号', img: 'img/qrcode-weibo-video.jpg', social: 'qq'}
-    // 可扩展更多
-  ];
+  // 1. 异步加载二维码配置
+  let qrcodeData = [];
+  fetch('img/qrcodes.json')
+    .then(res => res.json())
+    .then(data => {
+      qrcodeData = data
+    });
   // 2. 生成弹窗DOM
   function createQrcodePopup(items) {
     const popup = document.createElement('div');
@@ -110,14 +110,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const backToTop = document.querySelector('.back-to-top');
   
   if (backToTop) {
-    window.addEventListener('scroll', function() {
-      if (window.pageYOffset > 300) {
-        backToTop.classList.add('show');
-      } else {
-        backToTop.classList.remove('show');
-      }
-    });
-
     backToTop.addEventListener('click', function() {
       window.scrollTo({
         top: 0,
@@ -262,18 +254,86 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 咨询按钮点击效果
   document.querySelectorAll('.consult-item').forEach(item => {
+    // 点击效果（原有）
     item.addEventListener('click', function() {
       if (this.textContent.includes('合作咨询')) {
-        // 滚动到联系表单
-        const contactSection = document.querySelector('#contact');
-        if (contactSection) {
-          contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
+        showNotification('欢迎咨询合作方案有关信息', 'info');
       } else if (this.textContent.includes('关注我们')) {
-        // 显示二维码或社交媒体链接
-        showNotification('扫描二维码关注我们的微信公众号', 'info');
+        showNotification('可以扫描二维码，关注我们', 'info');
       }
     });
+
+    // 悬停弹出二维码弹窗（仅关注我们按钮，fixed定位，整体在按钮左侧）
+    if (item.textContent.includes('关注我们')) {
+      let qrcodePopup = null;
+      let hideTimer = null;
+      item.addEventListener('mouseenter', function() {
+        clearTimeout(hideTimer);
+        if (qrcodePopup) qrcodePopup.remove();
+        const items = qrcodeData;
+        if (!items.length) return;
+        qrcodePopup = document.createElement('div');
+        qrcodePopup.className = 'qrcode-popup';
+        // fixed定位，插入body
+        qrcodePopup.style.position = 'fixed';
+        qrcodePopup.style.zIndex = '9999';
+        // 先隐藏，插入后再定位
+        qrcodePopup.style.opacity = '0';
+        const inner = document.createElement('div');
+        inner.className = 'qrcode-popup-inner';
+        items.forEach(itemData => {
+          const itemDiv = document.createElement('div');
+          itemDiv.className = 'qrcode-item';
+          const img = document.createElement('img');
+          img.src = itemData.img;
+          img.alt = itemData.label;
+          const label = document.createElement('div');
+          label.className = 'qrcode-label';
+          label.textContent = itemData.label;
+          itemDiv.appendChild(img);
+          itemDiv.appendChild(label);
+          inner.appendChild(itemDiv);
+        });
+        qrcodePopup.appendChild(inner);
+        document.body.appendChild(qrcodePopup);
+        // 定位到按钮左侧
+        const rect = item.getBoundingClientRect();
+        const popupRect = qrcodePopup.getBoundingClientRect();
+        // 先显示获取宽高
+        qrcodePopup.style.opacity = '1';
+        // 重新获取弹窗宽高
+        const popupWidth = qrcodePopup.offsetWidth;
+        const popupHeight = qrcodePopup.offsetHeight;
+        // 计算top，垂直居中对齐按钮
+        let top = rect.top + window.scrollY + rect.height / 2 - popupHeight / 2;
+        // 保证不超出顶部
+        if (top < 10) top = 10;
+        // 保证不超出底部
+        const maxTop = window.innerHeight - popupHeight - 10;
+        if (top > maxTop) top = maxTop;
+        // left在按钮左侧
+        let left = rect.left + window.scrollX - popupWidth - 12;
+        if (left < 10) left = 10;
+        qrcodePopup.style.top = top + 'px';
+        qrcodePopup.style.left = left + 'px';
+        setTimeout(() => qrcodePopup.classList.add('active'), 10);
+        qrcodePopup.addEventListener('mouseenter', function() {
+          clearTimeout(hideTimer);
+        });
+        qrcodePopup.addEventListener('mouseleave', function() {
+          if (qrcodePopup) {
+            qrcodePopup.classList.remove('active');
+            hideTimer = setTimeout(() => { qrcodePopup && qrcodePopup.remove(); qrcodePopup = null; }, 400);
+          }
+        });
+      });
+      item.addEventListener('mouseleave', function() {
+        if (qrcodePopup) {
+          qrcodePopup.classList.remove('active');
+          hideTimer = setTimeout(() => { qrcodePopup && qrcodePopup.remove(); qrcodePopup = null; }, 400);
+        }
+      });
+    }
   });
 
   // 添加页面加载动画
@@ -344,29 +404,14 @@ document.addEventListener('DOMContentLoaded', function() {
     consultPopup.addEventListener('click', function(e) {
       e.stopPropagation();
     });
-
-    // 点击按钮外的区域隐藏弹出框 - 优化版本
-    document.addEventListener('click', function(e) {
-      if (!consultBtn.contains(e.target) && !consultPopup.contains(e.target)) {
-        consultPopup.style.opacity = '0';
-        consultPopup.style.visibility = 'hidden';
-        consultPopup.style.transform = 'translateY(-50%) translateX(0)';
-      }
-    });
-
-    // ESC键隐藏弹出框
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        consultPopup.style.opacity = '0';
-        consultPopup.style.visibility = 'hidden';
-        consultPopup.style.transform = 'translateY(-50%) translateX(0)';
-      }
-    });
   }
 });
 
 // 通知系统
 function showNotification(message, type = 'info') {
+  // 先移除已有的通知，避免重复堆叠
+  document.querySelectorAll('.notification').forEach(n => n.parentNode && n.parentNode.removeChild(n));
+
   // 创建通知元素
   const notification = document.createElement('div');
   notification.className = `notification notification-${type}`;

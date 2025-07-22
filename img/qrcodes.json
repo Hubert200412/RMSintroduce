@@ -1,32 +1,26 @@
 [
   {
     "icon": "fab fa-weixin",
-    "label": "瑞德库普视频号",
-    "img": "img/qrcode-weixin-video.jpg"
+    "label": "微信视频号",
+    "img": "img/qrcode-weixin-video.jpg",
+    "social": "weixin"
   },
   {
     "icon": "fab fa-weixin",
-    "label": "瑞德库普公众号",
-    "img": "img/qrcode-weixin-public.jpg"
+    "label": "微信公众号",
+    "img": "img/qrcode-weixin-public.jpg",
+    "social": "weixin" 
   },
   {
     "icon": "fab fa-weibo",
-    "label": "鸿天集团视频号",
-    "img": "img/qrcode-weibo-video.jpg"
-  },
-  {
-    "icon": "fab fa-tiktok",
-    "label": "抖音号",
-    "img": "img/qrcode-douyin.jpg"
-  },
-  {
-    "icon": "fab fa-xiaohongshu",
-    "label": "小红书",
-    "img": "img/qrcode-xiaohongshu.jpg"
+    "label": "关注微博",
+    "img": "img/qrcode-weibo-video.jpg",
+    "social": "weibo"
   },
   {
     "icon": "fab fa-qq",
-    "label": "鸿天集团",
-    "img": "img/qrcode-qq.jpg"
+    "label": "关注QQ",
+    "img": "img/qrcode-qq.jpg",
+    "social": "qq"
   }
 ]
