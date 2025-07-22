@@ -414,7 +414,88 @@ h1, h2, h3, h4, h5, h6, .heading {
 
 .social-links {
   display: flex;
-  gap: 15px;
+  gap: 28px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.social-links .social-icon {
+  width: 44px;
+  height: 44px;
+  background: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  transition: all 0.3s cubic-bezier(.4,0,.2,1);
+  cursor: pointer;
+  position: relative;
+}
+
+.social-links .social-icon:hover {
+  background: #ffa500;
+  color: #fff;
+  transform: scale(1.12) translateY(-4px);
+  z-index: 20;
+}
+
+/* 二维码弹窗容器 */
+.qrcode-popup {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  bottom: 70px;
+  transform: translateX(-50%) scaleY(0.7) rotateY(90deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.45s cubic-bezier(.4,0,.2,1);
+  z-index: 99;
+  perspective: 800px;
+}
+.qrcode-popup.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) scaleY(1) rotateY(0deg);
+}
+.qrcode-popup-inner {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 22px 28px 18px 28px;
+  display: flex;
+  gap: 32px;
+  align-items: flex-end;
+  max-width: 90vw;
+  flex-wrap: wrap;
+}
+.qrcode-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 8px;
+}
+.qrcode-item img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  background: #f8f8f8;
+  margin-bottom: 8px;
+}
+.qrcode-item .qrcode-label {
+  font-size: 14px;
+  color: #333;
+  margin-top: 2px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .social-links a {

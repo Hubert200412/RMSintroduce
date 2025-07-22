@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "fab fa-weixin",
+    "label": "瑞德库普视频号",
+    "img": "img/qrcode-weixin-video.jpg"
+  },
+  {
+    "icon": "fab fa-weixin",
+    "label": "瑞德库普公众号",
+    "img": "img/qrcode-weixin-public.jpg"
+  },
+  {
+    "icon": "fab fa-weibo",
+    "label": "鸿天集团视频号",
+    "img": "img/qrcode-weibo-video.jpg"
+  },
+  {
+    "icon": "fab fa-tiktok",
+    "label": "抖音号",
+    "img": "img/qrcode-douyin.jpg"
+  },
+  {
+    "icon": "fab fa-xiaohongshu",
+    "label": "小红书",
+    "img": "img/qrcode-xiaohongshu.jpg"
+  },
+  {
+    "icon": "fab fa-qq",
+    "label": "鸿天集团",
+    "img": "img/qrcode-qq.jpg"
+  }
+]

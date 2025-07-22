@@ -1,5 +1,71 @@
 // 网站交互功能
 document.addEventListener('DOMContentLoaded', function() {
+  // ====== 社交二维码弹窗功能 ======
+  // 1. 读取二维码配置
+  let qrcodeData = [
+    {icon: 'fab fa-weixin', label: '瑞德库普视频号', img: 'img/qrcode-weixin-video.jpg', social: 'weixin'},
+    {icon: 'fab fa-weibo', label: '瑞德库普公众号', img: 'img/qrcode-weixin-public.jpg', social: 'weibo'},
+    {icon: 'fab fa-qq', label: '鸿天集团视频号', img: 'img/qrcode-weibo-video.jpg', social: 'qq'}
+    // 可扩展更多
+  ];
+  // 2. 生成弹窗DOM
+  function createQrcodePopup(items) {
+    const popup = document.createElement('div');
+    popup.className = 'qrcode-popup';
+    const inner = document.createElement('div');
+    inner.className = 'qrcode-popup-inner';
+    items.forEach(item => {
+      const itemDiv = document.createElement('div');
+      itemDiv.className = 'qrcode-item';
+      const img = document.createElement('img');
+      img.src = item.img;
+      img.alt = item.label;
+      const label = document.createElement('div');
+      label.className = 'qrcode-label';
+      label.textContent = item.label;
+      itemDiv.appendChild(img);
+      itemDiv.appendChild(label);
+      inner.appendChild(itemDiv);
+    });
+    popup.appendChild(inner);
+    return popup;
+  }
+
+  // 3. 绑定事件
+  document.querySelectorAll('.social-links').forEach(socialLinks => {
+    // 只生成一次弹窗
+    let popup = null;
+    let hideTimer = null;
+    // 监听每个icon
+    socialLinks.querySelectorAll('.social-icon').forEach(icon => {
+      icon.addEventListener('mouseenter', function() {
+        clearTimeout(hideTimer); // 修复切换时闪烁
+        const type = icon.getAttribute('data-social');
+        const items = qrcodeData.filter(q => q.social === type);
+        if (!items.length) return;
+        if (popup) popup.remove();
+        popup = createQrcodePopup(items);
+        socialLinks.appendChild(popup);
+        setTimeout(() => popup.classList.add('active'), 10);
+        // 悬停弹窗时不消失
+        popup.addEventListener('mouseenter', function() {
+          clearTimeout(hideTimer);
+        });
+        popup.addEventListener('mouseleave', function() {
+          if (popup) {
+            popup.classList.remove('active');
+            hideTimer = setTimeout(() => { popup && popup.remove(); popup = null; }, 400);
+          }
+        });
+      });
+      icon.addEventListener('mouseleave', function() {
+        if (popup) {
+          popup.classList.remove('active');
+          hideTimer = setTimeout(() => { popup && popup.remove(); popup = null; }, 400);
+        }
+      });
+    });
+  });
   // 设置导航活跃状态
   setActiveNavigation();
   
