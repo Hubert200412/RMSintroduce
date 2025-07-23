@@ -1,3 +1,57 @@
+/* 登录选项区（记住我+忘记密码）美化 */
+.login-options-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.login-options-group .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: #ff9800;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s;
+}
+.login-options-group .checkbox-label:hover {
+    color: #ff6b35;
+}
+.login-options-group .checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ff9800;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.08);
+    position: relative;
+    transition: border-color 0.2s, background 0.2s;
+    margin-right: 2px;
+}
+.login-options-group .checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background: linear-gradient(135deg, #ff9800, #ffd700);
+    border-color: #ff6b35;
+}
+.login-options-group .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+}
+.login-options-group .forgot-link {
+    font-size: 15px;
+    color: #ff9800;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.login-options-group .forgot-link:hover {
+    color: #ff6b35;
+    text-decoration: underline;
+}
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap');
 
 :root {
@@ -259,27 +313,6 @@ ul { list-style: none; }
     position: relative;
 }
 
-/* 登录标签页样式 */
-.login-tab {
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 20px;
-    padding: 8px 20px !important;
-    margin: 0 5px;
-    display: inline-block;
-}
-
-.login-tab:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--mainColor);
-}
-
-.login-tab.active {
-    background: var(--gradient);
-    color: var(--white);
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-}
-
 input[type="checkbox"] { display: none; }
 
 .checkbox:checked + label, 
@@ -389,7 +422,7 @@ input[type="checkbox"] { display: none; }
 }
 
 .heading { 
-    margin-bottom: 25px; 
+    margin-bottom: 30px;
     font-size: 24px; 
     text-transform: uppercase;
     font-weight: 700;
@@ -458,6 +491,14 @@ input[type="checkbox"] { display: none; }
     color: var(--mainColor);
     transition: all .3s ease;
     z-index: 5;
+}
+
+.password-input {
+    padding-left: 20px ;
+}
+
+.merchant-input {
+    padding-left: 20px ;
 }
 
 /* 记住我和条款 */
@@ -722,90 +763,3 @@ input[type="checkbox"] { display: none; }
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
-/* 响应式设计 */
-/* @media (max-width: 992px) {
-    .left h2 { font-size: 40px; }
-    .left h2 span { font-size: 42px; }
-    .left p { font-size: 16px; }
-    .card-3d-wrap { width: 380px; }
-    
-    .features-preview {
-        gap: 15px;
-    }
-    
-    .feature-item {
-        font-size: 12px;
-        padding: 8px 12px;
-    }
-}
-
-@media (max-width: 768px) {
-    .left, .right { 
-        flex: 0 0 100%; 
-        max-width: 100%; 
-    }
-    
-    .left { 
-        order: 2;
-        text-align: center;
-        padding-top: 50px;
-    }
-    
-    .right { 
-        order: 1; 
-    }
-    
-    .full-screen {
-        padding-top: 80px;
-    }
-    
-    .social-media {
-        justify-content: center;
-        margin-top: 30px;
-    }
-    
-    .features-preview {
-        justify-content: center;
-        margin-top: 30px;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 15px;
-    }
-    
-    .left h2 { font-size: 32px; }
-    .left h2 span { font-size: 34px; }
-    .left p { font-size: 14px; }
-    
-    .card-3d-wrap { 
-        width: 320px; 
-        height: 450px;
-    }
-    
-    .center-wrap {
-        padding: 0 30px;
-    }
-    
-    .heading {
-        font-size: 24px;
-    }
-    
-    .form-style {
-        font-size: 14px;
-        height: 50px;
-        padding-left: 55px;
-    }
-    
-    .input-icon {
-        font-size: 20px;
-        top: 13px;
-    }
-    
-    .feature-item {
-        flex: 1 1 auto;
-        min-width: 120px;
-    }
-} */

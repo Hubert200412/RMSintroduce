@@ -1,3 +1,40 @@
+// 协议弹窗逻辑
+document.addEventListener('DOMContentLoaded', function() {
+  var modal = document.getElementById('policyModal');
+  var showBtn = document.getElementById('showPolicyModal');
+  var closeBtn = document.getElementById('closePolicyModal');
+  var cancelBtn = document.getElementById('cancelPolicyModal');
+  var agreeBtn = document.getElementById('agreePolicyModal');
+  var checkbox = document.getElementById('termsCheckbox');
+  if (showBtn) {
+    showBtn.onclick = function(e) {
+      e.preventDefault();
+      modal.style.display = 'block';
+    };
+  }
+  if (closeBtn) {
+    closeBtn.onclick = function() {
+      modal.style.display = 'none';
+    };
+  }
+  if (cancelBtn) {
+    cancelBtn.onclick = function() {
+      modal.style.display = 'none';
+    };
+  }
+  if (agreeBtn) {
+    agreeBtn.onclick = function() {
+      checkbox.checked = true;
+      modal.style.display = 'none';
+    };
+  }
+  // 点击遮罩关闭弹窗
+  if (modal) {
+    modal.onclick = function(e) {
+      if (e.target === modal) modal.style.display = 'none';
+    };
+  }
+});
 // 网站交互功能
 document.addEventListener('DOMContentLoaded', function() {
   // ====== 社交二维码弹窗功能 ======
@@ -263,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    // 悬停弹出二维码弹窗（仅关注我们按钮，fixed定位，整体在按钮左侧）
+    // 悬停弹出二维码弹窗（仅关注我们按钮，弹窗插入到body下，fixed定位）
     if (item.textContent.includes('关注我们')) {
       let qrcodePopup = null;
       let hideTimer = null;
@@ -274,11 +311,18 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!items.length) return;
         qrcodePopup = document.createElement('div');
         qrcodePopup.className = 'qrcode-popup';
-        // fixed定位，插入body
         qrcodePopup.style.position = 'fixed';
         qrcodePopup.style.zIndex = '9999';
-        // 先隐藏，插入后再定位
-        qrcodePopup.style.opacity = '0';
+        // 计算按钮位置
+        const rect = item.getBoundingClientRect();
+        // 弹窗宽度假定为220px，可根据实际调整
+        const popupWidth = 220;
+        // 弹窗高度假定为rect.height
+        const popupHeight = rect.height;
+        // 设置弹窗在按钮左侧居中
+        qrcodePopup.style.left = (rect.left - popupWidth - 100) + 'px';
+        qrcodePopup.style.width = popupWidth + 'px';
+        // 内容
         const inner = document.createElement('div');
         inner.className = 'qrcode-popup-inner';
         items.forEach(itemData => {
@@ -296,26 +340,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         qrcodePopup.appendChild(inner);
         document.body.appendChild(qrcodePopup);
-        // 定位到按钮左侧
-        const rect = item.getBoundingClientRect();
-        const popupRect = qrcodePopup.getBoundingClientRect();
-        // 先显示获取宽高
-        qrcodePopup.style.opacity = '1';
-        // 重新获取弹窗宽高
-        const popupWidth = qrcodePopup.offsetWidth;
-        const popupHeight = qrcodePopup.offsetHeight;
-        // 计算top，垂直居中对齐按钮
-        let top = rect.top + window.scrollY + rect.height / 2 - popupHeight / 2;
-        // 保证不超出顶部
-        if (top < 10) top = 10;
-        // 保证不超出底部
-        const maxTop = window.innerHeight - popupHeight - 10;
-        if (top > maxTop) top = maxTop;
-        // left在按钮左侧
-        let left = rect.left + window.scrollX - popupWidth - 12;
-        if (left < 10) left = 10;
-        qrcodePopup.style.top = top + 'px';
-        qrcodePopup.style.left = left + 'px';
         setTimeout(() => qrcodePopup.classList.add('active'), 10);
         qrcodePopup.addEventListener('mouseenter', function() {
           clearTimeout(hideTimer);

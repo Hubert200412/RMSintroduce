@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-icons@1.13.12/iconfont/material-icons.min.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="nav-container">
@@ -22,12 +24,12 @@
                 <li><a href="products.html">产品中心</a></li>
                 <li><a href="about.html">了解我们</a></li>
                 <li class="dropdown">
-                  <a style="cursor: pointer;">更多信息</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#news">新闻资讯</a></li>
-                    <li><a href="manual.html">使用手册</a></li>
-                    <li><a href="onlineshop.html">在线商城</a></li>
-                  </ul>
+                    <a style="cursor: pointer;">更多信息</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#news">新闻资讯</a></li>
+                        <li><a href="manual.html">使用手册</a></li>
+                        <li><a href="onlineshop.html">在线商城</a></li>
+                    </ul>
                 </li>
             </ul>
             <div class="nav-actions">
@@ -44,13 +46,10 @@
                     <h2>欢迎使用 <br> <span>RMS餐饮管理系统</span></h2>
                     <p>智能化餐厅管理，提升您的运营效率</p>
                     <a href="register.html" class="btn" style="font-size: 25px;">立即注册，加入我们！</a>
-
-                    <div class="social-media">
-                        <a href="#"><i class="fa-brands fa-weixin"></i></a>
-                        <a href="#"><i class="fa-brands fa-weibo"></i></a>
-                        <a href="#"><i class="fa-brands fa-qq"></i></a>
-                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <div class="social-links">
+                        <span class="social-icon" data-social="weixin"><i class="fab fa-weixin"></i></span>
+                        <span class="social-icon" data-social="weibo"><i class="fab fa-weibo"></i></span>
+                        <span class="social-icon" data-social="qq"><i class="fab fa-qq"></i></span>
                     </div>
 
                     <div class="features-preview">
@@ -72,34 +71,52 @@
                 <div class="right">
                     <div class="form">
                         <div class="text-center">
-                            <h6>
-                                <span class="login-tab" data-tab="phone" style="font-size: larger;">手机登录</span> 
-                                <span class="login-tab" data-tab="qr" style="font-size: larger;">扫码登录</span>
-                            </h6>
-                            <input type="checkbox" class="checkbox" id="reg-log">
-                            <label for="reg-log"></label>
                             <div class="card-3d-wrap">
                                 <div class="card-3d-wrapper">
                                     <div class="card-front">
                                         <div class="center-wrap">
                                             <h4 class="heading">手机登录</h4>
+
                                             <form id="phoneLoginForm">
+
+                                                <div class="form-group  merchant-group" id="merchantGroup">
+                                                    <input type="text" class="form-style merchant-input"
+                                                        placeholder="请输入您的商家号" autocomplete="off" maxlength="20"
+                                                        id="merchantInput">
+                                                </div>
+
                                                 <div class="form-group phone-input-group">
                                                     <div class="country-code">
                                                         <select class="country-select">
                                                             <option value="+86">+86</option>
-                                                            <option value="+1">+1</option>
-                                                            <option value="+44">+44</option>
-                                                            <option value="+81">+81</option>
-                                                            <option value="+82">+82</option>
                                                         </select>
                                                     </div>
-                                                    <input type="tel" class="form-style phone-input" placeholder="请输入11位手机号码" autocomplete="off" required maxlength="11">
+                                                    <input type="tel" class="form-style phone-input"
+                                                        placeholder="请输入11位手机号码" autocomplete="off" required
+                                                        maxlength="11">
                                                 </div>
 
-                                                <div class="form-group verification-group">
-                                                    <input type="text" class="form-style verification-input" placeholder="验证码" autocomplete="off" required maxlength="6">
-                                                    <button type="button" class="get-code-btn" id="getCodeBtn">获取验证码</button>
+                                                <div class="form-group verification-group" id="verifyGroup">
+                                                    <input type="text" class="form-style verification-input"
+                                                        placeholder="验证码" autocomplete="off" required maxlength="6"
+                                                        id="verifyInput">
+                                                    <button type="button" class="get-code-btn"
+                                                        id="getCodeBtn">获取验证码</button>
+                                                </div>
+
+                                                <div class="form-group password-group" id="passwordGroup">
+                                                    <input type="password" class="form-style password-input"
+                                                        placeholder="请输入密码" autocomplete="off" maxlength="20"
+                                                        id="passwordInput">
+                                                </div>
+
+                                                <div class="form-group login-options-group" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                                    <label class="checkbox-label" style="font-size: 15px; color: #ff9800; gap: 8px; cursor: pointer;">
+                                                        <input type="checkbox" id="rememberMe" style="display: none;">
+                                                        <span class="checkmark"></span>
+                                                        <span style="user-select:none;">记住我</span>
+                                                    </label>
+                                                    <a href="#" class="forgot-link" style="font-size: 15px; color: #ff9800; text-decoration: none; transition: color 0.2s;">忘记密码？</a>
                                                 </div>
 
                                                 <button type="submit" class="btn login-btn">立即登录</button>
@@ -107,7 +124,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="card-back">
+                                    <!-- <div class="card-back">
                                         <div class="center-wrap">
                                             <h4 class="heading" style="margin-top: 20px;">扫码登录</h4>
                                             <div class="qr-code-section">
@@ -117,32 +134,32 @@
                                                         <p>请使用手机扫描二维码</p>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="qr-instructions">
                                                     <p>1. 打开手机微信扫一扫</p>
                                                     <p>2. 扫描上方二维码</p>
                                                     <p>3. 确认登录即可</p>
                                                 </div>
-                                                
+
                                                 <button type="button" class="btn refresh-qr-btn" id="refreshQrBtn">
                                                     <i class="material-icons">refresh</i>
                                                     刷新二维码
                                                 </button>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
-                            
+
                             <div class="terms-agreement">
                                 <label class="checkbox-label">
                                     <input type="checkbox" id="termsCheckbox" required>
                                     <span class="checkmark"></span>
-                                    我已阅读并同意<a href="#" class="link">用户协议</a>和<a href="#" class="link">隐私政策</a>
+                                    我已阅读并同意 <a href="#" id="showPolicyModal" class="link">用户协议和隐私政策</a>
                                 </label>
                             </div>
                         </div>
-                    </div>    
+                    </div>
                 </div>
             </div>
         </div>
@@ -191,9 +208,9 @@
             <div class="footer-bottom">
                 <p>&copy; 2024 RMS餐饮系统. 保留所有权利.</p>
                 <div class="social-links">
-                  <span class="social-icon" data-social="weixin"><i class="fab fa-weixin"></i></span>
-                  <span class="social-icon" data-social="weibo"><i class="fab fa-weibo"></i></span>
-                  <span class="social-icon" data-social="qq"><i class="fab fa-qq"></i></span>
+                    <span class="social-icon" data-social="weixin"><i class="fab fa-weixin"></i></span>
+                    <span class="social-icon" data-social="weibo"><i class="fab fa-weibo"></i></span>
+                    <span class="social-icon" data-social="qq"><i class="fab fa-qq"></i></span>
                 </div>
             </div>
         </div>
@@ -209,5 +226,25 @@
     <script src="js/animated-background.js"></script>
     <script src="js/login.js"></script>
     <script src="js/app.js"></script>
+    <!-- 协议弹窗放置于body末尾，确保覆盖全页面 -->
+    <div id="policyModal" class="policy-modal">
+        <div class="policy-modal-content">
+            <div class="policy-modal-header">
+                <h2>个人信息保护隐私政策</h2>
+                <span id="closePolicyModal">&times;</span>
+            </div>
+            <div class="policy-modal-body">
+                感谢您对我们的信任！我们非常重视您的个人信息和隐私，我们将按照法律法规的规定，保护您的个人信息及隐私安全。特别提示：本政策将向您说明在服务过程中个人信息的处理，请您在使用相关服务前，仔细阅读并理解本隐私政策，这些信息对您非常重要。<br><br>
+                当您向我们提交您的个人信息，并同意本隐私政策后，将视为您完全知悉并同意本隐私政策内容。<b>如果您不同意按照本隐私政策所述方式处理您的个人信息，请在收到请求时不要提供您的信息，并停止使用本服务。使用本服务即表示您确认我们在本隐私政策中所述的有关您个人信息的处理。</b>
+                如果您对个人信息保护问题有任何疑问、建议、投诉，或对本隐私政策内容有任何疑问、意见或建议，您可以通过电子邮件与我们联系，我们核查后会及时向您反馈。<br><br>
+                本隐私政策所有条款的标题仅为阅读方便，不作为本隐私政策涵义解释或限制的依据；<br>本隐私政策任一条款被视为废止、无效或不可执行，该条应视为可分的且并不影响本隐私政策其余条款的有效性及可执行性；<br>本“隐私政策”的版权为我们所有，在法律允许的范围内，我们拥有解释和修改的权利。
+            </div>
+            <div class="policy-modal-footer">
+                <button id="cancelPolicyModal">取消</button>
+                <button id="agreePolicyModal">我已阅读并同意</button>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
