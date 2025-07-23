@@ -23,7 +23,7 @@
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#ffa500">
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
@@ -61,7 +61,8 @@
               <i class="fas fa-headset"></i>
               <div class="popup-text">
                 <h4>帮助中心</h4>
-                <p>智能版帮助中心：<a href="#" class="popup-link">点击查看</a><br>青春版帮助中心：<a href="#" class="popup-link">点击查看</a></p>
+                <p>智能版帮助中心：<a href="#" class="popup-link">点击查看</a><br>青春版帮助中心：<a href="#" class="popup-link">点击查看</a>
+                </p>
               </div>
             </div>
           </div>
@@ -92,7 +93,7 @@
         <li class="dropdown">
           <a style="cursor: pointer;">更多信息</a>
           <ul class="dropdown-menu">
-            <li><a href="#news">新闻资讯</a></li>
+            <li><a href="about.html#news">新闻资讯</a></li>
             <li><a href="manual.html">使用手册</a></li>
             <li><a href="onlineshop.html">在线商城</a></li>
           </ul>
@@ -124,21 +125,23 @@
     </div>
     <div class="hero-device">
       <div class="device-screen">
-        <div class="device-apps">
-          <div class="app-icon blue">
-            <i class="fas fa-cash-register"></i>
-          </div>
-          <div class="app-icon green">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <div class="app-icon orange">
-            <i class="fas fa-chart-pie"></i>
-          </div>
-          <div class="app-icon purple">
-            <i class="fas fa-users"></i>
-          </div>
-          <div class="app-icon yellow">
-            <i class="fas fa-utensils"></i>
+        <div class="device-inner-border">
+          <div class="device-apps">
+            <div class="app-icon blue">
+              <i class="fas fa-cash-register"></i>
+            </div>
+            <div class="app-icon green">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="app-icon orange">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <div class="app-icon purple">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="app-icon yellow">
+              <i class="fas fa-utensils"></i>
+            </div>
           </div>
         </div>
       </div>
@@ -251,13 +254,13 @@
     <div class="banner-container">
       <div class="banner-image">
         <div class="banner-text">
-            <span class="circle circle3"></span>
-            <span class="circle circle2"></span>
-            <span class="circle circle1"></span>
+          <span class="circle circle3"></span>
+          <span class="circle circle2"></span>
+          <span class="circle circle1"></span>
           RMS餐饮管理系统，您的智能管家伙伴
-            <span class="circle circle1"></span>
-            <span class="circle circle2"></span>
-            <span class="circle circle3"></span>
+          <span class="circle circle1"></span>
+          <span class="circle circle2"></span>
+          <span class="circle circle3"></span>
         </div>
       </div>
     </div>
@@ -471,7 +474,7 @@
 
   <!-- 页面加载完成后的初始化 -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // 追踪页面访问
       if (window.RMSAnalytics) {
         RMSAnalytics.trackCustomEvent('page_view', {
@@ -481,7 +484,7 @@
       }
 
       // 监听网络状态变化
-      window.addEventListener('networkStatusChange', function(event) {
+      window.addEventListener('networkStatusChange', function (event) {
         const status = event.detail.isOnline ? 'online' : 'offline';
         if (window.RMSAnalytics) {
           RMSAnalytics.trackCustomEvent('network_status_change', {
@@ -492,7 +495,7 @@
       });
 
       // 监听内容更新事件
-      window.addEventListener('contentUpdated', function(event) {
+      window.addEventListener('contentUpdated', function (event) {
         console.log('Content updated:', event.detail);
       });
 
@@ -508,7 +511,7 @@
     });
 
     // 添加页面可见性API监控
-    document.addEventListener('visibilitychange', function() {
+    document.addEventListener('visibilitychange', function () {
       if (window.RMSAnalytics) {
         RMSAnalytics.trackCustomEvent('page_visibility_change', {
           hidden: document.hidden,
