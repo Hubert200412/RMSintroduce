@@ -191,7 +191,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 20px;
+  padding: 20px 10px;
   background: white;
   border: 2px solid #e0e0e0;
   border-radius: 12px;
@@ -207,13 +207,13 @@
 }
 
 .industry-item.selected {
-  border-color: #ffa500;
-  background: #fff8f0;
+  border-color: #ff8c00;
+  background: #ffd0c4;
 }
 
 .industry-icon {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   background: linear-gradient(135deg, #ffa500, #ff8c00);
   border-radius: 50%;
   display: flex;
@@ -222,10 +222,19 @@
   margin-bottom: 15px;
   color: white;
   font-size: 1.5rem;
+  overflow: hidden;
+}
+
+.industry-icon img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  display: block;
+  margin: auto;
 }
 
 .industry-item span {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: #333;
 }
@@ -244,7 +253,7 @@
   display: block;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #333;
+  color: #ffa500;
   margin-bottom: 20px;
 }
 
@@ -260,7 +269,7 @@
   align-items: center;
   cursor: pointer;
   font-size: 1.1rem;
-  color: #333;
+  color: #ffa500;
   padding: 12px 20px;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
@@ -272,7 +281,7 @@
 
 .radio-option:hover {
   border-color: #ffa500;
-  background: #fff8f0;
+  background: #ffd0c4;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255, 165, 0, 0.15);
 }
@@ -315,8 +324,8 @@
 
 .radio-option:has(input[type="radio"]:checked) {
   border-color: #ffa500;
-  background: #fff8f0;
-  color: #ffa500;
+  background: #ffd0c4;
+  color: #333;
   font-weight: 600;
 }
 
@@ -346,7 +355,11 @@
 
 .scale-item.selected {
   border-color: #ffa500;
-  background: #fff8f0;
+  background: #ffd0c4;
+}
+
+.scale-item.selected .scale-number {
+  color: #333;
 }
 
 .scale-number {
@@ -359,7 +372,7 @@
 
 .scale-text {
   font-size: 0.9rem;
-  color: #666;
+  color: #000000;
 }
 
 .stage-options {
@@ -388,7 +401,11 @@
 
 .stage-item.selected {
   border-color: #ffa500;
-  background: #fff8f0;
+  background: #ffd0c4;
+}
+
+.stage-item.selected i {
+  color: #333;
 }
 
 .stage-item i {
@@ -430,7 +447,7 @@
 
 .need-item.selected {
   border-color: #ffa500;
-  background: #fff8f0;
+  background: #ffd0c4;
 }
 
 .need-item.selected .need-checkbox {

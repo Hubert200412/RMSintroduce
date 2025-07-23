@@ -132,6 +132,17 @@
   min-width: 1200px;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .hero-content h1 {
   font-size: 4rem;
   font-weight: 700;

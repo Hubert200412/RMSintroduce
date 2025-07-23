@@ -82,53 +82,101 @@
           <p>请选择您的餐厅类型，我们将为您推荐最适合的解决方案</p>
         </div>
         <div class="industry-grid">
+          <div class="industry-item" data-industry="fastfood">
+            <div class="industry-icon">
+              <img src="img/register-icon/快餐.svg" alt="快餐" />
+            </div>
+            <span>快餐</span>
+          </div>
           <div class="industry-item" data-industry="chinese">
             <div class="industry-icon">
-              <i class="fas fa-drumstick-bite"></i>
+              <img src="img/register-icon/中餐.svg" alt="中餐" />
             </div>
-            <span>中式餐厅</span>
-          </div>
-          <div class="industry-item" data-industry="western">
-            <div class="industry-icon">
-              <i class="fas fa-wine-glass-alt"></i>
-            </div>
-            <span>西式餐厅</span>
-          </div>
-          <div class="industry-item" data-industry="coffee">
-            <div class="industry-icon">
-              <i class="fas fa-coffee"></i>
-            </div>
-            <span>咖啡茶饮</span>
+            <span>中餐</span>
           </div>
           <div class="industry-item" data-industry="hotpot">
             <div class="industry-icon">
-              <i class="fas fa-fire"></i>
+              <img src="img/register-icon/火锅.svg" alt="火锅" />
             </div>
-            <span>火锅烧烤</span>
+            <span>火锅</span>
+          </div>
+          <div class="industry-item" data-industry="bbq">
+            <div class="industry-icon">
+              <img src="img/register-icon/烧烤.svg" alt="烧烤" />
+            </div>
+            <span>烧烤</span>
+          </div>
+          <div class="industry-item" data-industry="western">
+            <div class="industry-icon">
+              <img src="img/register-icon/西餐.svg" alt="西餐" />
+            </div>
+            <span>西餐</span>
+          </div>
+          <div class="industry-item" data-industry="buffet">
+            <div class="industry-icon">
+              <img src="img/register-icon/自助餐.svg" alt="自助餐" />
+            </div>
+            <span>自助餐</span>
+          </div>
+          <div class="industry-item" data-industry="noodle">
+            <div class="industry-icon">
+              <img src="img/register-icon/面馆.svg" alt="面馆" />
+            </div>
+            <span>面馆</span>
+          </div>
+          <div class="industry-item" data-industry="coffee">
+            <div class="industry-icon">
+              <img src="img/register-icon/咖啡厅.svg" alt="咖啡厅" />
+            </div>
+            <span>咖啡厅</span>
           </div>
           <div class="industry-item" data-industry="dessert">
             <div class="industry-icon">
-              <i class="fas fa-ice-cream"></i>
+              <img src="img/register-icon/甜品饮品.svg" alt="甜品饮品" />
             </div>
-            <span>甜品烘焙</span>
+            <span>甜品饮品</span>
           </div>
-          <div class="industry-item" data-industry="fastfood">
+          <div class="industry-item" data-industry="japan_korea">
             <div class="industry-icon">
-              <i class="fas fa-pizza-slice"></i>
+              <img src="img/register-icon/日韩料理.svg" alt="日韩料理" />
             </div>
-            <span>快餐便当</span>
+            <span>日韩料理</span>
+          </div>
+          <div class="industry-item" data-industry="southeastasia">
+            <div class="industry-icon">
+              <img src="img/register-icon/东南亚菜.svg" alt="东南亚菜" />
+            </div>
+            <span>东南亚菜</span>
+          </div>
+          <div class="industry-item" data-industry="halal">
+            <div class="industry-icon">
+              <img src="img/register-icon/清真餐厅.svg" alt="清真餐厅" />
+            </div>
+            <span>清真餐厅</span>
+          </div>
+          <div class="industry-item" data-industry="vegetarian">
+            <div class="industry-icon">
+              <img src="img/register-icon/素食.svg" alt="素食" />
+            </div>
+            <span>素食</span>
           </div>
           <div class="industry-item" data-industry="seafood">
             <div class="industry-icon">
-              <i class="fas fa-fish"></i>
+              <img src="img/register-icon/海鲜.svg" alt="海鲜" />
             </div>
-            <span>海鲜水产</span>
+            <span>海鲜</span>
+          </div>
+          <div class="industry-item" data-industry="bakery">
+            <div class="industry-icon">
+              <img src="img/register-icon/烘焙糕点.svg" alt="烘焙糕点" />
+            </div>
+            <span>烘焙糕点</span>
           </div>
           <div class="industry-item" data-industry="other">
             <div class="industry-icon">
-              <i class="fas fa-utensils"></i>
+              <img src="img/register-icon/其他.svg" alt="其他" />
             </div>
-            <span>其他餐饮</span>
+            <span>其他</span>
           </div>
         </div>
         <div class="step-actions">
@@ -299,7 +347,7 @@
               <div class="country-code">
                 <span class="country-prefix">+86</span>
               </div>
-              <input type="tel" class="form-input phone-input" placeholder="请输入11位手机号码" maxlength="11" required>
+              <input type="tel" class="form-input phone-input" placeholder="请输入您的手机号码" maxlength="11" required>
             </div>
           </div>
 
@@ -328,22 +376,27 @@
 
           <div class="form-group">
             <label>商家号</label>
-            <input type="text" class="form-input" placeholder="请输入您的商家号" required>
+            <input type="text" class="form-input merchant-number-input" placeholder="请输入您的商家号" required>
           </div>
 
           <div class="form-group">
-            <label>联系人姓名</label>
-            <input type="text" class="form-input" placeholder="请输入联系人姓名" required>
+            <label>商家联系人姓名</label>
+            <input type="text" class="form-input merchant-name-input" placeholder="请输入商家联系人姓名" required>
           </div>
 
           <div class="form-group">
             <label>推介人姓名</label>
-            <input type="text" class="form-input" placeholder="请输入推介人姓名" required>
+            <input type="text" class="form-input referrer-input" placeholder="请输入推介人姓名" required>
           </div>
 
           <div class="form-group">
             <label>推介人手机号</label>
-            <input type="text" class="form-input" placeholder="请输入推介人手机号" required>
+            <div class="phone-input-group">
+              <div class="country-code">
+                <span class="country-prefix">+86</span>
+              </div>
+              <input type="tel" class="form-input referrer-phone-input" placeholder="请输入推介人手机号" maxlength="11" required>
+            </div>
           </div>
 
           <div class="terms-agreement">
@@ -356,7 +409,7 @@
         </div>
         <div class="step-actions">
           <button class="btn-prev">回到上一步</button>
-          <button class="btn-submit" disabled>完成注册</button>
+          <button class="btn-submit">完成注册</button>
         </div>
       </div>
     </div>

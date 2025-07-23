@@ -1,5 +1,17 @@
 // 注册页面交互功能
 document.addEventListener('DOMContentLoaded', function() {
+  // 页面加载时清空所有表单内容
+  document.querySelectorAll('input[type="text"], input[type="tel"], input[type="password"], input[type="checkbox"]').forEach(function(input) {
+    if (input.type === 'checkbox') {
+      input.checked = false;
+    } else {
+      input.value = '';
+    }
+  });
+  // 页面加载时清除所有radio的选中状态
+  document.querySelectorAll('input[type="radio"]').forEach(function(radio) {
+    radio.checked = false;
+  });
   let currentStep = 1;
   const totalSteps = 4;
   let registrationData = {
@@ -10,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
     needs: [],
     phone: '',
     password: '',
-    merchantName: '',
-    contactName: ''
+    merchantNumber: '',
+    contactPerson: ''
   };
 
   // 初始化
@@ -142,8 +154,10 @@ document.addEventListener('DOMContentLoaded', function() {
   function initAccountSetup() {
     const phoneInput = document.querySelector('.phone-input');
     const passwordInput = document.querySelector('.password-input');
-    const merchantNameInput = document.querySelector('input[placeholder*="餐厅名称"]');
-    const contactNameInput = document.querySelector('input[placeholder*="联系人姓名"]');
+    const merchantNumberInput = document.querySelector('.merchant-number-input');
+    const contactPersonInput = document.querySelector('.merchant-name-input');
+    const referrerNameInput = document.querySelector('.referrer-input');
+    const referrerPhoneInput = document.querySelector('.referrer-phone-input');
     const termsCheckbox = document.querySelector('#termsCheckbox');
     
     // 手机号验证
@@ -151,6 +165,15 @@ document.addEventListener('DOMContentLoaded', function() {
       phoneInput.addEventListener('input', function() {
         this.value = this.value.replace(/\D/g, '');
         registrationData.phone = this.value;
+        checkStep4Completion();
+      });
+    }
+
+    // 验证码
+    const verificationInput = document.querySelector('.verification-input');
+    if (verificationInput) {
+      verificationInput.addEventListener('input', function() {
+        registrationData.verificationCode = this.value.replace(/\D/g, '');
         checkStep4Completion();
       });
     }
@@ -164,37 +187,35 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 
-    // 密码显示切换
-    const passwordToggle = document.querySelector('.password-toggle');
-    if (passwordToggle) {
-      passwordToggle.addEventListener('click', function() {
-        const input = passwordInput;
-        const icon = this.querySelector('i');
-        
-        if (input.type === 'password') {
-          input.type = 'text';
-          icon.classList.remove('fa-eye');
-          icon.classList.add('fa-eye-slash');
-        } else {
-          input.type = 'password';
-          icon.classList.remove('fa-eye-slash');
-          icon.classList.add('fa-eye');
-        }
-      });
-    }
-
-    // 商户名称
-    if (merchantNameInput) {
-      merchantNameInput.addEventListener('input', function() {
-        registrationData.merchantName = this.value;
+    // 商家号
+    if (merchantNumberInput) {
+      merchantNumberInput.addEventListener('input', function() {
+        registrationData.merchantNumber = this.value;
         checkStep4Completion();
       });
     }
 
     // 联系人姓名
-    if (contactNameInput) {
-      contactNameInput.addEventListener('input', function() {
-        registrationData.contactName = this.value;
+    if (contactPersonInput) {
+      contactPersonInput.addEventListener('input', function() {
+        registrationData.contactPerson = this.value;
+        checkStep4Completion();
+      });
+    }
+
+    // 推介人姓名
+    if (referrerNameInput) {
+      referrerNameInput.addEventListener('input', function() {
+        registrationData.referrerName = this.value;
+        checkStep4Completion();
+      });
+    }
+
+    // 推介人手机号
+    if (referrerPhoneInput) {
+      referrerPhoneInput.addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '');
+        registrationData.referrerPhone = this.value;
         checkStep4Completion();
       });
     }
@@ -242,17 +263,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function checkStep4Completion() {
     const phoneValid = registrationData.phone && registrationData.phone.length === 11;
+    const verificationValid = registrationData.verificationCode && registrationData.verificationCode.length === 6;
     const passwordValid = registrationData.password && registrationData.password.length >= 8;
-    const merchantNameValid = registrationData.merchantName && registrationData.merchantName.trim();
-    const contactNameValid = registrationData.contactName && registrationData.contactName.trim();
+    const merchantNumberValid = registrationData.merchantNumber && registrationData.merchantNumber.trim();
+    const contactPersonValid = registrationData.contactPerson && registrationData.contactPerson.trim();
+    const referrerNameValid = registrationData.referrerName && registrationData.referrerName.trim();
+    const referrerPhoneValid = registrationData.referrerPhone && registrationData.referrerPhone.length === 11;
     const termsChecked = document.querySelector('#termsCheckbox').checked;
-    
-    const isComplete = phoneValid && passwordValid && merchantNameValid && contactNameValid && termsChecked;
-    
+
+    const isComplete = phoneValid && verificationValid && passwordValid && merchantNumberValid && contactPersonValid && referrerNameValid && referrerPhoneValid && termsChecked;
+
     const submitBtn = document.querySelector('.btn-submit');
-    if (submitBtn) {
-      submitBtn.disabled = !isComplete;
-    }
   }
 
   // 按钮事件
@@ -361,9 +382,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const stepElement = document.getElementById(`step${step}`);
     if (stepElement) {
       const nextBtn = stepElement.querySelector('.btn-next');
-      if (nextBtn) {
-        nextBtn.disabled = !enabled;
-      }
     }
   }
 
@@ -395,7 +413,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function startCountdown(btn) {
     let count = 60;
-    btn.disabled = true;
     btn.textContent = `${count}秒后重新获取`;
     
     const timer = setInterval(() => {
@@ -404,7 +421,6 @@ document.addEventListener('DOMContentLoaded', function() {
       
       if (count <= 0) {
         clearInterval(timer);
-        btn.disabled = false;
         btn.textContent = '获取验证码';
       }
     }, 1000);
@@ -420,7 +436,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // 显示提交中状态
     const submitBtn = document.querySelector('.btn-submit');
     const originalText = submitBtn.textContent;
-    submitBtn.disabled = true;
     submitBtn.textContent = '注册中...';
 
     // 模拟提交过程
@@ -438,29 +453,31 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function validateRegistrationData() {
-    const verificationInput = document.querySelector('.verification-input');
-    const verificationCode = verificationInput ? verificationInput.value : '';
-    
-    if (!verificationCode || verificationCode.length !== 6) {
-      showNotification('请输入6位验证码', 'error');
-      return false;
-    }
-    
     if (!registrationData.phone || registrationData.phone.length !== 11) {
       showNotification('请输入正确的手机号码', 'error');
       return false;
     }
-    
+    if (!registrationData.verificationCode || registrationData.verificationCode.length !== 6) {
+      showNotification('请输入6位验证码', 'error');
+      return false;
+    }
     if (!registrationData.password || registrationData.password.length < 8) {
       showNotification('密码长度至少8位', 'error');
       return false;
     }
-    
-    if (!registrationData.merchantName || !registrationData.contactName) {
+    if (!registrationData.merchantNumber || !registrationData.contactPerson || !registrationData.referrerName || !registrationData.referrerPhone) {
+      console.error('商户信息不完整:', registrationData);
       showNotification('请填写完整的商户信息', 'error');
       return false;
     }
-    
+    if (registrationData.referrerPhone.length !== 11) {
+      showNotification('请输入正确的推介人手机号', 'error');
+      return false;
+    }
+    if (!document.querySelector('#termsCheckbox').checked) {
+      showNotification('请勾选并同意用户协议和隐私政策', 'error');
+      return false;
+    }
     return true;
   }
 
