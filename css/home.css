@@ -1017,3 +1017,58 @@
   text-shadow: 0 2px 12px rgba(0,0,0,0.25);
   width: 100%;
 }
+
+/* 无限滚动商标横幅样式 */
+.infinite-scroll-banner {
+  width: 100%;
+  background: #fff;
+  padding: 32px 0 24px 0;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.scroll-content {
+  display: flex;
+  align-items: center;
+  animation: scroll-horizontal 60s linear infinite;
+  width: calc(126px * 32); /* 16图标*2遍，每个图标含间距约126px */
+}
+.scroll-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 36px;
+  min-width: 90px;
+  width: 126px;
+}
+.scroll-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 36px;
+  min-width: 90px;
+}
+.scroll-item img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+}
+.scroll-item span {
+  font-size: 1.08rem;
+  color: #333;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+@keyframes scroll-horizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-2016px); } /* 126px*16图标=2016px，动画到一遍内容宽度 */
+}
