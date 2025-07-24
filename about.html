@@ -67,7 +67,11 @@
   <section class="about-hero">
     <div class="hero-background">
       <div class="hero-content" data-aos="fade-up">
-        <h1>了解我们</h1>
+        <canvas id="movingText"></canvas>
+        <script type="module">
+          import { particleTextAnimation } from './js/about.js';
+          particleTextAnimation({ canvasId: 'movingText', text: '关于我们' });
+        </script>
         <p class="hero-subtitle">专业的餐饮管理解决方案提供商</p>
         <div class="hero-stats">
           <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
@@ -582,6 +586,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/animated-background.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/about.js"></script>
   <script>
     // 初始化AOS动画
     AOS.init({

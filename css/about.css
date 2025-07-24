@@ -6,7 +6,7 @@
   min-height: 90vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+  background:#ff8c00;
   overflow: hidden;
   background-attachment: fixed;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
