@@ -191,15 +191,12 @@ function validateForm() {
     if (!element.value || (field.name === 'agreeTerms' && !element.checked)) {
       showFieldError(element, field.message);
       isValid = false;
+      // 针对未勾选协议，显示动态图片指向勾选框
+      if (field.name === 'agreeTerms' && !element.checked) {
+        showAgreementPointer(element);
+      }
     }
   });
-  
-  // 手机号格式验证
-  const phoneField = form.querySelector('[name="contactPhone"]');
-  if (phoneField.value && !isValidPhone(phoneField.value)) {
-    showFieldError(phoneField, '请输入正确的手机号码');
-    isValid = false;
-  }
   
   return isValid;
 }
@@ -215,41 +212,81 @@ function validateField(field) {
     isValid = false;
   }
   
-  // 手机号格式检查
-  if (fieldName === 'contactPhone' && field.value && !isValidPhone(field.value)) {
-    showFieldError(field, '请输入正确的手机号码');
+  // 手机号格式校验
+  if (fieldName === 'contactPhone' && field.value && !/^\d{11}$/.test(field.value)) {
+    showFieldError(field, '请输入11位数字的手机号码');
     isValid = false;
   }
-  
   if (isValid) {
     clearFieldError(field);
   }
-  
   return isValid;
 }
 
-// 手机号验证
-function isValidPhone(phone) {
-  const phoneRegex = /^1[3-9]\d{9}$/;
-  return phoneRegex.test(phone);
-}
-
 // 显示字段错误
+// 显示动态图片指向协议勾选框
+function showAgreementPointer(checkbox) {
+  // 检查是否已存在指示图片
+  if (document.getElementById('agreement-pointer-img')) return;
+  const pointerImg = document.createElement('img');
+  pointerImg.id = 'agreement-pointer-img';
+  pointerImg.src = 'img/inquiry1.jpg'; // 请将指示图片放在 img 目录下
+  pointerImg.alt = '请勾选';
+  pointerImg.style.cssText = `
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    width: 32px;
+    height: 32px;
+    transform: translateY(-50%);
+    z-index: 20;
+    pointer-events: none;
+    animation: pointerMove 1s infinite alternate;
+  `;
+  // 父元素需定位
+  const parent = checkbox.parentNode;
+  if (window.getComputedStyle(parent).position === 'static') {
+    parent.style.position = 'relative';
+  }
+  parent.appendChild(pointerImg);
+  // 动画样式
+  if (!document.getElementById('pointer-anim-style')) {
+    const style = document.createElement('style');
+    style.id = 'pointer-anim-style';
+    style.textContent = `
+      @keyframes pointerMove {
+        0% { left: -40px; }
+        100% { left: -10px; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+  // 3秒后自动移除
+  setTimeout(() => {
+    if (pointerImg.parentNode) pointerImg.parentNode.removeChild(pointerImg);
+  }, 3000);
+}
 function showFieldError(field, message) {
   clearFieldError(field);
-  
   field.style.borderColor = '#dc3545';
-  
+  // 确保父元素有定位属性
+  if (field.parentNode && window.getComputedStyle(field.parentNode).position === 'static') {
+    field.parentNode.style.position = 'relative';
+  }
   const errorDiv = document.createElement('div');
   errorDiv.className = 'field-error';
   errorDiv.style.cssText = `
     color: #dc3545;
     font-size: 0.85rem;
-    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 4px);
+    white-space: nowrap;
+    pointer-events: none;
     animation: fadeIn 0.3s ease;
+    z-index: 10;
   `;
   errorDiv.textContent = message;
-  
   field.parentNode.appendChild(errorDiv);
 }
 
@@ -457,11 +494,4 @@ function initAnimatedText() {
   textFragments.forEach((fragment, index) => {
     fragment.style.setProperty('--delay', index);
   });
-  
-  // 初始动画完成后，开始循环动画
-  setTimeout(() => {
-    textFragments.forEach(fragment => {
-      fragment.classList.add('animate-cycle');
-    });
-  }, textFragments.length * 100 + 8000); // 等待初始动画完成
 }
