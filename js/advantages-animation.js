@@ -183,6 +183,21 @@ function initAdvantageAnimation() {
     },
     "expandFinal+=0.5"
   );
+  // 图片虚化淡化（只针对最终图片）
+  if (finalWrapper) {
+    const finalImage = finalWrapper.querySelector("img");
+    if (finalImage) {
+      advantageMainTl.to(
+        finalImage,
+        {
+          filter: "blur(6px) brightness(0.8)",
+          duration: 0.8,
+          ease: "power2.out"
+        },
+        "expandFinal+=0.5"
+      );
+    }
+  }
 
   // 缩放最终图片
   if (finalWrapper) {

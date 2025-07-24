@@ -307,8 +307,7 @@
   margin: 0 auto;
 }
 
-/* 让第一个新闻横向占据2/3宽度，其余占据1/3宽度 */
-/* 第一条新闻横跨两列，其余各占一列 */
+/*新闻卡片布局*/
 .news-card.featured {
   grid-column: 1 / 3;
   grid-row: 1;
