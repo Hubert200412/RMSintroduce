@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 保存选择
         registrationData.industry = this.dataset.industry;
-        
+        console.log('行业选择:', registrationData.industry);
         // 启用下一步按钮
         updateNextButton(1, true);
         
@@ -382,6 +382,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const stepElement = document.getElementById(`step${step}`);
     if (stepElement) {
       const nextBtn = stepElement.querySelector('.btn-next');
+      if (nextBtn) {
+        nextBtn.disabled = !enabled;
+      }
     }
   }
 
