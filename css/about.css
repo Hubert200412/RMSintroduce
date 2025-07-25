@@ -381,7 +381,7 @@
   transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.4s cubic-bezier(.4,0,.2,1);
 }
 
-.news-card.featured .news-image {
+.news-card .news-image {
   height: 400px;
 }
 
@@ -436,9 +436,6 @@
   line-height: 1.4;
 }
 
-.news-card.featured h3 {
-  font-size: 1.6rem;
-}
 
 .news-card p {
   color: #666;
