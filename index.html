@@ -280,7 +280,7 @@
         <p>专为餐饮企业打造的数字化经营解决方案</p>
       </div>
       <div class="solutions-grid">
-        <div class="solution-card">
+        <div class="solution-card" data-href="manual.html#cash-register">
           <div class="solution-icon">
             <i class="fas fa-cash-register"></i>
           </div>
@@ -297,7 +297,7 @@
             查看详情
           </a>
         </div>
-        <div class="solution-card">
+        <div class="solution-card" data-href="manual.html#supply-chain">
           <div class="solution-icon">
             <i class="fas fa-truck"></i>
           </div>
@@ -314,7 +314,7 @@
             查看详情
           </a>
         </div>
-        <div class="solution-card">
+        <div class="solution-card" data-href="manual.html#production">
           <div class="solution-icon">
             <i class="fas fa-utensils"></i>
           </div>
@@ -331,7 +331,7 @@
             查看详情
           </a>
         </div>
-        <div class="solution-card">
+        <div class="solution-card" data-href="manual.html#delivery">
           <div class="solution-icon">
             <i class="fas fa-motorcycle"></i>
           </div>
@@ -348,7 +348,7 @@
             查看详情
           </a>
         </div>
-        <div class="solution-card">
+        <div class="solution-card" data-href="manual.html#analytics">
           <div class="solution-icon">
             <i class="fas fa-chart-bar"></i>
           </div>
@@ -365,7 +365,7 @@
             查看详情
           </a>
         </div>
-        <div class="solution-card">
+        <div class="solution-card" data-href="manual.html#smart-devices">
           <div class="solution-icon">
             <i class="fas fa-wifi"></i>
           </div>
@@ -535,6 +535,52 @@
           </div>
         </div>
       </section>
+
+      <!-- 多业态支持详细说明 -->
+      <section class="multi-business-support-detail">
+        <div class="container">
+          <div class="multi-business-desc">
+            <p style="font-size:1.25rem;">
+              &nbsp;&nbsp;&nbsp;&nbsp;RMS餐饮管理系统覆盖咖啡厅、快餐、火锅、烘焙、烧烤、素食、甜品饮品、自助餐、东南亚菜、日韩料理、清真餐厅、海鲜等多种业态。
+              系统可根据不同业态的经营特点，灵活配置功能模块，实现门店统一管理、个性化营销、智能数据分析和高效运营。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;——对于快餐业态​，RMS系统侧重高效订单处理与快速收银，支持自助点餐、扫码支付，减少人力成本。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;——对于​茶饮业态​，RMS系统针对高频订单优化，单笔订单节省3-5秒，促进日单量增加。<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;——对于​正餐业态，如火锅、中餐）​，RMS系统强化桌台管理、分单打印、价格体系管控等，提升整体运营效率。<br/>
+            </p>
+              <div class="mbs-layout">
+                <div class="mbs-list">
+                  <li class="mbs-item">
+                    <span class="mbs-abbr">需求</span>
+                    <span class="mbs-detail">支持多门店、多业态一体化管理，满足连锁及多品牌发展需求</span>
+                  </li>
+                  <li class="mbs-item">
+                    <span class="mbs-abbr">灵活</span>
+                    <span class="mbs-detail">灵活适配各类餐饮场景，助力企业快速上线与扩展</span>
+                  </li>
+                  <li class="mbs-item">
+                    <span class="mbs-abbr">洞察</span>
+                    <span class="mbs-detail">智能分析经营数据，精准洞察各业态运营状况</span>
+                  </li>
+                  <li class="mbs-item">
+                    <span class="mbs-abbr">设备</span>
+                    <span class="mbs-detail">丰富的配套设备与服务，保障系统稳定运行</span>
+                  </li>
+                  <li class="mbs-item">
+                    <span class="mbs-abbr">定制</span>
+                    <span class="mbs-detail">专业团队提供定制化解决方案，助力企业数字化转型</span>
+                  </li>
+                </div>
+                <div class="mbs-image-wrapper">
+                  <div class="mbs-image"></div>
+                </div>
+              </div>
+            <p style="font-size:1.25rem;">
+              &nbsp;&nbsp;&nbsp;&nbsp;无论您是餐饮行业的何种业态，单店经营还是多店连锁，我们都能为您提供高效、智能、可靠的数字化管理平台，助力企业持续成长。
+            </p>
+          </div>
+        </div>
+      </section>
+
     </div>
   </section>
 
@@ -623,6 +669,19 @@
   <script src="js/content-manager.js"></script>
   <script src="js/animated-background.js"></script>
   <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.solution-card').forEach(function(card) {
+        card.addEventListener('click', function(e) {
+          // 避免点击卡片内的链接重复跳转
+          if (e.target.closest('a')) return;
+          var href = card.getAttribute('data-href');
+          if (href) window.location.href = href;
+        });
+        card.style.cursor = 'pointer';
+      });
+    });
+  </script>
 
   <!-- 页面加载完成后的初始化 -->
   <script>
