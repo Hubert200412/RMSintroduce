@@ -726,7 +726,9 @@
   });
   document.querySelectorAll('.acc-popup-wrapper .popup-trigger').forEach(function (el) {
     el.addEventListener('click', function () {
-      openProductPopup('acc');
+      var wrapper = el.closest('.acc-popup-wrapper');
+      var pid = wrapper && wrapper.getAttribute('data-id');
+      openProductPopup(pid || 'acc');
     });
   });
   document.getElementById('product-popup-close').onclick = function () {

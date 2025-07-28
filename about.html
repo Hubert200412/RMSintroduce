@@ -183,81 +183,11 @@
     <div class="container">
       <div class="section-header" data-aos="fade-up">
         <h2>新闻动态</h2>
-        <p>了解RMS的最新发展和行业资讯</p>
+        <p>了解RMS的最新动态和行业资讯</p>
       </div>
 
       <div class="news-grid">
-        <div class="news-card featured" data-aos="fade-up">
-          <div class="news-image">
-            <div class="news-placeholder">
-              <img src="img/news/news1.jpg" alt="新闻资讯1" style="width:100%;object-fit:cover;"
-                onerror="this.style.display='none'">
-            </div>
-          </div>
-          <div class="news-content">
-            <div class="news-meta">
-              <span class="news-date">2024-12-15</span>
-              <span class="news-category">产品发布</span>
-            </div>
-            <h3>RMS餐饮管理系统V3.0正式发布</h3>
-            <p>全新版本带来AI智能分析、语音助手、人脸识别等前沿功能，助力餐厅实现更高效的智能化管理。</p>
-            <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <div class="news-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="news-image">
-            <div class="news-placeholder">
-              <img src="img/news/news2.jpg" alt="新闻资讯2" style="width:100%;object-fit:cover;"
-                onerror="this.style.display='none'">
-            </div>
-          </div>
-          <div class="news-content">
-            <div class="news-meta">
-              <span class="news-date">2024-11-28</span>
-              <span class="news-category">公司荣誉</span>
-            </div>
-            <h3>RMS荣获"最佳餐饮科技创新奖"</h3>
-            <p>在2024年餐饮科技峰会上，RMS凭借出色的技术创新能力获得行业认可。</p>
-            <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <div class="news-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="news-image">
-            <div class="news-placeholder">
-              <img src="img/news/news3.jpg" alt="新闻资讯3" style="width:100%;object-fit:cover;"
-                onerror="this.style.display='none'">
-            </div>
-          </div>
-          <div class="news-content">
-            <div class="news-meta">
-              <span class="news-date">2024-10-20</span>
-              <span class="news-category">合作伙伴</span>
-            </div>
-            <h3>与知名连锁品牌达成战略合作</h3>
-            <p>RMS与多家知名连锁餐饮品牌签署合作协议，共同推进餐饮行业数字化转型。</p>
-            <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <div class="news-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="news-image">
-            <div class="news-placeholder">
-              <img src="img/news/news4.jpg" alt="新闻资讯4" style="width:100%;object-fit:cover;"
-                onerror="this.style.display='none'">
-            </div>
-          </div>
-          <div class="news-content">
-            <div class="news-meta">
-              <span class="news-date">2024-09-15</span>
-              <span class="news-category">市场拓展</span>
-            </div>
-            <h3>用户突破10000家里程碑</h3>
-            <p>RMS餐饮管理系统服务的餐厅数量正式突破10000家，覆盖全国主要城市。</p>
-            <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
+        <!-- 新闻列表由 JS 动态渲染 -->
       </div>
     </div>
   </section>
@@ -612,6 +542,32 @@
         }
       });
     });
+
+    // 动态加载新闻列表
+fetch('js/news-data.json')
+  .then(res => res.json())
+  .then(data => {
+    const newsGrid = document.querySelector('.news-grid');
+    newsGrid.innerHTML = data.map((item, idx) => `
+      <div class="news-card${idx === 0 ? ' featured' : ''}" data-aos="fade-up" data-aos-delay="${idx * 100}">
+        <div class="news-image">
+          <div class="news-placeholder">
+            <img src="${item.image}" alt="${item.title}" style="width:100%;object-fit:cover;" onerror="this.style.display='none'">
+          </div>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span class="news-date">${item.date}</span>
+            <span class="news-category">${item.category}</span>
+          </div>
+          <h3>${item.title}</h3>
+          <p>${item.summary}</p>
+          <a href="information/template.html?id=${item.id}" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    `).join('');
+    AOS.refresh();
+  });
   </script>
 </body>
 

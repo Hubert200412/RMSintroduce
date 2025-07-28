@@ -66,7 +66,6 @@ export function particleTextAnimation({
                         my: Math.random() * canvas.height,
                         radius: Math.random() * 3 + 2,
                         speed: 15,
-                        // 黑灰色主色调，冷色更深
                         color: `rgba(${Math.random() * 60}, ${Math.random() * 60}, ${Math.random() * 60 + 30},${pix.data[i * 4 + 3] / 255})`
                     })
                 }
@@ -85,16 +84,79 @@ export function particleTextAnimation({
                     this.arr[i].my = this.arr[i].my + ((this.arr[i].y * 5 + cy) - this.arr[i].my) / this.arr[i].speed;
                 }
             }
+            isGathered(threshold = 2) {
+                // 判断所有粒子是否都聚合到目标点附近
+                return this.arr.every(item => {
+                    const dx = item.mx - (item.x * 5 + cx);
+                    const dy = item.my - (item.y * 5 + cy);
+                    return Math.abs(dx) < threshold && Math.abs(dy) < threshold;
+                });
+            }
         }
         const particle = new Particle();
         particle.init();
+        let animationFrameId;
+        let gathered = false;
+        let gatherCount = 0;
+        let transition = false;
+        let transitionFrame = 0;
+        const transitionTotalFrames = 10;
         function step() {
             ctx.fillStyle = "rgba(255,140,0,1)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            particle.draw();
-            particle.update();
-            window.requestAnimationFrame(step);
+            if (!gathered && !transition) {
+                particle.draw();
+                particle.update();
+                if (particle.isGathered()) {
+                    gatherCount++;
+                    // 粒子聚合后保持一段时间
+                    if (gatherCount > 30) {
+                        transition = true;
+                        transitionFrame = 0;
+                    }
+                }
+                animationFrameId = window.requestAnimationFrame(step);
+            } else if (transition) {
+                // 过渡阶段：粒子逐渐消失，文字逐渐显现
+                // 计算当前透明度
+                let t = transitionFrame / transitionTotalFrames;
+                // 粒子透明度从1到0，文字透明度从0到1
+                // 画粒子
+                particle.arr.forEach(item => {
+                    ctx.beginPath();
+                    // 取原色，调整alpha
+                    let color = item.color.replace(/rgba\(([^,]+),([^,]+),([^,]+),([^\)]+)\)/, function(_, r, g, b, a) {
+                        return `rgba(${r},${g},${b},${(1-t)*parseFloat(a)})`;
+                    });
+                    ctx.fillStyle = color;
+                    ctx.arc(item.mx, item.my, item.radius, 0, Math.PI * 2, false);
+                    ctx.fill();
+                });
+                // 画文字
+                ctx.save();
+                ctx.globalAlpha = t;
+                ctx.font = 'bold 160px fangsong';
+                ctx.fillStyle = 'rgb(30,30,60,1)';
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillText(text, canvas.width / 2, canvas.height / 2 + 56);
+                ctx.restore();
+                transitionFrame++;
+                if (transitionFrame > transitionTotalFrames) {
+                    transition = false;
+                    gathered = true;
+                }
+                animationFrameId = window.requestAnimationFrame(step);
+            } else {
+                // 过渡结束，直接显示文字
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.font = 'bold 160px fangsong';
+                ctx.fillStyle = 'rgb(30,30,60,1)';
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillText(text, canvas.width / 2, canvas.height / 2 + 56);
+            }
         }
-        window.requestAnimationFrame(step);
+        animationFrameId = window.requestAnimationFrame(step);
     });
 }

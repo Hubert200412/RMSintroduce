@@ -1,0 +1,234 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>新闻详情 - RMS餐饮管理系统</title>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/about.css">
+  <meta name="description" content="RMS餐饮管理系统新闻详情页">
+  <meta name="keywords" content="餐饮管理系统,新闻详情,行业资讯">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#ffa500">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <i class="fas fa-utensils"></i>
+        <span>RMS餐饮管理系统</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../inquiry.html">预约体验</a></li>
+        <li><a href="../products.html">产品中心</a></li>
+        <li><a href="../about.html">了解我们</a></li>
+        <li class="dropdown">
+          <a style="cursor: pointer;">更多信息</a>
+          <ul class="dropdown-menu">
+            <li><a href="../about.html#news">新闻资讯</a></li>
+            <li><a href="../manual.html">使用手册</a></li>
+            <li><a href="../onlineshop.html">在线商城</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <a href="../inquiry.html#system-experience" class="btn-consult">咨询顾问</a>
+        <a href="../login.html" class="btn-login">登录/注册</a>
+      </div>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 新闻详情主体 -->
+  <section class="news-detail-section" style="background:white;padding:80px 0;">
+    <div class="container" id="news-detail-container">
+      <!-- 返回按钮 -->
+      <div id="back-btn" style="margin-bottom:30px;">
+        <button onclick="goBackAbout()" style="background:linear-gradient(135deg,#ffa500,#ff8c00);color:white;border:none;border-radius:20px;padding:10px 28px;font-size:1rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(255,165,0,0.08);display:inline-flex;align-items:center;gap:8px;">
+          <i class="fas fa-arrow-left"></i> 返回
+        </button>
+      </div>
+      <!-- 动态内容区域 -->
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>产品服务</h3>
+          <ul>
+            <li><a href="../manual.html#cash-register">收银系统</a></li>
+            <li><a href="../manual.html#supply-chain">供应链管理</a></li>
+            <li><a href="../manual.html#production">生产管理</a></li>
+            <li><a href="../manual.html#delivery">外卖管理</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>解决方案</h3>
+          <ul>
+            <li><a href="../manual.html#cash-register">收银</a></li>
+            <li><a href="../manual.html#supply-chain">供应链</a></li>
+            <li><a href="../manual.html#production">生产管理</a></li>
+            <li><a href="../manual.html#delivery">外卖管理</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>服务支持</h3>
+          <ul>
+            <li><a href="../inquiry.html#system-experience">技术支持</a></li>
+            <li><a href="../inquiry.html#system-experience">培训服务</a></li>
+            <li><a href="../manual.html">说明手册</a></li>
+            <li><a href="../inquiry.html#system-experience">常见问题</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>关于我们</h3>
+          <ul>
+            <li><a href="../about.html#company">公司介绍</a></li>
+            <li><a href="../about.html#news">新闻动态</a></li>
+            <li><a href="../about.html#partners">合作伙伴</a></li>
+            <li><a href="../about.html#careers">加入我们</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 RMS餐饮系统. 保留所有权利.</p>
+        <div class="social-links">
+          <span class="social-icon" data-social="weixin"><i class="fab fa-weixin"></i></span>
+          <span class="social-icon" data-social="weibo"><i class="fab fa-weibo"></i></span>
+          <span class="social-icon" data-social="qq"><i class="fab fa-qq"></i></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 右侧滚动按钮组 -->
+  <div class="fixed-buttons">
+    <div class="consult-buttons">
+      <div class="consult-item" id="consultBtn">
+        <i class="fas fa-comments"></i>
+        <span>合作咨询</span>
+        <div class="consult-popup" id="consultPopup">
+          <div class="popup-content">
+            <div class="popup-item">
+              <i class="fas fa-calendar-alt"></i>
+              <div class="popup-text">
+                <h4>预约演示</h4>
+                <p>填写您的基本信息，</p>
+                <p>专属餐饮顾问会一对一帮您安装使用。</p>
+              </div>
+            </div>
+            <div class="popup-item">
+              <i class="fas fa-phone"></i>
+              <div class="popup-text">
+                <h4>电话咨询</h4>
+                <p>售后客服热线：400-6260-106<br>快速响应，全程跟踪</p>
+              </div>
+            </div>
+            <div class="popup-item">
+              <i class="fas fa-headset"></i>
+              <div class="popup-text">
+                <h4>帮助中心</h4>
+                <p>智能版帮助中心：<a href="#" class="popup-link">点击查看</a><br>青春版帮助中心：<a href="#" class="popup-link">点击查看</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="consult-item">
+        <i class="fas fa-qrcode"></i>
+        <span>关注我们</span>
+      </div>
+    </div>
+    <div class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <!-- 加载脚本 -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../js/animated-background.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/about.js"></script>
+  <script>
+    // 初始化AOS动画
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // 返回按钮逻辑
+    function goBackAbout() {
+      if (document.referrer && document.referrer.indexOf('about.html') !== -1) {
+        window.history.back();
+      } else {
+        window.location.href = '../about.html#news';
+      }
+    }
+
+    // 动态加载新闻详情
+    function getNewsIdFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return parseInt(params.get('id'), 10);
+    }
+    fetch('../js/news-data.json')
+      .then(res => res.json())
+      .then(data => {
+        var id = getNewsIdFromUrl();
+        var news = data.find(n => n.id === id);
+        var container = document.getElementById('news-detail-container');
+        if (!news) {
+          container.innerHTML += '<div style="text-align:center;padding:80px 0;"><h2>未找到该新闻</h2></div>';
+          return;
+        }
+        container.innerHTML += `
+          <div class="news-detail-card" style="max-width:900px;margin:0 auto;background:white;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.08);overflow:hidden;">
+            <div class="news-detail-image" style="height:400px;overflow:hidden;">
+              <img src="../${news.image}" alt="${news.title}" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div class="news-detail-content" style="padding:40px;">
+              <div class="news-meta" style="margin-bottom:20px;display:flex;gap:15px;">
+                <span class="news-date">${news.date}</span>
+                <span class="news-category" style="background:linear-gradient(135deg,#ffa500,#ff8c00);color:white;padding:4px 12px;border-radius:20px;font-size:0.95rem;font-weight:500;">${news.category}</span>
+              </div>
+              <h1 style="font-size:2rem;color:#333;margin-bottom:30px;">${news.title}</h1>
+              <p style="color:#666;line-height:1.8;margin-bottom:30px;font-size:1.15rem;">${news.summary}</p>
+              <div style="color:#444;line-height:2;font-size:1.08rem;white-space:pre-line;">${news.content}</div>
+            </div>
+          </div>
+        `;
+        AOS.refresh();
+      });
+  </script>
+</body>
+</html>
