@@ -224,19 +224,6 @@
         {"label": "接口", "value": "USB"},
         {"label": "尺寸", "value": "250×200×60mm"}
       ]
-    },
-    {
-      "id": "acc",
-      "name": "收银配件",
-      "info": [
-        {"label": "打印方式", "value": "直接行式热敏"},
-        {"label": "打印速度", "value": "70mm/s"},
-        {"label": "纸卷宽度", "value": "58mm"},
-        {"label": "自动切刀", "value": "不支持"},
-        {"label": "接口类型", "value": "USB"},
-        {"label": "外形尺寸", "value": "长120 × 宽105 × 高105mm"},
-        {"label": "裸机重量", "value": "约500g"}
-      ]
     }
   ]
 }

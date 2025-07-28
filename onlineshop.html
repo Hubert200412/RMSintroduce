@@ -49,88 +49,28 @@
 
     <!-- 搜索栏 -->
     <section class="search-section">
+        <div style="text-align:center;margin-bottom:32px;">
+            <h1 style="font-size:3.2rem;font-weight:900;color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,0.10);letter-spacing:3px;line-height:1.2;">在线商城</h1>
+        </div>
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="搜索产品...">
-            <button class="search-button">搜索</button>
+            <input type="text" class="search-input" id="searchInput" placeholder="搜索产品...">
+            <button class="search-button" id="searchBtn">搜索</button>
         </div>
     </section>
 
-    <!-- 产品分类 -->
+    <!-- 产品分类（动态渲染） -->
     <section class="product-category">
         <h2 class="category-title">产品分类</h2>
-        <div class="category-grid">
-            <div class="category-item">
-                <img src="img/banner-placeholder.svg" alt="分类 1" class="category-icon">
-                <span class="category-name">分类 1</span>
-            </div>
-            <div class="category-item">
-                <img src="img/banner-placeholder.svg" alt="分类 2" class="category-icon">
-                <span class="category-name">分类 2</span>
-            </div>
-            <div class="category-item">
-                <img src="img/banner-placeholder.svg" alt="分类 3" class="category-icon">
-                <span class="category-name">分类 3</span>
-            </div>
-            <div class="category-item">
-                <img src="img/banner-placeholder.svg" alt="分类 4" class="category-icon">
-                <span class="category-name">分类 4</span>
-            </div>
+        <div class="category-grid" id="categoryGrid">
+            <!-- 分类由JS动态生成 -->
         </div>
     </section>
 
-    <!-- 热门产品 -->
+    <!-- 产品列表（动态渲染） -->
     <section class="hot-products">
-        <h2 class="section-title">热门产品</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="img/banner-placeholder.svg" alt="产品 1" class="product-image">
-                <h3 class="product-name">产品 1</h3>
-                <p class="product-description">这里是产品 1 的简要描述。</p>
-                <div class="product-price">¥99.99</div>
-                <button class="add-to-cart">加入购物车</button>
-            </div>
-            <div class="product-card">
-                <img src="img/banner-placeholder.svg" alt="产品 2" class="product-image">
-                <h3 class="product-name">产品 2</h3>
-                <p class="product-description">这里是产品 2 的简要描述。</p>
-                <div class="product-price">¥199.99</div>
-                <button class="add-to-cart">加入购物车</button>
-            </div>
-            <div class="product-card">
-                <img src="img/banner-placeholder.svg" alt="产品 3" class="product-image">
-                <h3 class="product-name">产品 3</h3>
-                <p class="product-description">这里是产品 3 的简要描述。</p>
-                <div class="product-price">¥299.99</div>
-                <button class="add-to-cart">加入购物车</button>
-            </div>
-            <div class="product-card">
-                <img src="img/banner-placeholder.svg" alt="产品 4" class="product-image">
-                <h3 class="product-name">产品 4</h3>
-                <p class="product-description">这里是产品 4 的简要描述。</p>
-                <div class="product-price">¥399.99</div>
-                <button class="add-to-cart">加入购物车</button>
-            </div>
-            <div class="product-card">
-                <img src="img/banner-placeholder.svg" alt="产品 5" class="product-image">
-                <h3 class="product-name">产品 5</h3>
-                <p class="product-description">这里是产品 5 的简要描述。</p>
-                <div class="product-price">¥499.99</div>
-                <button class="add-to-cart">加入购物车</button>
-            </div>
-            <div class="product-card">
-                <img src="img/banner-placeholder.svg" alt="产品 6" class="product-image">
-                <h3 class="product-name">产品 6</h3>
-                <p class="product-description">这里是产品 6 的简要描述。</p>
-                <div class="product-price">¥599.99</div>
-                <button class="add-to-cart">加入购物车</button>
-            </div>
-            <div class="product-card">
-                <img src="img/banner-placeholder.svg" alt="产品 7" class="product-image">
-                <h3 class="product-name">产品 7</h3>
-                <p class="product-description">这里是产品 7 的简要描述。</p>
-                <div class="product-price">¥699.99</div>
-                <button class="add-to-cart">加入购物车</button>
-            </div>
+        <h2 class="section-title">全部产品</h2>
+        <div class="product-grid" id="productGrid">
+            <!-- 产品由JS动态生成 -->
         </div>
     </section>
 
@@ -232,5 +172,69 @@
   </div>
   
   <script src="js/app.js"></script>
+  <script>
+    // 动态渲染产品分类和产品列表
+    fetch('js/products-data.json')
+      .then(res => res.json())
+      .then(data => {
+        const products = data.products;
+        // 分类提取
+        const categories = {};
+        products.forEach(p => {
+          let cat = '其他';
+          if (p.name.includes('收银系统')) cat = '收银系统';
+          else if (p.name.includes('收银配件')) cat = '收银配件';
+          categories[cat] = categories[cat] || [];
+          categories[cat].push(p);
+        });
+
+        // 分类渲染
+        const categoryGrid = document.getElementById('categoryGrid');
+        categoryGrid.innerHTML = Object.keys(categories).map(cat => `
+          <div class="category-item" data-category="${cat}">
+            <img src="img/banner-placeholder.svg" alt="${cat}" class="category-icon">
+            <span class="category-name">${cat}</span>
+          </div>
+        `).join('');
+
+        // 产品渲染函数
+        function renderProducts(list) {
+          const productGrid = document.getElementById('productGrid');
+          productGrid.innerHTML = list.map(p => `
+            <div class="product-card" style="display:flex;flex-direction:column;height:100%;border-radius:0 0 16px 16px;overflow:hidden;">
+              <img src="${p.img || 'img/banner-placeholder.svg'}" alt="${p.name}" class="product-image">
+              <h3 class="product-name">${p.name}</h3>
+              <ul class="product-info" style="flex:1 1 auto;">
+                ${p.info.map(i => `<li><strong>&nbsp;&nbsp;${i.label}：</strong>${i.value}</li>`).join('')}
+              </ul>
+              <button class="add-to-cart" style="margin-top:auto;width:100%;background:linear-gradient(90deg,#ff6600,#ffa500);color:#fff;font-weight:700;font-size:1.1rem;padding:14px 0;border:none;border-radius:0 0 16px 16px;box-shadow:0 2px 8px rgba(255,102,0,0.08);cursor:pointer;">去购买</button>
+            </div>
+          `).join('');
+        }
+
+        // 默认显示全部产品
+        renderProducts(products);
+
+        // 分类点击筛选
+        categoryGrid.addEventListener('click', e => {
+          const item = e.target.closest('.category-item');
+          if (item) {
+            const cat = item.getAttribute('data-category');
+            renderProducts(categories[cat] || products);
+          }
+        });
+
+        // 搜索功能
+        document.getElementById('searchBtn').onclick = function() {
+          const val = document.getElementById('searchInput').value.trim();
+          if (!val) {
+            renderProducts(products);
+            return;
+          }
+          const result = products.filter(p => p.name.includes(val) || (p.info && p.info.some(i => i.value.includes(val))));
+          renderProducts(result);
+        };
+      });
+  </script>
 </body>
 </html>
