@@ -470,7 +470,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if (!registrationData.merchantNumber || !registrationData.contactPerson || !registrationData.referrerName || !registrationData.referrerPhone) {
       console.error('商户信息不完整:', registrationData);
-      showNotification('请填写完整的商户信息', 'error');
+      showNotification('请填写完整的商家和推介人信息', 'error');
       return false;
     }
     if (registrationData.referrerPhone.length !== 11) {

@@ -27,7 +27,7 @@ class ContentManager {
       banners: [
         {
           id: 1,
-          title: "RMS餐饮管理系统",
+          title: "惠商餐饮管理系统",
           subtitle: "专业的餐厅数字化管理解决方案，助力餐饮企业实现智能化运营",
           image: "img/banner-placeholder.svg",
           link: "#products",
@@ -47,7 +47,7 @@ class ContentManager {
       news: [
         {
           id: 1,
-          title: "RMS系统助力餐厅数字化升级",
+          title: "惠商系统助力餐厅数字化升级",
           summary: "新功能上线，帮助餐厅提升效率",
           image: "img/news-placeholder.svg",
           date: "2024-01-15",
@@ -106,7 +106,7 @@ class ContentManager {
       <div class="container">
         <div class="section-header">
           <h2>最新动态</h2>
-          <p>了解RMS系统最新功能和行业资讯</p>
+          <p>了解惠商系统最新功能和行业资讯</p>
         </div>
         <div class="news-grid">
           ${this.contentConfig.news.map(news => `
