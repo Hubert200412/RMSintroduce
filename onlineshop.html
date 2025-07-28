@@ -1,80 +1,84 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>在线商城 - RMS餐饮管理系统</title>
-    <meta property="og:title" content="在线商城 - RMS餐饮管理系统">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="css/onlineshop.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>在线商城 - RMS餐饮管理系统</title>
+  <meta property="og:title" content="在线商城 - RMS餐饮管理系统">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/onlineshop.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <i class="fas fa-utensils"></i>
-                <span>RMS餐饮管理系统</span>
-            </a>
-            <ul class="nav-menu">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="inquiry.html">预约体验</a></li>
-                <li><a href="products.html">产品中心</a></li>
-                <li><a href="about.html">了解我们</a></li>
-                <li class="dropdown">
-                  <a style="cursor: pointer;">更多信息</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="about.html#news">新闻资讯</a></li>
-                    <li><a href="manual.html">使用手册</a></li>
-                    <li><a href="onlineshop.html">在线商城</a></li>
-                  </ul>
-                </li>
-            </ul>
-            <div class="nav-actions">
-                <a href="inquiry.html#system-experience" class="btn-consult">咨询顾问</a>
-                <a href="login.html" class="btn-login">登录/注册</a>
-            </div>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <i class="fas fa-utensils"></i>
+        <span>RMS餐饮管理系统</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="inquiry.html">预约体验</a></li>
+        <li><a href="products.html">产品中心</a></li>
+        <li><a href="about.html">了解我们</a></li>
+        <li class="dropdown">
+          <a style="cursor: pointer;">更多信息</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html#news">新闻资讯</a></li>
+            <li><a href="manual.html">使用手册</a></li>
+            <li><a href="onlineshop.html">在线商城</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <a href="inquiry.html#system-experience" class="btn-consult">咨询顾问</a>
+        <a href="login.html" class="btn-login">登录/注册</a>
+      </div>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
 
-    <!-- 搜索栏 -->
-    <section class="search-section">
-        <div style="text-align:center;margin-bottom:32px;">
-            <h1 style="font-size:3.2rem;font-weight:900;color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,0.10);letter-spacing:3px;line-height:1.2;">在线商城</h1>
-        </div>
-        <div class="search-container">
-            <input type="text" class="search-input" id="searchInput" placeholder="搜索产品...">
-            <button class="search-button" id="searchBtn">搜索</button>
-        </div>
-    </section>
+  <!-- 搜索栏 -->
+  <section class="search-section">
+    <div style="text-align:center;margin-bottom:32px;">
+      <h1
+        style="font-size:3.2rem;font-weight:900;color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,0.10);letter-spacing:3px;line-height:1.2;">
+        在线商城</h1>
+    </div>
+    <div class="search-container">
+      <input type="text" class="search-input" id="searchInput" placeholder="搜索产品...">
+      <button class="search-button" id="searchBtn">搜索</button>
+    </div>
+  </section>
 
-    <!-- 产品分类（动态渲染） -->
-    <section class="product-category">
-        <h2 class="category-title">产品分类</h2>
-        <div class="category-grid" id="categoryGrid">
-            <!-- 分类由JS动态生成 -->
-        </div>
-    </section>
+  <!-- 产品分类（动态渲染） -->
+  <section class="product-category">
+    <h2 class="category-title">产品分类</h2>
+    <div class="category-grid" id="categoryGrid">
+      <!-- 分类由JS动态生成 -->
+    </div>
+  </section>
 
-    <!-- 产品列表（动态渲染） -->
-    <section class="hot-products">
-        <h2 class="section-title">全部产品</h2>
-        <div class="product-grid" id="productGrid">
-            <!-- 产品由JS动态生成 -->
-        </div>
-    </section>
+  <!-- 产品列表（动态渲染） -->
+  <section class="hot-products">
+    <h2 class="section-title">全部产品</h2>
+    <div class="product-grid" id="productGrid">
+      <!-- 产品由JS动态生成 -->
+    </div>
+  </section>
 
-    
+
   <!-- 页脚 -->
   <footer class="footer">
     <div class="container">
@@ -127,7 +131,7 @@
     </div>
   </footer>
 
-      <!-- 右侧滚动按钮组 -->
+  <!-- 右侧滚动按钮组 -->
   <div class="fixed-buttons">
     <div class="consult-buttons">
       <div class="consult-item" id="consultBtn">
@@ -155,7 +159,8 @@
               <i class="fas fa-headset"></i>
               <div class="popup-text">
                 <h4>帮助中心</h4>
-                <p>智能版帮助中心：<a href="#" class="popup-link">点击查看</a><br>青春版帮助中心：<a href="#" class="popup-link">点击查看</a></p>
+                <p>智能版帮助中心：<a href="#" class="popup-link">点击查看</a><br>青春版帮助中心：<a href="#" class="popup-link">点击查看</a>
+                </p>
               </div>
             </div>
           </div>
@@ -170,7 +175,7 @@
       <i class="fas fa-arrow-up"></i>
     </div>
   </div>
-  
+
   <script src="js/app.js"></script>
   <script>
     // 动态渲染产品分类和产品列表
@@ -191,10 +196,9 @@
         // 分类渲染
         const categoryGrid = document.getElementById('categoryGrid');
         categoryGrid.innerHTML = Object.keys(categories).map(cat => `
-          <div class="category-item" data-category="${cat}">
-            <img src="img/banner-placeholder.svg" alt="${cat}" class="category-icon">
-            <span class="category-name">${cat}</span>
-          </div>
+          <button class="category-item" data-category="${cat}">
+            ${cat}
+          </button>
         `).join('');
 
         // 产品渲染函数
@@ -205,7 +209,7 @@
               <img src="${p.img || 'img/banner-placeholder.svg'}" alt="${p.name}" class="product-image">
               <h3 class="product-name">${p.name}</h3>
               <ul class="product-info" style="flex:1 1 auto;">
-                ${p.info.map(i => `<li><strong>&nbsp;&nbsp;${i.label}：</strong>${i.value}</li>`).join('')}
+                ${p.info.map(i => `<li class="product-name" style="font-size:16px;"><strong>&nbsp;&nbsp;${i.label}：</strong>${i.value}</li>`).join('')}
               </ul>
               <button class="add-to-cart" style="margin-top:auto;width:100%;background:linear-gradient(90deg,#ff6600,#ffa500);color:#fff;font-weight:700;font-size:1.1rem;padding:14px 0;border:none;border-radius:0 0 16px 16px;box-shadow:0 2px 8px rgba(255,102,0,0.08);cursor:pointer;">去购买</button>
             </div>
@@ -225,7 +229,7 @@
         });
 
         // 搜索功能
-        document.getElementById('searchBtn').onclick = function() {
+        document.getElementById('searchBtn').onclick = function () {
           const val = document.getElementById('searchInput').value.trim();
           if (!val) {
             renderProducts(products);
@@ -237,4 +241,5 @@
       });
   </script>
 </body>
+
 </html>

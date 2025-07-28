@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // ====== 社交二维码弹窗功能 ======
   // 1. 异步加载二维码配置
   let qrcodeData = [];
-  fetch('img/qrcodes.json')
+  fetch('../img/qrcodes.json')
     .then(res => res.json())
     .then(data => {
       qrcodeData = data
