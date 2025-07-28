@@ -1,9 +1,17 @@
-// 初始化AOS动画
+// 正确初始化AOS动画库
 AOS.init({
     duration: 800,
     easing: 'ease-in-out',
     once: true
 });
+
+// AOS初始化后延迟执行锚点跳转，确保内容已渲染
+setTimeout(function () {
+    if (window.location.hash === '#partners') {
+        var el = document.getElementById('partners');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+}, 500);
 
 // 平滑滚动
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -20,6 +28,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
+
+
 // 粒子文字动画功能
 // 如何引用功能：
 // import { particleTextAnimation } from './js/about.js';
@@ -32,7 +42,7 @@ export function particleTextAnimation({
     textColor = 'rgb(255,255,255,1)',
     canvasHeight = 300
 } = {}) {
-    window.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('DOMContentLoaded', function () {
         const canvas = document.getElementById(canvasId);
         if (!canvas) return;
         const ctx = canvas.getContext('2d');
@@ -43,7 +53,7 @@ export function particleTextAnimation({
         ctx.fillText(text, 0, 30, 180);
         const pix = ctx.getImageData(0, 0, ctx.measureText(text).width, 35);
         function canvasResize() {
-            canvas.width = window.innerWidth-200;
+            canvas.width = window.innerWidth - 200;
             canvas.height = canvasHeight;
         }
         canvasResize();
@@ -125,8 +135,8 @@ export function particleTextAnimation({
                 particle.arr.forEach(item => {
                     ctx.beginPath();
                     // 取原色，调整alpha
-                    let color = item.color.replace(/rgba\(([^,]+),([^,]+),([^,]+),([^\)]+)\)/, function(_, r, g, b, a) {
-                        return `rgba(${r},${g},${b},${(1-t)*parseFloat(a)})`;
+                    let color = item.color.replace(/rgba\(([^,]+),([^,]+),([^,]+),([^\)]+)\)/, function (_, r, g, b, a) {
+                        return `rgba(${r},${g},${b},${(1 - t) * parseFloat(a)})`;
                     });
                     ctx.fillStyle = color;
                     ctx.arc(item.mx, item.my, item.radius, 0, Math.PI * 2, false);
@@ -160,3 +170,29 @@ export function particleTextAnimation({
         animationFrameId = window.requestAnimationFrame(step);
     });
 }
+
+// 动态加载新闻列表
+fetch('js/news-data.json')
+    .then(res => res.json())
+    .then(data => {
+        const newsGrid = document.querySelector('.news-grid');
+        newsGrid.innerHTML = data.map((item, idx) => `
+      <div class="news-card${idx === 0 ? ' featured' : ''}" data-aos="fade-up" data-aos-delay="${idx * 100}">
+        <div class="news-image">
+          <div class="news-placeholder">
+            <img src="${item.image}" alt="${item.title}" style="width:100%;object-fit:cover;" onerror="this.style.display='none'">
+          </div>
+        </div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span class="news-date">${item.date}</span>
+            <span class="news-category">${item.category}</span>
+          </div>
+          <h3>${item.title}</h3>
+          <p>${item.summary}</p>
+          <a href="news-template.html?id=${item.id}" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    `).join('');
+        AOS.refresh();
+    });
