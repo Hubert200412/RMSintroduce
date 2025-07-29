@@ -34,59 +34,103 @@
     </ul>
   </nav>
 
-  <section class="m-products-hero">
-    <img src="img/products1.jpg" alt="产品中心" class="products-hero-img">
-    <div class="products-hero-content">
-      <h1>产品中心</h1>
-      <p>全面的餐饮管理产品工具箱，助力餐厅数字化转型</p>
-    </div>
-  </section>
-
-  <section class="m-products-list">
-    <div class="products-section-card">
-      <i class="fas fa-cash-register"></i>
-      <div class="products-section-info">
-        <h2>智能收银系统</h2>
-        <p>高效收银，支持多种支付方式</p>
+  <!-- 产品卡片列表 -->
+  <main class="m-products-list">
+    <section class="m-product-card" data-expanded="false">
+      <div class="m-product-card__collapsed">
+        <div class="m-product-card__img-wrap">
+          <img src="img/products1.jpg" alt="产品图片" class="m-product-card__img">
+        </div>
+        <div class="m-product-card__info">
+          <div class="m-product-card__title">智能收银一体机</div>
+          <button class="m-product-card__buy-btn">立即购买</button>
+          <span class="m-product-card__price">点击展开，查看详情↓</span>
+        </div>
       </div>
-    </div>
-    <div class="products-section-card">
-      <i class="fas fa-truck"></i>
-      <div class="products-section-info">
-        <h2>供应链管理</h2>
-        <p>智能采购、库存预警、供应商管理</p>
+      <div class="m-product-card__expanded">
+        <div class="m-product-card__img-wrap m-product-card__img-wrap--expanded">
+          <img src="img/products1.jpg" alt="产品图片" class="m-product-card__img">
+        </div>
+        <div class="m-product-card__details">
+          <h3 class="m-product-card__title">智能收银一体机</h3>
+          <div class="m-product-card__desc">
+            <ul class="m-product-card__params">
+              <li>处理器：八核高性能</li>
+              <li>内存：4GB</li>
+              <li>存储：64GB</li>
+              <li>屏幕：15.6英寸高清触控</li>
+              <li>接口：USB*4，HDMI，RJ45</li>
+              <li>系统：定制安卓/Windows</li>
+            </ul>
+            <span>点击收起↑</span>
+          </div>
+          <button class="m-product-card__buy-btn m-product-card__buy-btn--expanded">立即购买</button>
+        </div>
       </div>
-    </div>
-    <div class="products-section-card">
-      <i class="fas fa-utensils"></i>
-      <div class="products-section-info">
-        <h2>生产管理</h2>
-        <p>标准化菜谱、生产流程监控</p>
+    </section>
+    <section class="m-product-card" data-expanded="false">
+      <div class="m-product-card__collapsed">
+        <div class="m-product-card__img-wrap">
+          <img src="img/products2.jpg" alt="产品图片" class="m-product-card__img">
+        </div>
+        <div class="m-product-card__info">
+          <div class="m-product-card__title">智能后厨管理屏</div>
+          <button class="m-product-card__buy-btn">立即购买</button>
+          <span class="m-product-card__price">点击展开，查看详情↓</span>
+        </div>
       </div>
-    </div>
-    <div class="products-section-card">
-      <i class="fas fa-motorcycle"></i>
-      <div class="products-section-info">
-        <h2>外卖管理</h2>
-        <p>多平台订单聚合，智能配送调度</p>
+      <div class="m-product-card__expanded">
+        <div class="m-product-card__img-wrap m-product-card__img-wrap--expanded">
+          <img src="img/products2.jpg" alt="产品图片" class="m-product-card__img">
+        </div>
+        <div class="m-product-card__details">
+          <h3 class="m-product-card__title">智能后厨管理屏</h3>
+          <div class="m-product-card__desc">
+            <ul class="m-product-card__params">
+              <li>屏幕：21.5英寸高清触控</li>
+              <li>防水防油设计</li>
+              <li>无线联网</li>
+              <li>支持多终端同步</li>
+              <li>适配多种厨房场景</li>
+            </ul>
+            <span>点击收起↑</span>
+          </div>
+          <button class="m-product-card__buy-btn m-product-card__buy-btn--expanded">立即购买</button>
+        </div>
       </div>
-    </div>
-    <div class="products-section-card">
-      <i class="fas fa-chart-pie"></i>
-      <div class="products-section-info">
-        <h2>数据分析</h2>
-        <p>全方位经营数据分析，助力科学决策</p>
+    </section>
+    <section class="m-product-card" data-expanded="false">
+      <div class="m-product-card__collapsed">
+        <div class="m-product-card__img-wrap">
+          <img src="img/products3.jpg" alt="产品图片" class="m-product-card__img">
+        </div>
+        <div class="m-product-card__info">
+          <div class="m-product-card__title">智能扫码点餐系统</div>
+          <button class="m-product-card__buy-btn">立即购买</button>
+          <span class="m-product-card__price">点击展开，查看详情↓</span>
+        </div>
       </div>
-    </div>
-    <div class="products-section-card">
-      <i class="fas fa-microchip"></i>
-      <div class="products-section-info">
-        <h2>智能设备</h2>
-        <p>IoT设备接入，设备状态监控</p>
+      <div class="m-product-card__expanded">
+        <div class="m-product-card__img-wrap m-product-card__img-wrap--expanded">
+          <img src="img/products3.jpg" alt="产品图片" class="m-product-card__img">
+        </div>
+        <div class="m-product-card__details">
+          <h3 class="m-product-card__title">智能扫码点餐系统</h3>
+          <div class="m-product-card__desc">
+            <ul class="m-product-card__params">
+              <li class="m-product-card__desc">支持桌边扫码自助点餐</li>
+              <li class="m-product-card__desc">微信/支付宝/会员多方式支付</li>
+              <li class="m-product-card__desc">自动同步后厨</li>
+              <li class="m-product-card__desc">数据分析报表</li>
+              <li class="m-product-card__desc">适配多种餐饮业态</li>
+            </ul>
+            <span>点击收起↑</span>
+          </div>
+          <button class="m-product-card__buy-btn m-product-card__buy-btn--expanded">立即购买</button>
+        </div>
       </div>
-    </div>
-  </section>
-
+    </section>
+  </main>
   <footer class="m-footer">
     <div class="m-footer-content">
       <div class="m-footer-links">
