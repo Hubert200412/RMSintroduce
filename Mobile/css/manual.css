@@ -1,0 +1,74 @@
+/* manual页面专有样式 */
+.m-manual-hero {
+  position: relative;
+  text-align: center;
+  background: #fff;
+  padding-bottom: 1.2em;
+}
+.manual-hero-img {
+  width: 100%;
+  max-height: 32vw;
+  object-fit: cover;
+  border-radius: 0 0 1.2em 1.2em;
+}
+.manual-hero-content {
+  position: absolute;
+  left: 0; right: 0; bottom: 0.5em;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18), 0 0 2px #fff;
+  padding: 0 1em;
+}
+.m-manual-hero h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 0.3em;
+}
+.m-manual-hero p {
+  font-size: 1em;
+}
+
+.m-manual-list {
+  background: #fff;
+  padding: 2em 1.2em 1.2em 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+.manual-section-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  background: #fff7e6;
+  border-radius: 1em;
+  box-shadow: 0 2px 8px rgba(255,165,0,0.06);
+  padding: 1.2em 1em;
+  cursor: pointer;
+  transition: box-shadow 0.18s, background 0.18s;
+}
+.manual-section-card:hover {
+  background: #ffe5b2;
+  box-shadow: 0 4px 16px rgba(255,165,0,0.10);
+}
+.manual-section-card i {
+  font-size: 2em;
+  color: #ffa500;
+  flex-shrink: 0;
+}
+.manual-section-info h2 {
+  font-size: 1.1em;
+  color: #ffa500;
+  margin: 0 0 0.3em 0;
+}
+.manual-section-info p {
+  font-size: 0.98em;
+  color: #b97a00;
+  margin: 0;
+}
+@media (max-width: 480px) {
+  .manual-hero-img {
+    max-height: 38vw;
+  }
+  .m-manual-list {
+    padding: 1.2em 0.5em 0.7em 0.5em;
+  }
+}

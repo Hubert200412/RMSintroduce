@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>在线商城 - 惠商餐饮管理系统</title>
+  <meta name="description" content="惠商餐饮管理系统在线商城，选购餐饮管理相关产品与配件。">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/onlineshop.css">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="theme-color" content="#ffa500">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- 顶部导航栏 -->
+  <nav class="m-navbar">
+    <div class="m-nav-logo">
+      <a href="index.html"><i class="fas fa-utensils"></i> 惠商餐饮管理系统</a>
+    </div>
+    <div class="m-nav-menu-btn" id="menuBtn">
+      <span class="m-nav-menu-btn-bar"></span>
+      <span class="m-nav-menu-btn-bar"></span>
+      <span class="m-nav-menu-btn-bar"></span>
+    </div>
+    <ul class="m-nav-menu" id="navMenu">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="inquiry.html">预约体验</a></li>
+      <li><a href="products.html">产品中心</a></li>
+      <li><a href="about.html">了解我们</a></li>
+      <li><a href="onlineshop.html" class="active">在线商城</a></li>
+      <li><a href="login.html">登录/注册</a></li>
+    </ul>
+  </nav>
+
+  <section class="m-shop-hero">
+    <img src="img/products1.jpg" alt="在线商城" class="shop-hero-img">
+    <div class="shop-hero-content">
+      <h1>在线商城</h1>
+      <p>选购餐饮管理相关产品与配件</p>
+    </div>
+  </section>
+
+  <section class="m-shop-search">
+    <input type="text" class="shop-search-input" id="searchInput" placeholder="搜索产品...">
+    <button class="shop-search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+  </section>
+
+  <section class="m-shop-category">
+    <h2>产品分类</h2>
+    <div class="shop-category-list" id="categoryGrid">
+      <!-- 分类由JS动态生成 -->
+    </div>
+  </section>
+
+  <section class="m-shop-products">
+    <h2>全部产品</h2>
+    <div class="shop-product-list" id="productGrid">
+      <!-- 产品由JS动态生成 -->
+    </div>
+  </section>
+
+  <footer class="m-footer">
+    <div class="m-footer-content">
+      <div class="m-footer-links">
+        <a href="products.html">产品服务</a>
+        <a href="about.html">解决方案</a>
+        <a href="#">服务支持</a>
+        <a href="about.html">关于我们</a>
+      </div>
+      <div class="m-footer-social">
+        <span><i class="fab fa-weixin"></i></span>
+        <span><i class="fab fa-weibo"></i></span>
+        <span><i class="fab fa-qq"></i></span>
+      </div>
+      <div class="m-footer-copy">&copy; 2024 惠商餐饮系统. 保留所有权利.</div>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/onlineshop.js"></script>
+</body>
+</html>
