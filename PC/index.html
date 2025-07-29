@@ -1,0 +1,738 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>首页 - 惠商餐饮管理系统</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/home.css">
+  <meta name="description" content="惠商餐饮管理系统为餐饮企业提供一体化的数字化经营解决方案，包含供应链管理、生产管理、前厅管理、外卖管理等功能模块。">
+  <meta name="keywords" content="餐饮管理系统,收银系统,餐厅管理,智能点餐,外卖管理,供应链管理">
+
+  <meta property="og:title" content="首页 - 惠商餐饮管理系统">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="惠商餐饮管理系统">
+  <meta property="og:description" content="为餐饮企业提供一体化的数字化经营解决方案和管理平台">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#ffa500">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+
+
+<body>
+
+  <!-- 右侧滚动按钮组 -->
+  <div class="fixed-buttons">
+    <div class="consult-buttons">
+      <div class="consult-item" id="consultBtn">
+        <i class="fas fa-comments"></i>
+        <span>合作咨询</span>
+        <!-- 弹出框 -->
+        <div class="consult-popup" id="consultPopup">
+          <div class="popup-content">
+            <div class="popup-item">
+              <i class="fas fa-calendar-alt"></i>
+              <div class="popup-text">
+                <h4>预约演示</h4>
+                <p>填写您的基本信息，</p>
+                <p>专属餐饮顾问会一对一帮您安装使用。</p>
+              </div>
+            </div>
+            <div class="popup-item">
+              <i class="fas fa-phone"></i>
+              <div class="popup-text">
+                <h4>电话咨询</h4>
+                <p>售后客服热线：400-6260-106<br>快速响应，全程跟踪</p>
+              </div>
+            </div>
+            <div class="popup-item">
+              <i class="fas fa-headset"></i>
+              <div class="popup-text">
+                <h4>帮助中心</h4>
+                <p>智能版帮助中心：<a href="#" class="popup-link">点击查看</a><br>青春版帮助中心：<a href="#" class="popup-link">点击查看</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="consult-item">
+        <i class="fas fa-qrcode"></i>
+        <span>关注我们</span>
+      </div>
+    </div>
+    <div class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <i class="fas fa-utensils"></i>
+        <span>惠商餐饮管理系统</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="#home">首页</a></li>
+        <li><a href="inquiry.html">预约体验</a></li>
+        <li><a href="products.html">产品中心</a></li>
+        <li><a href="about.html">了解我们</a></li>
+        <li class="dropdown">
+          <a style="cursor: pointer;">更多信息</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html#news">新闻资讯</a></li>
+            <li><a href="manual.html">使用手册</a></li>
+            <li><a href="onlineshop.html">在线商城</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <a href="inquiry.html#system-experience" class="btn-consult">咨询顾问</a>
+        <a href="login.html" class="btn-login">登录/注册</a>
+      </div>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主页横幅 -->
+  <section id="home" class="hero">
+    <div class="hero-background"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>惠商餐饮管理系统</h1>
+      <p class="hero-subtitle">专业的餐厅数字化管理解决方案，助力餐饮企业实现智能化运营</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">查看详情</a>
+        <a href="inquiry.html" class="btn-secondary">立即体验</a>
+      </div>
+    </div>
+    <div class="hero-device">
+      <div class="device-screen">
+        <div class="device-inner-border">
+          <div class="device-apps">
+            <div class="app-icon blue">
+              <i class="fas fa-cash-register"></i>
+            </div>
+            <div class="app-icon green">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="app-icon orange">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <div class="app-icon purple">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="app-icon yellow">
+              <i class="fas fa-utensils"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- 核心能力 -->
+  <section id="capabilities" class="capabilities">
+    <div class="container-ability">
+      <div class="section-header">
+        <div class="header-decoration">
+          <div class="decoration-line left"></div>
+          <div class="decoration-icon left">❖</div>
+          <h2 style="color: #ffffff;">我们的能力</h2>
+          <div class="decoration-icon right">❖</div>
+          <div class="decoration-line right"></div>
+        </div>
+      </div>
+      <div class="capabilities-grid">
+        <div class="capability-item">
+          <div class="capability-icon">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <h3>平台权益</h3>
+          <p>为您提供惠商专属权益</p>
+          <div class="capability-detail">
+            <ul>
+              <li>专属会员特权</li>
+              <li>平台活动优先参与</li>
+              <li>定制化服务支持</li>
+            </ul>
+          </div>
+        </div>
+        <div class="capability-item">
+          <div class="capability-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>海量带客</h3>
+          <p>真正打通线上下流客数据，带来更多同业</p>
+          <div class="capability-detail">
+            <ul>
+              <li>多渠道引流</li>
+              <li>客户数据整合</li>
+              <li>精准营销推荐</li>
+            </ul>
+          </div>
+        </div>
+        <div class="capability-item">
+          <div class="capability-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>智能分析</h3>
+          <p>大数据驱动经营决策，提升运营效率</p>
+          <div class="capability-detail">
+            <ul>
+              <li>经营数据实时分析</li>
+              <li>趋势预测与预警</li>
+              <li>多维度报表导出</li>
+            </ul>
+          </div>
+        </div>
+        <div class="capability-item">
+          <div class="capability-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>移动管理</h3>
+          <p>随时随地掌控餐厅运营状况</p>
+          <div class="capability-detail">
+            <ul>
+              <li>手机端全功能管理</li>
+              <li>远程监控与操作</li>
+              <li>消息推送提醒</li>
+            </ul>
+          </div>
+        </div>
+        <div class="capability-item">
+          <div class="capability-icon">
+            <i class="fas fa-cog"></i>
+          </div>
+          <h3>一体化管理</h3>
+          <p>从供应链到外卖的全链路数字化</p>
+          <div class="capability-detail">
+            <ul>
+              <li>供应链全流程打通</li>
+              <li>多门店统一管理</li>
+              <li>自动化业务流程</li>
+            </ul>
+          </div>
+        </div>
+        <div class="capability-item">
+          <div class="capability-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>专业服务</h3>
+          <p>7x24小时技术支持，专业团队保障</p>
+          <div class="capability-detail">
+            <ul>
+              <li>全天候技术支持</li>
+              <li>专属顾问服务</li>
+              <li>定期系统培训</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner 横幅区域 -->
+  <section class="banner-section">
+    <div class="banner-container">
+      <div class="banner-image">
+        <div class="banner-text">
+          <span class="circle circle3"></span>
+          <span class="circle circle2"></span>
+          <span class="circle circle1"></span>
+          惠商餐饮管理系统，您的智能管家伙伴
+          <span class="circle circle1"></span>
+          <span class="circle circle2"></span>
+          <span class="circle circle3"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 解决方案 -->
+  <section id="solutions" class="solutions">
+    <div class="container">
+      <div class="section-header">
+        <div class="header-decoration">
+          <div class="decoration-line left"></div>
+          <div class="decoration-icon left">❖</div>
+          <h2>核心解决方案</h2>
+          <div class="decoration-icon right">❖</div>
+          <div class="decoration-line right"></div>
+        </div>
+        <p>专为餐饮企业打造的数字化经营解决方案</p>
+      </div>
+      <div class="solutions-grid">
+        <div class="solution-card" data-href="manual.html#cash-register">
+          <div class="solution-icon">
+            <i class="fas fa-cash-register"></i>
+          </div>
+          <h3>智能收银系统</h3>
+          <p>支持多种支付方式，快速结账，自动对账，提升前厅服务效率</p>
+          <ul>
+            <li>多支付方式集成</li>
+            <li>自动生成报表</li>
+            <li>会员管理系统</li>
+            <li>优惠券管理</li>
+          </ul>
+          <a href="manual.html#cash-register" class="detail-btn">
+            <i class="fas fa-arrow-right"></i>
+            查看详情
+          </a>
+        </div>
+        <div class="solution-card" data-href="manual.html#supply-chain">
+          <div class="solution-icon">
+            <i class="fas fa-truck"></i>
+          </div>
+          <h3>供应链管理</h3>
+          <p>从采购到库存的全流程管理，降低成本，提升食材管理效率</p>
+          <ul>
+            <li>智能采购建议</li>
+            <li>库存预警系统</li>
+            <li>供应商管理</li>
+            <li>成本分析报告</li>
+          </ul>
+          <a href="manual.html#supply-chain" class="detail-btn">
+            <i class="fas fa-arrow-right"></i>
+            查看详情
+          </a>
+        </div>
+        <div class="solution-card" data-href="manual.html#production">
+          <div class="solution-icon">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h3>生产管理</h3>
+          <p>标准化作业流程，提升出餐效率，保证食品安全和品质</p>
+          <ul>
+            <li>标准化菜谱管理</li>
+            <li>生产流程监控</li>
+            <li>品质管控系统</li>
+            <li>效率分析优化</li>
+          </ul>
+          <a href="manual.html#production" class="detail-btn">
+            <i class="fas fa-arrow-right"></i>
+            查看详情
+          </a>
+        </div>
+        <div class="solution-card" data-href="manual.html#delivery">
+          <div class="solution-icon">
+            <i class="fas fa-motorcycle"></i>
+          </div>
+          <h3>外卖管理</h3>
+          <p>多平台订单统一管理，智能配送调度，提升外卖运营效率</p>
+          <ul>
+            <li>多平台订单聚合</li>
+            <li>智能配送路径</li>
+            <li>实时订单跟踪</li>
+            <li>配送数据分析</li>
+          </ul>
+          <a href="manual.html#delivery" class="detail-btn">
+            <i class="fas fa-arrow-right"></i>
+            查看详情
+          </a>
+        </div>
+        <div class="solution-card" data-href="manual.html#analytics">
+          <div class="solution-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>数据分析</h3>
+          <p>全方位经营数据分析，助力商家科学决策，提升盈利能力</p>
+          <ul>
+            <li>销售数据分析</li>
+            <li>客户行为分析</li>
+            <li>财务报表生成</li>
+            <li>趋势预测分析</li>
+          </ul>
+          <a href="manual.html#analytics" class="detail-btn">
+            <i class="fas fa-arrow-right"></i>
+            查看详情
+          </a>
+        </div>
+        <div class="solution-card" data-href="manual.html#smart-devices">
+          <div class="solution-icon">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <h3>智能设备</h3>
+          <p>IoT设备接入，设备状态监控，预防性维护，保障设备稳定运行</p>
+          <ul>
+            <li>设备状态监控</li>
+            <li>故障预警系统</li>
+            <li>远程诊断维护</li>
+            <li>设备使用分析</li>
+          </ul>
+          <a href="manual.html#smart-devices" class="detail-btn">
+            <i class="fas fa-arrow-right"></i>
+            查看详情
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="solutions" class="solutions">
+    <div class="container">
+      <div class="section-header">
+        <div class="header-decoration">
+          <div class="decoration-line left"></div>
+          <div class="decoration-icon left">❖</div>
+          <h2>多业态服务支持</h2>
+          <div class="decoration-icon right">❖</div>
+          <div class="decoration-line right"></div>
+        </div>
+        <p>为多业态、中小型餐饮企业提供一站式智能化餐饮管理系统与配套设备。</p>
+      </div>
+      <!-- 无限滚动商标横幅 -->
+      <section class="infinite-scroll-banner">
+        <div class="scroll-container">
+          <div class="scroll-content">
+            <!-- 图标及标签，自动生成 -->
+            <div class="scroll-item">
+              <img src="img/register-icon/东南亚菜.svg" alt="东南亚菜">
+              <span>东南亚菜</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/中餐.svg" alt="中餐">
+              <span>中餐</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/其他.svg" alt="其他">
+              <span>其他</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/咖啡厅.svg" alt="咖啡厅">
+              <span>咖啡厅</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/快餐.svg" alt="快餐">
+              <span>快餐</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/日韩料理.svg" alt="日韩料理">
+              <span>日韩料理</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/海鲜.svg" alt="海鲜">
+              <span>海鲜</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/清真餐厅.svg" alt="清真餐厅">
+              <span>清真餐厅</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/火锅.svg" alt="火锅">
+              <span>火锅</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/烘焙糕点.svg" alt="烘焙糕点">
+              <span>烘焙糕点</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/烧烤.svg" alt="烧烤">
+              <span>烧烤</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/甜品饮品.svg" alt="甜品饮品">
+              <span>甜品饮品</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/素食.svg" alt="素食">
+              <span>素食</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/自助餐.svg" alt="自助餐">
+              <span>自助餐</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/西餐.svg" alt="西餐">
+              <span>西餐</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/面馆.svg" alt="面馆">
+              <span>面馆</span>
+            </div>
+            <!-- 复制一遍用于无缝滚动 -->
+            <div class="scroll-item">
+              <img src="img/register-icon/东南亚菜.svg" alt="东南亚菜">
+              <span>东南亚菜</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/中餐.svg" alt="中餐">
+              <span>中餐</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/其他.svg" alt="其他">
+              <span>其他</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/咖啡厅.svg" alt="咖啡厅">
+              <span>咖啡厅</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/快餐.svg" alt="快餐">
+              <span>快餐</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/日韩料理.svg" alt="日韩料理">
+              <span>日韩料理</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/海鲜.svg" alt="海鲜">
+              <span>海鲜</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/清真餐厅.svg" alt="清真餐厅">
+              <span>清真餐厅</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/火锅.svg" alt="火锅">
+              <span>火锅</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/烘焙糕点.svg" alt="烘焙糕点">
+              <span>烘焙糕点</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/烧烤.svg" alt="烧烤">
+              <span>烧烤</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/甜品饮品.svg" alt="甜品饮品">
+              <span>甜品饮品</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/素食.svg" alt="素食">
+              <span>素食</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/自助餐.svg" alt="自助餐">
+              <span>自助餐</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/西餐.svg" alt="西餐">
+              <span>西餐</span>
+            </div>
+            <div class="scroll-item">
+              <img src="img/register-icon/面馆.svg" alt="面馆">
+              <span>面馆</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 多业态支持详细说明 -->
+      <section class="multi-business-support-detail">
+        <div class="container">
+          <div class="multi-business-desc">
+            <p style="font-size:1.25rem;">
+              &nbsp;&nbsp;&nbsp;&nbsp;惠商餐饮管理系统覆盖咖啡厅、快餐、火锅、烘焙、烧烤、素食、甜品饮品、自助餐、东南亚菜、日韩料理、清真餐厅、海鲜等多种业态。
+              系统可根据不同业态的经营特点，灵活配置功能模块，实现门店统一管理、个性化营销、智能数据分析和高效运营。<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;——对于快餐业态​，惠商系统侧重高效订单处理与快速收银，支持自助点餐、扫码支付，减少人力成本。<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;——对于​茶饮业态​，惠商系统针对高频订单优化，单笔订单节省3-5秒，促进日单量增加。<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;——对于​正餐业态，如火锅、中餐​，惠商系统强化桌台管理、分单打印、价格体系管控等，提升整体运营效率。<br />
+            </p>
+            <div class="mbs-layout">
+              <div class="mbs-list">
+                <li class="mbs-item">
+                  <span class="mbs-abbr">需求</span>
+                  <span class="mbs-detail">支持多门店、多业态一体化管理，满足连锁及多品牌发展需求</span>
+                </li>
+                <li class="mbs-item">
+                  <span class="mbs-abbr">灵活</span>
+                  <span class="mbs-detail">灵活适配各类餐饮场景，助力企业快速上线与扩展</span>
+                </li>
+                <li class="mbs-item">
+                  <span class="mbs-abbr">洞察</span>
+                  <span class="mbs-detail">智能分析经营数据，精准洞察各业态运营状况</span>
+                </li>
+                <li class="mbs-item">
+                  <span class="mbs-abbr">设备</span>
+                  <span class="mbs-detail">丰富的配套设备与服务，保障系统稳定运行</span>
+                </li>
+                <li class="mbs-item">
+                  <span class="mbs-abbr">定制</span>
+                  <span class="mbs-detail">专业团队提供定制化解决方案，助力企业数字化转型</span>
+                </li>
+              </div>
+              <div class="mbs-image-wrapper">
+                <div class="mbs-image"></div>
+              </div>
+            </div>
+            <p style="font-size:1.25rem;">
+              &nbsp;&nbsp;&nbsp;&nbsp;无论您是餐饮行业的何种业态，单店经营还是多店连锁，我们都能为您提供高效、智能、可靠的数字化管理平台，助力企业持续成长。
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+  <!-- 联系我们 -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-info">
+          <h2>开启数字化经营新篇章</h2>
+          <p>立即联系我们，获取专业的餐饮管理解决方案</p>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <i class="fas fa-phone"></i>
+              <span>400-123-4567</span>
+            </div>
+            <div class="contact-method">
+              <i class="fas fa-envelope"></i>
+              <span>huishang@xxxxxx.com</span>
+            </div>
+            <div class="contact-method">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>北京市xx区惠商产品总部</span>
+            </div>
+          </div>
+        </div>
+        <div class="action-buttons">
+          <a href="register.html" class="btn-effect-20">前往注册</a>
+          <a href="inquiry.html#system-experience" class="btn-effect-20">前往体验</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>产品服务</h3>
+          <ul>
+            <li><a href="manual.html#cash-register">收银系统</a></li>
+            <li><a href="manual.html#supply-chain">供应链管理</a></li>
+            <li><a href="manual.html#production">生产管理</a></li>
+            <li><a href="manual.html#delivery">外卖管理</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>解决方案</h3>
+          <ul>
+            <li><a href="manual.html#cash-register">收银</a></li>
+            <li><a href="manual.html#supply-chain">供应链</a></li>
+            <li><a href="manual.html#production">生产管理</a></li>
+            <li><a href="manual.html#delivery">外卖管理</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>服务支持</h3>
+          <ul>
+            <li><a href="inquiry.html#system-experience">技术支持</a></li>
+            <li><a href="inquiry.html#system-experience">培训服务</a></li>
+            <li><a href="manual.html">说明手册</a></li>
+            <li><a href="inquiry.html#system-experience">常见问题</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>关于我们</h3>
+          <ul>
+            <li><a href="about.html#company">公司介绍</a></li>
+            <li><a href="about.html#news">新闻动态</a></li>
+            <li><a href="about.html#partners">合作伙伴</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 惠商餐饮系统. 保留所有权利.</p>
+        <div class="social-links">
+          <span class="social-icon" data-social="weixin"><i class="fab fa-weixin"></i></span>
+          <span class="social-icon" data-social="weibo"><i class="fab fa-weibo"></i></span>
+          <span class="social-icon" data-social="qq"><i class="fab fa-qq"></i></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 加载新的功能模块 -->
+  <script src="js/content-manager.js"></script>
+  <script src="js/animated-background.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.solution-card').forEach(function (card) {
+        card.addEventListener('click', function (e) {
+          // 避免点击卡片内的链接重复跳转
+          if (e.target.closest('a')) return;
+          var href = card.getAttribute('data-href');
+          if (href) window.location.href = href;
+        });
+        card.style.cursor = 'pointer';
+      });
+    });
+  </script>
+
+  <!-- 页面加载完成后的初始化 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 追踪页面访问
+      if (window.RMSAnalytics) {
+        RMSAnalytics.trackCustomEvent('page_view', {
+          page: 'homepage',
+          timestamp: Date.now()
+        });
+      }
+
+      // 监听网络状态变化
+      window.addEventListener('networkStatusChange', function (event) {
+        const status = event.detail.isOnline ? 'online' : 'offline';
+        if (window.RMSAnalytics) {
+          RMSAnalytics.trackCustomEvent('network_status_change', {
+            status: status,
+            timestamp: event.detail.timestamp
+          });
+        }
+      });
+
+      // 监听内容更新事件
+      window.addEventListener('contentUpdated', function (event) {
+        console.log('Content updated:', event.detail);
+      });
+
+      // 设置性能监控阈值警告
+      setTimeout(() => {
+        if (window.RMSErrorMonitor) {
+          const stats = RMSErrorMonitor.getErrorStats();
+          if (stats.performance.loadTime > 2000) {
+            console.warn('Page load time is slow:', stats.performance.loadTime + 'ms');
+          }
+        }
+      }, 3000);
+    });
+
+    // 添加页面可见性API监控
+    document.addEventListener('visibilitychange', function () {
+      if (window.RMSAnalytics) {
+        RMSAnalytics.trackCustomEvent('page_visibility_change', {
+          hidden: document.hidden,
+          timestamp: Date.now()
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
