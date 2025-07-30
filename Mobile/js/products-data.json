@@ -4,6 +4,7 @@
       "id": "system1",
       "name": "收银系统A",
       "img": "img/products/system1.jpg",
+      "category": "system",
       "info": [
         {"label": "处理器", "value": "高性能多核处理器A"},
         {"label": "显示器", "value": "15.6寸，分辨率1920×1080"},
@@ -19,6 +20,7 @@
       "id": "system2",
       "name": "收银系统B",
       "img": "img/products/system2.jpg",
+      "category": "system",
       "info": [
         {"label": "处理器", "value": "高性能多核处理器B"},
         {"label": "显示器", "value": "14寸，分辨率1366×768"},
@@ -34,6 +36,7 @@
       "id": "system3",
       "name": "收银系统C",
       "img": "img/products/system3.jpg",
+      "category": "system",
       "info": [
         {"label": "处理器", "value": "高性能多核处理器C"},
         {"label": "显示器", "value": "17寸，分辨率1920×1200"},
@@ -49,6 +52,7 @@
       "id": "system4",
       "name": "收银系统D",
       "img": "img/products/system1.jpg",
+      "category": "system",
       "info": [
         {"label": "处理器", "value": "四核高频处理器D"},
         {"label": "显示器", "value": "13.3寸，分辨率1920×1080"},
@@ -64,6 +68,7 @@
       "id": "system5",
       "name": "收银系统E",
       "img": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "system",
       "info": [
         {"label": "处理器", "value": "八核高性能处理器E"},
         {"label": "显示器", "value": "15寸，分辨率1920×1080"},
@@ -79,6 +84,7 @@
       "id": "system6",
       "name": "收银系统F",
       "img": "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "system",
       "info": [
         {"label": "处理器", "value": "八核高性能处理器F"},
         {"label": "显示器", "value": "15.6寸，分辨率1920×1080"},
@@ -94,6 +100,7 @@
       "id": "system7",
       "name": "收银系统G",
       "img": "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "system",
       "info": [
         {"label": "处理器", "value": "六核高性能处理器G"},
         {"label": "显示器", "value": "14寸，分辨率1366×768"},
@@ -109,6 +116,7 @@
       "id": "system8",
       "name": "收银系统H",
       "img": "https://images.unsplash.com/photo-1446488547543-78c11468449a?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "system",
       "info": [
         {"label": "处理器", "value": "四核高性能处理器H"},
         {"label": "显示器", "value": "13.3寸，分辨率1920×1080"},
@@ -124,6 +132,7 @@
       "id": "system9",
       "name": "收银系统I",
       "img": "https://images.unsplash.com/photo-1463693396721-8ca0cfa2b3b5?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "system",
       "info": [
         {"label": "处理器", "value": "四核高性能处理器I"},
         {"label": "显示器", "value": "12.5寸，分辨率1920×1080"},
@@ -139,6 +148,7 @@
       "id": "acc1",
       "name": "收银配件1",
       "img": "img/products/accessories1.jpg",
+      "category": "accessory",
       "info": [
         {"label": "类型", "value": "热敏打印机"},
         {"label": "接口", "value": "USB"},
@@ -149,6 +159,7 @@
       "id": "acc2",
       "name": "收银配件2",
       "img": "img/products/accessories2.jpg",
+      "category": "accessory",
       "info": [
         {"label": "类型", "value": "扫码枪"},
         {"label": "接口", "value": "USB/蓝牙"},
@@ -159,6 +170,7 @@
       "id": "acc3",
       "name": "收银配件3",
       "img": "img/products/accessories3.jpg",
+      "category": "accessory",
       "info": [
         {"label": "类型", "value": "钱箱"},
         {"label": "接口", "value": "RJ11"},
@@ -169,6 +181,7 @@
       "id": "acc4",
       "name": "收银配件4",
       "img": "img/products/accessories4.jpg",
+      "category": "accessory",
       "info": [
         {"label": "类型", "value": "顾显"},
         {"label": "接口", "value": "USB"},
@@ -179,6 +192,7 @@
       "id": "acc5",
       "name": "收银配件5",
       "img": "img/products/accessories1.jpg",
+      "category": "accessory",
       "info": [
         {"label": "类型", "value": "热敏打印机"},
         {"label": "接口", "value": "USB"},
@@ -189,6 +203,7 @@
       "id": "acc6",
       "name": "收银配件6",
       "img": "img/products/accessories2.jpg",
+      "category": "accessory",
       "info": [
         {"label": "类型", "value": "扫码枪"},
         {"label": "接口", "value": "USB/蓝牙"},
@@ -199,6 +214,7 @@
       "id": "acc7",
       "name": "收银配件7",
       "img": "img/products/accessories3.jpg",
+      "category": "accessory",
       "info": [
         {"label": "类型", "value": "钱箱"},
         {"label": "接口", "value": "RJ11"},
@@ -209,6 +225,7 @@
       "id": "acc8",
       "name": "收银配件8",
       "img": "img/products/accessories4.jpg",
+      "category": "accessory",
       "info": [
         {"label": "类型", "value": "顾显"},
         {"label": "接口", "value": "USB"},
@@ -219,6 +236,7 @@
       "id": "acc9",
       "name": "收银配件9",
       "img": "img/products/accessories5.jpg",
+      "category": "accessory",
       "info": [
         {"label": "类型", "value": "电子秤"},
         {"label": "接口", "value": "USB"},
