@@ -142,7 +142,7 @@
 }
 @media (max-width: 480px) {
   .m-product-card__img-wrap--expanded {
-    height: 120px;
+    height: 200px;
   }
 }
 .m-products-list {

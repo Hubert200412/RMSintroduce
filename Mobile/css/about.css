@@ -1,0 +1,153 @@
+/* 主横幅背景图片淡化，仅做背景 */
+.m-about-hero-hasbg {
+  position: relative;
+  overflow: hidden;
+}
+.m-about-hero-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.18;
+  pointer-events: none;
+  filter: blur(2px);
+}
+/* 移动端关于我们页面专用样式 */
+.m-about-hero{
+    padding-bottom: 20px;
+}
+
+.m-about-hero h1 {
+    font-size: 2em;
+    color: #ff7300;
+    font-weight: 900;
+    margin-bottom: 0.3em;
+}
+
+.m-about-hero p {
+    color: #000000  ;
+    font-size: 1.1em;
+}
+
+.m-about-hero .m-hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-top: 1.2em;
+}
+
+.m-about-hero .m-hero-stats-item {
+    text-align: center;
+}
+
+.m-about-hero .m-hero-stats-item .num {
+    font-size: 1.3em;
+    color: #ff0000;
+    font-weight: 700;
+}
+
+.m-about-hero .m-hero-stats-item .label {
+    font-size: 0.95em;
+    color: #000000;
+}
+
+.m-company-section {
+    background: #fff;
+    padding: 1.5em 0 1em 0;
+}
+
+.m-company-section h2 {
+    color: #ffa500;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.m-company-section h3 {
+    color: #ff7300;
+    font-size: 1.08em;
+    font-weight: 700;
+    margin-bottom: 0.3em;
+}
+
+.m-company-section p {
+    color: #444;
+    font-size: 0.98em;
+}
+
+.m-company-section .m-vision-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+}
+
+.m-company-section .m-vision-list-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+}
+
+.m-company-section .m-vision-list-item i {
+    color: #ffa500;
+}
+
+.m-news-section {
+    background: #fff7e6;
+    padding: 1.5em 0 1em 0;
+}
+
+.m-news-section h2 {
+    color: #ffa500;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.m-news-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.m-news-section li {
+    margin-bottom: 0.7em;
+    color: #444;
+    font-size: 0.97em;
+}
+
+.m-partners-section {
+    background: #fff;
+    padding: 1.5em 0 1em 0;
+}
+
+.m-partners-section h2 {
+    color: #ffa500;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.m-partners-section .m-partners-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em 1.2em;
+    justify-content: flex-start;
+}
+
+.m-partners-section .m-partner-item {
+    text-align: center;
+    min-width: 70px;
+}
+
+.m-partners-section .m-partner-item span {
+    font-size: 1.5em;
+    display: block;
+}
+
+.m-partners-section .m-partner-item .label {
+    font-size: 0.93em;
+    color: #444;
+}

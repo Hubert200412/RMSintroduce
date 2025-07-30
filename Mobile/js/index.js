@@ -31,5 +31,5 @@ document.addEventListener('DOMContentLoaded', function () {
     imgs[idx].classList.remove('active');
     idx = (idx + 1) % imgs.length;
     imgs[idx].classList.add('active');
-  }, 3500);
+  }, 4000);
 });

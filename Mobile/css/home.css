@@ -275,12 +275,13 @@
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 0.8s cubic-bezier(.4,1.4,.6,1);
+  transition: opacity 1s cubic-bezier(.4,1.4,.6,1);
   z-index: 1;
 }
 .carousel-img.active {
-  opacity: 1;
+  opacity: 0.8;
   z-index: 2;
+  filter: brightness(0.5);
 }
 .m-hero-content {
   position: relative;
@@ -302,13 +303,7 @@
   overflow: hidden;
 }
 
-.m-hero-bg {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: url('../img/banner-between (Small).jpg') center/cover no-repeat;
-  opacity: 0.83;
-  z-index: 0;
-}
+
 .m-hero-content {
   position: relative;
   z-index: 1;
