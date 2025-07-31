@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>新闻详情 - 惠商餐饮管理系统</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/news-template.css">
+</head>
+
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="m-navbar">
+        <div class="m-nav-logo">
+            <a href="index.html"><i class="fas fa-utensils"></i> 惠商餐饮管理系统</a>
+        </div>
+        <div class="m-nav-menu-btn" id="menuBtn">
+            <span class="m-nav-menu-btn-bar"></span>
+            <span class="m-nav-menu-btn-bar"></span>
+            <span class="m-nav-menu-btn-bar"></span>
+        </div>
+        <ul class="m-nav-menu" id="navMenu">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="products.html">产品中心</a></li>
+            <li><a href="about.html">了解我们</a></li>
+            <li><a href="manual.html">使用手册</a></li>
+            <li><a href="login.html">登录/注册</a></li>
+        </ul>
+    </nav>
+    <section class="m-news-detail-section" id="news-detail">
+        <!-- 返回按钮 -->
+        <div id="back-btn" style="display:flex;align-items:center;gap:1.2em;">
+            <button id="goBackBtn"
+                style="background:linear-gradient(135deg,#ffa500,#ff8c00);color:white;border:none;border-radius:20px;padding:10px 28px;font-size:1rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(255,165,0,0.08);display:inline-flex;align-items:center;gap:8px;">
+                <i class="fas fa-arrow-left"></i> 返回
+            </button>
+            <span class="m-nav-back-right" style="margin-left:auto;">惠商-新闻资讯</span>
+        </div>
+        <div>
+            <h1 id="news-title"></h1>
+            <div id="news-date"></div>
+            <img id="news-image" src="" alt="新闻图片" />
+            <div id="news-summary"></div>
+            <div id="news-content"></div>
+        </div>
+    </section>
+    <footer class="m-footer">
+        <div class="m-footer-content">
+            <div class="m-footer-links">
+                <a href="products.html">产品服务</a>
+                <a href="about.html">解决方案</a>
+                <a href="manual.html">服务支持</a>
+                <a href="about.html">关于我们</a>
+            </div>
+            <div class="m-footer-social">
+                <span><i class="fab fa-weixin"></i></span>
+                <span><i class="fab fa-weibo"></i></span>
+                <span><i class="fab fa-qq"></i></span>
+            </div>
+            <div class="m-footer-copy">&copy; 2024 惠商餐饮系统. 保留所有权利.</div>
+        </div>
+    </footer>
+    <script src="js/news-template.js"></script>
+    <script src="js/common.js"></script>
+</body>
+
+</html>
