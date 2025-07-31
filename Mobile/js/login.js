@@ -1,5 +1,57 @@
 // 页面加载遮罩控制
 document.addEventListener('DOMContentLoaded', function () {
+  // 登录/注册tab切换
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  var loginFormBox = document.getElementById('loginForm');
+  var registerFormBox = document.getElementById('registerForm');
+  tabBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      tabBtns.forEach(function(b){b.classList.remove('active');});
+      this.classList.add('active');
+      if(this.dataset.tab === 'login'){
+        loginFormBox.style.display = '';
+        registerFormBox.style.display = 'none';
+      }else{
+        loginFormBox.style.display = 'none';
+        registerFormBox.style.display = '';
+      }
+    });
+  });
+  // 自动填充表单内容并清空storage
+  fillLoginForm(true);
+  // 协议链接点击时保存表单内容
+  var policyLink = document.getElementById('policyLink');
+  if (policyLink) {
+    policyLink.addEventListener('click', function() {
+      saveLoginForm();
+    });
+  }
+// 仅在点击协议时存储表单内容
+function saveLoginForm() {
+  var merchant = document.getElementById('merchantInput')?.value || '';
+  var phone = document.getElementById('login-phone')?.value || '';
+  var code = document.getElementById('login-code')?.value || '';
+  var password = document.getElementById('login-password')?.value || '';
+  var remember = document.getElementById('rememberMe')?.checked || false;
+  var terms = document.getElementById('termsCheckbox')?.checked || false;
+  localStorage.setItem('loginFormCache', JSON.stringify({merchant, phone, code, password, remember, terms}));
+}
+
+// 页面加载时填充表单并清空storage
+function fillLoginForm(clearAfterFill) {
+  var cache = localStorage.getItem('loginFormCache');
+  if (!cache) return;
+  try {
+    var data = JSON.parse(cache);
+    if (data.merchant !== undefined) document.getElementById('merchantInput').value = data.merchant;
+    if (data.phone !== undefined) document.getElementById('login-phone').value = data.phone;
+    if (data.code !== undefined) document.getElementById('login-code').value = data.code;
+    if (data.password !== undefined) document.getElementById('login-password').value = data.password;
+    if (data.remember !== undefined) document.getElementById('rememberMe').checked = data.remember;
+    if (data.terms !== undefined) document.getElementById('termsCheckbox').checked = data.terms;
+  } catch(e) {}
+  if(clearAfterFill) localStorage.removeItem('loginFormCache');
+}
   setTimeout(function () {
     var main = document.getElementById('main-content');
     var mask = document.getElementById('page-loading-mask');

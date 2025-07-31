@@ -1,38 +1,133 @@
+/* 弹窗样式 */
+.manual-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.manual-modal.show {
+  display: block;
+}
+.manual-modal-mask {
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 0;
+}
+.manual-modal-dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 1.2em;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  max-width: 90vw;
+  width: 300px;
+  padding: 2em 1.2em 1.2em 1.2em;
+  z-index: 1;
+  animation: modal-fade-in 0.22s;
+}
+.manual-modal-content {
+  color: #333;
+  font-size: 1.05em;
+  line-height: 1.7;
+}
+.manual-modal-content h2 {
+  font-size: 1.2em;
+  color: #ffa500;
+  margin-bottom: 0.7em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.manual-modal-content ul {
+  padding-left: 1.2em;
+  margin: 0.5em 0 0 0;
+}
+.manual-modal-content li {
+  margin-bottom: 0.4em;
+}
+.manual-modal-close {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: #aaa;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.18s;
+}
+.manual-modal-close:hover {
+  color: #ffa500;
+}
+body.manual-modal-open {
+  overflow: hidden;
+  touch-action: none;
+}
+@keyframes modal-fade-in {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
 /* manual页面专有样式 */
 .m-manual-hero {
   position: relative;
   text-align: center;
   background: #fff;
   padding-bottom: 1.2em;
+  min-height: 32vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .manual-hero-img {
   width: 100%;
-  max-height: 32vw;
+  height: 200px;
+  max-height: 52vw;
   object-fit: cover;
   border-radius: 0 0 1.2em 1.2em;
 }
 .manual-hero-content {
   position: absolute;
-  left: 0; right: 0; bottom: 0.5em;
+  left: 0; right: 0;
   color: #fff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.18), 0 0 2px #fff;
-  padding: 0 1em;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.22), 0 0 2px #fff;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.38) 100%);
+  border-radius: 0 0 1.2em 1.2em;
+  z-index: 2;
 }
 .m-manual-hero h1 {
-  font-size: 1.5em;
-  font-weight: 700;
-  margin-bottom: 0.3em;
+  font-size: 2em;
+  font-weight: 800;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.25), 0 0 2px #fff;
 }
 .m-manual-hero p {
-  font-size: 1em;
+  font-size: 1.08em;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
 }
 
 .m-manual-list {
   background: #fff;
-  padding: 2em 1.2em 1.2em 1.2em;
+  padding: 2.5em 1.2em 1.2em 1.2em;
   display: flex;
   flex-direction: column;
   gap: 1.2em;
+  margin-top: 0.5em;
 }
 .manual-section-card {
   display: flex;
@@ -66,9 +161,13 @@
 }
 @media (max-width: 480px) {
   .manual-hero-img {
-    max-height: 38vw;
+    max-height: 44vw;
+  }
+  .m-manual-hero {
+    min-height: 44vw;
   }
   .m-manual-list {
     padding: 1.2em 0.5em 0.7em 0.5em;
+    margin-top: 0.5em;
   }
 }
