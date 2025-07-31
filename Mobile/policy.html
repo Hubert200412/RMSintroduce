@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>用户协议和隐私政策 - 惠商餐饮管理系统</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <meta name="theme-color" content="#ffa500">
+  <style>
+    .policy-container { max-width: 700px; margin: 2em auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2em 1.2em; font-size: 16px; line-height: 2; color: #333; }
+    .policy-container h1 { color: #ff9800; margin-top: 1.2em; text-align: center; }
+    .policy-container h2 { color: #ff9800; margin-top: 1.2em; }
+    .policy-container a { color: #2196f3; text-decoration: underline; }
+    @media (max-width: 600px) { .policy-container { padding: 1em 0.5em; font-size: 15px; } }
+  </style>
+</head>
+<body style="background:#f7f7f7; padding: 10px;">
+  <div class="policy-container">
+    <h1>个人信息保护隐私政策</h1>
+    <p>亲爱的用户，感谢您信任并使用惠商餐饮管理系统！</p>
+    <p>我们依据相关法律制定了
+      <a href="/Mobile/policy/Product-Service-Agreement.html">《产品服务协议》</a>、
+      <a href="/Mobile/policy/Privacy-Policy.html">《隐私政策》</a>和
+      <a href="/Mobile/policy/Certification-Service.html">《认证服务协议》</a>，请您在点击同意之前仔细阅读并充分理解相关条款，其中的重点条款已经为您标注，方便您了解自己的权利。
+    </p>
+    <p>我们通过《隐私政策》向您说明：</p>
+    <ol>
+      <li>1、为了提供相关服务，我们如何在为您提供服务的过程中收集、使用对应的必要信息以及其他信息。比如帮助您了解部分功能可能调用的设备权限以及调用第三方插件情况等。</li>
+      <li>2、您可对上述信息进行访问、更正、删除以及注销账号，我们也将依据法律规定和本协议约定采取安全措施来保护您的商业信息及个人信息。</li>
+      <li>3、未经您的授权同意，我们不会将上述信息共享给第三方或用于您未授权的其他用途。</li>
+    </ol>
+    <p>如您同意，请在登录页面或下方勾选“我已阅读并同意”，开始接受我们的服务。<br>
+    同意效力仅代表授权基本功能收集必要个人信息，其它功能收集个人信息将在您使用时单独征求您的同意。</p>
+    <hr>
+
+    <p style="font-size:14px;color:#888;">如需详细条款，请点击上方相关协议链接。</p>
+    <div style="display:flex;justify-content:center;gap:1.5em;margin:2.5em 0 0 0;">
+      <button id="disagreeBtn" style="padding:0.7em 2.2em;font-size:17px;background:#e0e0e0;color:#666;border:none;border-radius:24px;box-shadow:0 2px 8px rgba(0,0,0,0.06);cursor:pointer;">不同意</button>
+      <button id="agreeBtn" style="padding:0.7em 2.2em;font-size:17px;background:linear-gradient(90deg,#ff9800,#ffa726);color:#fff;border:none;border-radius:24px;box-shadow:0 2px 8px rgba(0,0,0,0.10);cursor:pointer;">我已阅读并同意</button>
+    </div>
+  </div>
+</body>
+<script>
+  // 获取来源页
+  function getLoginPage() {
+    // 优先取document.referrer，若无则默认login.html
+    var ref = document.referrer || 'login.html';
+    // 只允许回到本站的login.html，防止外链
+    if (!/\/login\.html(\?|#|$)/.test(ref)) return 'login.html';
+    return ref;
+  }
+  document.getElementById('disagreeBtn').onclick = function() {
+    // 回到登录页并自动勾选协议
+    var url = new URL(getLoginPage(), window.location.origin);
+    url.searchParams.set('agree', '0');
+    window.location.href = url.toString();
+  };
+  document.getElementById('agreeBtn').onclick = function() {
+    // 回到登录页并自动勾选协议
+    var url = new URL(getLoginPage(), window.location.origin);
+    url.searchParams.set('agree', '1');
+    window.location.href = url.toString();
+  };
+</script>
+</html>
